@@ -1,0 +1,434 @@
+export const languages = {
+  en: "English",
+  es: "Español",
+  sv: "Svenska",
+};
+
+export const defaultLang = "en";
+export const showDefaultLang = false;
+
+export const ui = {
+  en: {
+    meta: {
+      title: "Carfdev | Custom Web Development for Stockholm Businesses",
+      description:
+        "Expert web and mobile development services in Stockholm. I build fast, modern websites and applications for small businesses to help them grow online.",
+    },
+    nav: {
+      links: [
+        { text: "Services", href: "#services" },
+        { text: "Work", href: "#work" },
+        { text: "About", href: "#about" },
+      ],
+      ctaButton: "Get in Touch",
+    },
+    hero: {
+      title: "High-Quality Web Development for Your Stockholm Business.",
+      subtitle:
+        "From concept to launch, I build custom, high-performance websites and applications that deliver real results. Your local, long-term tech partner.",
+      primaryCta: "Let's Discuss Your Project",
+      secondaryCta: "See My Work",
+    },
+    valueProposition: {
+      title: "More Than a Developer. A Partner.",
+      items: [
+        {
+          icon: "direct-collaboration",
+          title: "Direct Collaboration",
+          description:
+            "You'll always work directly with me. No project managers, no communication gaps. Just a clear, efficient process from start to finish.",
+        },
+        {
+          icon: "modern-tech",
+          title: "Modern, Future-Proof Tech",
+          description:
+            "I use a modern tech stack (Astro, React, Node.js) to build fast, secure, and scalable solutions that grow with your business, not against it.",
+        },
+        {
+          icon: "local-focus",
+          title: "A Local Stockholm Focus",
+          description:
+            "Based right here in Stockholm, I'm available for in-person meetings to truly understand your business goals and build lasting relationships.",
+        },
+      ],
+    },
+    services: {
+      title: "My Services",
+      subtitle: "Custom solutions to bring your digital ideas to life.",
+      items: [
+        {
+          icon: "web-development",
+          title: "Custom Web Development",
+          description:
+            "Bespoke websites built from scratch to meet your unique business needs, optimized for performance and user experience.",
+        },
+        {
+          icon: "e-commerce",
+          title: "E-Commerce Solutions",
+          description:
+            "Powerful and easy-to-manage online stores that turn visitors into customers and help you sell your products effectively.",
+        },
+        {
+          icon: "mobile-apps",
+          title: "Mobile App Development",
+          description:
+            "Engaging cross-platform mobile apps for iOS and Android, built with technologies like React Native and Flutter.",
+        },
+        {
+          icon: "maintenance",
+          title: "Maintenance & Support",
+          description:
+            "Ongoing support, security updates, and performance monitoring to ensure your website or app runs smoothly around the clock.",
+        },
+      ],
+    },
+    portfolio: {
+      title: "Featured Work",
+      subtitle: "A selection of projects I'm proud of.",
+      items: [
+        {
+          title: "Kaffe & Klart Roasters",
+          description:
+            "A sleek e-commerce and marketing site for a local Stockholm coffee roastery. The platform increased their online sales by 40% in the first three months.",
+          techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
+          liveUrl: "#",
+          caseStudyUrl: "#",
+          imageSrc: "/images/portfolio/kaffe-klart.png",
+        },
+        {
+          title: "Södermalm Flow Yoga",
+          description:
+            "A custom booking platform and informational website for a boutique yoga studio, enabling easy class scheduling and membership management for their clients.",
+          techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
+          liveUrl: "#",
+          caseStudyUrl: "#",
+          imageSrc: "/images/portfolio/sodermalm-flow.png",
+        },
+      ],
+    },
+    techStack: {
+      title: "My Tech Toolbox",
+      subtitle:
+        "I use a curated set of modern tools to ensure the highest quality, performance, and security for your project.",
+    },
+    about: {
+      title: "Hi, I'm Carfdev.",
+      description1:
+        "I'm a full-stack developer and designer based in Stockholm with a passion for building beautiful, functional things for the web. I thrive on the challenge of turning a complex problem into an elegant, user-friendly solution.",
+      description2:
+        "My philosophy is simple: build strong, long-term relationships with my clients. I want to be your go-to tech partner, someone you can rely on to not only build your project but also to help you grow your business. When I'm not coding, you can find me exploring the city's cafes or cycling through its beautiful parks.",
+      buttonText: "Connect on LinkedIn",
+    },
+    cta: {
+      title: "Have a project in mind?",
+      subtitle:
+        "Let's turn your idea into a reality. I'm currently available for new freelance opportunities and would love to hear about your goals.",
+      buttonText: "Get a Free Quote",
+    },
+    contact: {
+      title: "Get in Touch",
+      subtitle:
+        "Fill out the form below or email me directly at hello@carfdev.com. I'll get back to you within 24 hours.",
+      form: {
+        nameLabel: "Your Name",
+        namePlaceholder: "What should I call you?",
+        emailLabel: "Your Email",
+        emailPlaceholder: "Where can I reach you?",
+        messageLabel: "Your Message",
+        messagePlaceholder: "Tell me a little about your project...",
+      },
+      submitButton: "Send Message",
+    },
+    footer: {
+      copyright: "© {year} Carfdev. All rights reserved.",
+      location: "Based in Stockholm, Sweden",
+      socialLinks: {
+        github: "GitHub",
+        linkedin: "LinkedIn",
+      },
+    },
+  },
+  es: {
+    meta: {
+      title:
+        "Carfdev | Desarrollo Web Personalizado para Negocios en Estocolmo",
+      description:
+        "Servicios expertos de desarrollo web y móvil en Estocolmo. Creo sitios web y aplicaciones modernas y rápidas para pequeñas empresas, ayudándolas a crecer en línea.",
+    },
+    nav: {
+      links: [
+        { text: "Servicios", href: "#services" },
+        { text: "Proyectos", href: "#work" },
+        { text: "Sobre mí", href: "#about" },
+      ],
+      ctaButton: "Contáctame",
+    },
+    hero: {
+      title: "Desarrollo Web de Alta Calidad para tu Negocio en Estocolmo.",
+      subtitle:
+        "Desde el concepto hasta el lanzamiento, construyo sitios y aplicaciones personalizadas, rápidas y eficientes que generan resultados reales. Tu socio tecnológico local y a largo plazo.",
+      primaryCta: "Hablemos de tu proyecto",
+      secondaryCta: "Ver mis trabajos",
+    },
+    valueProposition: {
+      title: "Más que un Desarrollador. Un Socio.",
+      items: [
+        {
+          icon: "direct-collaboration",
+          title: "Colaboración Directa",
+          description:
+            "Trabajarás directamente conmigo. Sin gestores de proyecto, sin malentendidos. Un proceso claro y eficiente de principio a fin.",
+        },
+        {
+          icon: "modern-tech",
+          title: "Tecnología Moderna y Escalable",
+          description:
+            "Uso una pila tecnológica moderna (Astro, React, Node.js) para crear soluciones rápidas, seguras y escalables que crecen junto a tu negocio.",
+        },
+        {
+          icon: "local-focus",
+          title: "Enfoque Local en Estocolmo",
+          description:
+            "Con base en Estocolmo, estoy disponible para reuniones presenciales y así entender mejor tus objetivos y construir relaciones duraderas.",
+        },
+      ],
+    },
+    services: {
+      title: "Mis Servicios",
+      subtitle:
+        "Soluciones personalizadas para dar vida a tus ideas digitales.",
+      items: [
+        {
+          icon: "web-development",
+          title: "Desarrollo Web Personalizado",
+          description:
+            "Sitios web creados desde cero para adaptarse a las necesidades únicas de tu negocio, optimizados para rendimiento y experiencia de usuario.",
+        },
+        {
+          icon: "e-commerce",
+          title: "Soluciones de Comercio Electrónico",
+          description:
+            "Tiendas en línea potentes y fáciles de administrar que convierten visitantes en clientes y aumentan tus ventas.",
+        },
+        {
+          icon: "mobile-apps",
+          title: "Desarrollo de Aplicaciones Móviles",
+          description:
+            "Aplicaciones móviles multiplataforma atractivas para iOS y Android, construidas con tecnologías como React Native y Flutter.",
+        },
+        {
+          icon: "maintenance",
+          title: "Mantenimiento y Soporte",
+          description:
+            "Soporte continuo, actualizaciones de seguridad y monitoreo de rendimiento para asegurar que tu sitio o app funcione sin problemas las 24 horas.",
+        },
+      ],
+    },
+    portfolio: {
+      title: "Proyectos Destacados",
+      subtitle: "Una selección de trabajos de los que me siento orgulloso.",
+      items: [
+        {
+          title: "Kaffe & Klart Roasters",
+          description:
+            "Una tienda en línea moderna para una tostaduría local de café en Estocolmo. La plataforma aumentó sus ventas en línea un 40% en los primeros tres meses.",
+          techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
+          liveUrl: "#",
+          caseStudyUrl: "#",
+          imageSrc: "/images/portfolio/kaffe-klart.png",
+        },
+        {
+          title: "Södermalm Flow Yoga",
+          description:
+            "Una plataforma de reservas personalizada y sitio informativo para un estudio boutique de yoga, facilitando la gestión de clases y membresías para sus clientes.",
+          techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
+          liveUrl: "#",
+          caseStudyUrl: "#",
+          imageSrc: "/images/portfolio/sodermalm-flow.png",
+        },
+      ],
+    },
+    techStack: {
+      title: "Mi Caja de Herramientas Tecnológicas",
+      subtitle:
+        "Uso un conjunto moderno y seleccionado de herramientas para garantizar la máxima calidad, rendimiento y seguridad en tu proyecto.",
+    },
+    about: {
+      title: "Hola, soy Carfdev.",
+      description1:
+        "Soy desarrollador full-stack y diseñador radicado en Estocolmo, apasionado por crear cosas bellas y funcionales para la web. Me motiva el reto de transformar problemas complejos en soluciones elegantes y fáciles de usar.",
+      description2:
+        "Mi filosofía es simple: construir relaciones sólidas y duraderas con mis clientes. Quiero ser tu socio tecnológico de confianza, alguien que no solo construya tu proyecto, sino que también te ayude a hacer crecer tu negocio. Cuando no estoy programando, me encontrarás explorando los cafés de la ciudad o recorriendo sus parques en bicicleta.",
+      buttonText: "Conectar en LinkedIn",
+    },
+    cta: {
+      title: "¿Tienes un proyecto en mente?",
+      subtitle:
+        "Convirtamos tu idea en realidad. Actualmente estoy disponible para nuevos proyectos freelance y me encantaría conocer tus objetivos.",
+      buttonText: "Solicitar Cotización Gratis",
+    },
+    contact: {
+      title: "Ponte en Contacto",
+      subtitle:
+        "Rellena el formulario o envíame un correo directamente a hello@carfdev.com. Te responderé en menos de 24 horas.",
+      form: {
+        nameLabel: "Tu Nombre",
+        namePlaceholder: "¿Cómo debo llamarte?",
+        emailLabel: "Tu Correo Electrónico",
+        emailPlaceholder: "¿Dónde puedo contactarte?",
+        messageLabel: "Tu Mensaje",
+        messagePlaceholder: "Cuéntame un poco sobre tu proyecto...",
+      },
+      submitButton: "Enviar Mensaje",
+    },
+    footer: {
+      copyright: "© {year} Carfdev. Todos los derechos reservados.",
+      location: "Con base en Estocolmo, Suecia",
+      socialLinks: {
+        github: "GitHub",
+        linkedin: "LinkedIn",
+      },
+    },
+  },
+  sv: {
+    meta: {
+      title: "Carfdev | Skräddarsydd webbutveckling för företag i Stockholm",
+      description:
+        "Expert på webbutveckling och mobilutveckling i Stockholm. Jag bygger snabba, moderna webbplatser och appar för småföretag för att hjälpa dem växa online.",
+    },
+    nav: {
+      links: [
+        { text: "Tjänster", href: "#services" },
+        { text: "Projekt", href: "#work" },
+        { text: "Om mig", href: "#about" },
+      ],
+      ctaButton: "Kontakta mig",
+    },
+    hero: {
+      title: "Webbutveckling av hög kvalitet för ditt företag i Stockholm.",
+      subtitle:
+        "Från idé till lansering bygger jag skräddarsydda, högpresterande webbplatser och appar som ger verkliga resultat. Din lokala och långsiktiga teknikpartner.",
+      primaryCta: "Låt oss prata om ditt projekt",
+      secondaryCta: "Se mitt arbete",
+    },
+    valueProposition: {
+      title: "Mer än en utvecklare. En partner.",
+      items: [
+        {
+          icon: "direct-collaboration",
+          title: "Direkt samarbete",
+          description:
+            "Du arbetar alltid direkt med mig. Inga projektledare, inga kommunikationsluckor. Bara en tydlig och effektiv process från början till slut.",
+        },
+        {
+          icon: "modern-tech",
+          title: "Modern och framtidssäker teknik",
+          description:
+            "Jag använder en modern teknikstack (Astro, React, Node.js) för att bygga snabba, säkra och skalbara lösningar som växer tillsammans med ditt företag.",
+        },
+        {
+          icon: "local-focus",
+          title: "Lokalt fokus i Stockholm",
+          description:
+            "Jag finns här i Stockholm och är tillgänglig för personliga möten för att verkligen förstå dina affärsmål och bygga långvariga relationer.",
+        },
+      ],
+    },
+    services: {
+      title: "Mina tjänster",
+      subtitle:
+        "Skräddarsydda lösningar för att förverkliga dina digitala idéer.",
+      items: [
+        {
+          icon: "web-development",
+          title: "Skräddarsydd webbutveckling",
+          description:
+            "Webbplatser byggda från grunden för att möta ditt företags unika behov, optimerade för prestanda och användarupplevelse.",
+        },
+        {
+          icon: "e-commerce",
+          title: "E-handelslösningar",
+          description:
+            "Kraftfulla och lättanvända nätbutiker som omvandlar besökare till kunder och hjälper dig att sälja effektivt.",
+        },
+        {
+          icon: "mobile-apps",
+          title: "Utveckling av mobilappar",
+          description:
+            "Engagerande mobilappar för iOS och Android, byggda med tekniker som React Native och Flutter.",
+        },
+        {
+          icon: "maintenance",
+          title: "Underhåll och support",
+          description:
+            "Löpande support, säkerhetsuppdateringar och prestandaövervakning för att se till att din webbplats eller app fungerar smidigt dygnet runt.",
+        },
+      ],
+    },
+    portfolio: {
+      title: "Utvalda projekt",
+      subtitle: "Ett urval av projekt jag är stolt över.",
+      items: [
+        {
+          title: "Kaffe & Klart Roasters",
+          description:
+            "En elegant e-handels- och marknadsföringswebbplats för ett lokalt kafferosteri i Stockholm. Plattformen ökade deras onlineförsäljning med 40 % under de första tre månaderna.",
+          techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
+          liveUrl: "#",
+          caseStudyUrl: "#",
+          imageSrc: "/images/portfolio/kaffe-klart.png",
+        },
+        {
+          title: "Södermalm Flow Yoga",
+          description:
+            "En skräddarsydd bokningsplattform och informationswebbplats för en yogastudio, som möjliggör enkel klassbokning och medlemshantering för deras kunder.",
+          techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
+          liveUrl: "#",
+          caseStudyUrl: "#",
+          imageSrc: "/images/portfolio/sodermalm-flow.png",
+        },
+      ],
+    },
+    techStack: {
+      title: "Min tekniska verktygslåda",
+      subtitle:
+        "Jag använder ett noggrant utvalt set av moderna verktyg för att säkerställa högsta kvalitet, prestanda och säkerhet i ditt projekt.",
+    },
+    about: {
+      title: "Hej, jag är Carfdev.",
+      description1:
+        "Jag är en fullstack-utvecklare och designer baserad i Stockholm med en passion för att skapa vackra och funktionella webblösningar. Jag trivs med att förvandla komplexa problem till eleganta och användarvänliga lösningar.",
+      description2:
+        "Min filosofi är enkel: bygg starka och långsiktiga relationer med mina kunder. Jag vill vara din pålitliga teknikpartner, någon du kan lita på för att inte bara bygga ditt projekt utan också hjälpa ditt företag att växa. När jag inte programmerar hittar du mig ofta på stadens kaféer eller cyklande genom dess vackra parker.",
+      buttonText: "Anslut på LinkedIn",
+    },
+    cta: {
+      title: "Har du ett projekt i åtanke?",
+      subtitle:
+        "Låt oss förvandla din idé till verklighet. Jag är för närvarande tillgänglig för nya frilansuppdrag och skulle gärna höra mer om dina mål.",
+      buttonText: "Få en gratis offert",
+    },
+    contact: {
+      title: "Kontakta mig",
+      subtitle:
+        "Fyll i formuläret nedan eller mejla mig direkt på hello@carfdev.com. Jag svarar inom 24 timmar.",
+      form: {
+        nameLabel: "Ditt namn",
+        namePlaceholder: "Vad ska jag kalla dig?",
+        emailLabel: "Din e-postadress",
+        emailPlaceholder: "Hur kan jag nå dig?",
+        messageLabel: "Ditt meddelande",
+        messagePlaceholder: "Berätta lite om ditt projekt...",
+      },
+      submitButton: "Skicka meddelande",
+    },
+    footer: {
+      copyright: "© {year} Carfdev. Alla rättigheter förbehållna.",
+      location: "Baserad i Stockholm, Sverige",
+      socialLinks: {
+        github: "GitHub",
+        linkedin: "LinkedIn",
+      },
+    },
+  },
+} as const;
