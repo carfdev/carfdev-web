@@ -21,6 +21,9 @@ export const ui = {
         { text: "About", href: "#about" },
       ],
       ctaButton: "Get in Touch",
+      logoLabel: "Carfdev Home",
+      title: "Navigation Menu",
+      description: "Main site navigation menu",
     },
     hero: {
       title: "High-Quality Web Development for Your Stockholm Business.",
@@ -162,6 +165,9 @@ export const ui = {
         { text: "Sobre mí", href: "#about" },
       ],
       ctaButton: "Contáctame",
+      logoLabel: "Inicio de Carfdev",
+      title: "Menú de Navegación",
+      description: "Menú principal para navegación del sitio",
     },
     hero: {
       title: "Desarrollo Web de Alta Calidad para tu Negocio en Estocolmo.",
@@ -303,6 +309,9 @@ export const ui = {
         { text: "Om mig", href: "#about" },
       ],
       ctaButton: "Kontakta mig",
+      logoLabel: "Carfdev Hem",
+      title: "Navigeringsmeny",
+      description: "Huvudmeny för webbplatsnavigering",
     },
     hero: {
       title: "Webbutveckling av hög kvalitet för ditt företag i Stockholm.",

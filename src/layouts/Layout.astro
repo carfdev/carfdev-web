@@ -1,25 +1,57 @@
 ---
 import { Font } from "astro:assets";
+import { ClientRouter } from "astro:transitions";
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { CustomNavbar } from "@/components/customNavbar";
 
 import "@/styles/global.css";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const navItems = t("nav").links.slice() as {
+  text: string;
+  href: string;
+}[];
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={t("meta").description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Font cssVariable="--font-inter" preload />
+    <ClientRouter />
     <title>{t("meta").title}</title>
   </head>
   <body>
+    <CustomNavbar navItems={navItems} client:visible lang={lang} />
+    <div class="h-[200dvh] w-full"></div>
     <slot />
   </body>
 </html>
+
+<script is:inline>
+  const theme = localStorage.theme;
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  if (theme === "dark" || (!theme && prefersDark)) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  document.addEventListener("astro:before-swap", (event) => {
+    const theme = localStorage.theme;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    if (theme === "dark" || (!theme && prefersDark)) {
+      event.newDocument.documentElement.classList.add("dark");
+    } else {
+      event.newDocument.documentElement.classList.remove("dark");
+    }
+  });
+</script>

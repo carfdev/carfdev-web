@@ -7,7 +7,7 @@ export function getLangFromUrl(url: URL) {
 }
 
 type Ui = typeof ui;
-type Lang = keyof Ui;
+export type Lang = keyof Ui;
 
 export function useTranslations<L extends Lang>(lang: L) {
   return function t<K extends keyof Ui[L]>(key: K): Ui[L][K] {
