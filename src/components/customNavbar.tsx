@@ -12,7 +12,7 @@ import {
   LanguageMenu,
 } from "./ui/resizable-navbar";
 import { Button } from "./ui/button";
-import { Moon } from "lucide-react";
+import { SunMoon } from "lucide-react";
 
 interface Props {
   navItems: {
@@ -27,9 +27,23 @@ const handleChangeTheme = () => {
   // eslint-disable-next-line no-undef
   document.documentElement.classList.toggle("dark");
   // eslint-disable-next-line no-undef
-  localStorage.theme = document.documentElement.classList.contains("dark")
+  const newTheme = document.documentElement.classList.contains("dark")
     ? "dark"
     : "light";
+
+  // eslint-disable-next-line no-undef
+  localStorage.theme = newTheme;
+
+  // eslint-disable-next-line no-undef
+  const announcement = document.createElement("div");
+  announcement.setAttribute("role", "status");
+  announcement.setAttribute("aria-live", "polite");
+  announcement.className = "sr-only";
+  announcement.textContent = `Theme changed to ${newTheme}`;
+  // eslint-disable-next-line no-undef
+  document.body.appendChild(announcement);
+  // eslint-disable-next-line no-undef
+  setTimeout(() => announcement.remove(), 1000);
 };
 
 export const CustomNavbar = ({ navItems, lang }: Props) => {
@@ -50,8 +64,9 @@ export const CustomNavbar = ({ navItems, lang }: Props) => {
               size="icon"
               className="cursor-pointer"
               onClick={handleChangeTheme}
+              aria-label="Change Theme"
             >
-              <Moon className="size-4" />
+              <SunMoon />
             </Button>
           </div>
 
@@ -74,7 +89,7 @@ export const CustomNavbar = ({ navItems, lang }: Props) => {
                   className="cursor-pointer"
                   onClick={handleChangeTheme}
                 >
-                  <Moon className="size-4" />
+                  <SunMoon />
                 </Button>
 
                 <LanguageMenu lang={lang} />

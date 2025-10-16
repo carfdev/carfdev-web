@@ -1,0 +1,46 @@
+---
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import { Link } from "@/components/ui/link";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { Eye, Rocket } from "lucide-react";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="relative flex w-full items-center justify-center overflow-hidden">
+  <BackgroundRippleEffect client:visible />
+  <div
+    class="pointer-events-none z-10 flex w-full flex-col items-center justify-center gap-4 px-4 py-44"
+  >
+    <h1
+      class="text-primary relative max-w-4xl text-center text-[clamp(1.5rem,5vw,3.75rem)] tracking-tighter text-pretty"
+    >
+      {t("hero").title}
+    </h1>
+    <TextGenerateEffect client:visible words={t("hero").subtitle} />
+    <p class="sr-only">
+      {t("hero").subtitle}
+    </p>
+    <div class="mt-8 flex flex-col gap-4 md:flex-row">
+      <Link
+        href="#contact"
+        className="pointer-events-auto cursor-pointer"
+        size="lg"
+      >
+        <Rocket />
+        {t("hero").primaryCta}
+      </Link>
+      <Link
+        href="#work"
+        variant="secondary"
+        className="pointer-events-auto cursor-pointer"
+        size="lg"
+      >
+        <Eye />
+        {t("hero").secondaryCta}
+      </Link>
+    </div>
+  </div>
+</div>

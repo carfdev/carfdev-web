@@ -26,7 +26,7 @@ export const ui = {
       description: "Main site navigation menu",
     },
     hero: {
-      title: "High-Quality Web Development for Your Stockholm Business.",
+      title: "High-Quality Web Development for Your Stockholm Business",
       subtitle:
         "From concept to launch, I build custom, high-performance websites and applications that deliver real results. Your local, long-term tech partner.",
       primaryCta: "Let's Discuss Your Project",
@@ -170,7 +170,7 @@ export const ui = {
       description: "Menú principal para navegación del sitio",
     },
     hero: {
-      title: "Desarrollo Web de Alta Calidad para tu Negocio en Estocolmo.",
+      title: "Desarrollo Web de Alta Calidad para tu Negocio en Estocolmo",
       subtitle:
         "Desde el concepto hasta el lanzamiento, construyo sitios y aplicaciones personalizadas, rápidas y eficientes que generan resultados reales. Tu socio tecnológico local y a largo plazo.",
       primaryCta: "Hablemos de tu proyecto",
@@ -314,7 +314,7 @@ export const ui = {
       description: "Huvudmeny för webbplatsnavigering",
     },
     hero: {
-      title: "Webbutveckling av hög kvalitet för ditt företag i Stockholm.",
+      title: "Webbutveckling av hög kvalitet för ditt företag i Stockholm",
       subtitle:
         "Från idé till lansering bygger jag skräddarsydda, högpresterande webbplatser och appar som ger verkliga resultat. Din lokala och långsiktiga teknikpartner.",
       primaryCta: "Låt oss prata om ditt projekt",
