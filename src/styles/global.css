@@ -40,6 +40,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  --breakpoint-xs: 30rem;
+
   --font-inter: var(--font-inter);
   --default-font-family: var(--font-inter);
 
@@ -134,5 +136,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-cell-ripple {
+      animation: none !important;
+    }
+
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }

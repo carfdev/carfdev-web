@@ -33,22 +33,24 @@ export const ui = {
       secondaryCta: "See My Work",
     },
     valueProposition: {
-      title: "More Than a Developer. A Partner.",
+      title: "More Than a Developer. A Partner",
+      subtitle:
+        "I work closely with Stockholm businesses to create digital solutions that drive real growth and success.",
       items: [
         {
-          icon: "direct-collaboration",
+          icon: "Handshake",
           title: "Direct Collaboration",
           description:
             "You'll always work directly with me. No project managers, no communication gaps. Just a clear, efficient process from start to finish.",
         },
         {
-          icon: "modern-tech",
+          icon: "Code",
           title: "Modern, Future-Proof Tech",
           description:
             "I use a modern tech stack (Astro, React, Node.js) to build fast, secure, and scalable solutions that grow with your business, not against it.",
         },
         {
-          icon: "local-focus",
+          icon: "MapPin",
           title: "A Local Stockholm Focus",
           description:
             "Based right here in Stockholm, I'm available for in-person meetings to truly understand your business goals and build lasting relationships.",
@@ -177,22 +179,24 @@ export const ui = {
       secondaryCta: "Ver mis trabajos",
     },
     valueProposition: {
-      title: "Más que un Desarrollador. Un Socio.",
+      title: "Más que un Desarrollador. Un Socio",
+      subtitle:
+        "Trabajo en estrecha colaboración con empresas de Estocolmo para crear soluciones digitales que impulsen el crecimiento y el éxito.",
       items: [
         {
-          icon: "direct-collaboration",
+          icon: "Handshake",
           title: "Colaboración Directa",
           description:
             "Trabajarás directamente conmigo. Sin gestores de proyecto, sin malentendidos. Un proceso claro y eficiente de principio a fin.",
         },
         {
-          icon: "modern-tech",
+          icon: "Code",
           title: "Tecnología Moderna y Escalable",
           description:
             "Uso una pila tecnológica moderna (Astro, React, Node.js) para crear soluciones rápidas, seguras y escalables que crecen junto a tu negocio.",
         },
         {
-          icon: "local-focus",
+          icon: "MapPin",
           title: "Enfoque Local en Estocolmo",
           description:
             "Con base en Estocolmo, estoy disponible para reuniones presenciales y así entender mejor tus objetivos y construir relaciones duraderas.",
@@ -321,22 +325,24 @@ export const ui = {
       secondaryCta: "Se mitt arbete",
     },
     valueProposition: {
-      title: "Mer än en utvecklare. En partner.",
+      title: "Mer än en utvecklare. En partner",
+      subtitle:
+        "Jag arbetar nära företag i Stockholm för att skapa digitala lösningar som driver verklig tillväxt och framgång.",
       items: [
         {
-          icon: "direct-collaboration",
+          icon: "Handshake",
           title: "Direkt samarbete",
           description:
             "Du arbetar alltid direkt med mig. Inga projektledare, inga kommunikationsluckor. Bara en tydlig och effektiv process från början till slut.",
         },
         {
-          icon: "modern-tech",
+          icon: "Code",
           title: "Modern och framtidssäker teknik",
           description:
             "Jag använder en modern teknikstack (Astro, React, Node.js) för att bygga snabba, säkra och skalbara lösningar som växer tillsammans med ditt företag.",
         },
         {
-          icon: "local-focus",
+          icon: "MapPin",
           title: "Lokalt fokus i Stockholm",
           description:
             "Jag finns här i Stockholm och är tillgänglig för personliga möten för att verkligen förstå dina affärsmål och bygga långvariga relationer.",
