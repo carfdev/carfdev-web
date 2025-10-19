@@ -110,24 +110,23 @@ export const ui = {
     portfolio: {
       title: "Featured Work",
       subtitle: "A selection of projects I'm proud of.",
+      btn: "View Project",
       items: [
         {
           title: "Kaffe & Klart Roasters",
           description:
             "A sleek e-commerce and marketing site for a local Stockholm coffee roastery. The platform increased their online sales by 40% in the first three months.",
           techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          liveUrl: "#",
-          caseStudyUrl: "#",
-          imageSrc: "/images/portfolio/kaffe-klart.png",
+          url: "/kaffe-klart-roasters",
+          imageAlt: "Kaffe & Klart Roasters project screenshot",
         },
         {
           title: "Södermalm Flow Yoga",
           description:
             "A custom booking platform and informational website for a boutique yoga studio, enabling easy class scheduling and membership management for their clients.",
           techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          liveUrl: "#",
-          caseStudyUrl: "#",
-          imageSrc: "/images/portfolio/sodermalm-flow.png",
+          url: "/sodermalm-flow-yoga",
+          imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
     },
@@ -277,24 +276,23 @@ export const ui = {
     portfolio: {
       title: "Proyectos Destacados",
       subtitle: "Una selección de trabajos de los que me siento orgulloso.",
+      btn: "Ver Proyecto",
       items: [
         {
           title: "Kaffe & Klart Roasters",
           description:
             "Una tienda en línea moderna para una tostaduría local de café en Estocolmo. La plataforma aumentó sus ventas en línea un 40% en los primeros tres meses.",
           techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          liveUrl: "#",
-          caseStudyUrl: "#",
-          imageSrc: "/images/portfolio/kaffe-klart.png",
+          url: "/kaffe-klart-roasters",
+          imageAlt: "Kaffe & Klart Roasters project screenshot",
         },
         {
           title: "Södermalm Flow Yoga",
           description:
             "Una plataforma de reservas personalizada y sitio informativo para un estudio boutique de yoga, facilitando la gestión de clases y membresías para sus clientes.",
           techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          liveUrl: "#",
-          caseStudyUrl: "#",
-          imageSrc: "/images/portfolio/sodermalm-flow.png",
+          url: "/sodermalm-flow-yoga",
+          imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
     },
@@ -443,24 +441,23 @@ export const ui = {
     portfolio: {
       title: "Utvalda projekt",
       subtitle: "Ett urval av projekt jag är stolt över.",
+      btn: "Visa projekt",
       items: [
         {
           title: "Kaffe & Klart Roasters",
           description:
             "En elegant e-handels- och marknadsföringswebbplats för ett lokalt kafferosteri i Stockholm. Plattformen ökade deras onlineförsäljning med 40 % under de första tre månaderna.",
           techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          liveUrl: "#",
-          caseStudyUrl: "#",
-          imageSrc: "/images/portfolio/kaffe-klart.png",
+          url: "/kaffe-klart-roasters",
+          imageAlt: "Kaffe & Klart Roasters project screenshot",
         },
         {
           title: "Södermalm Flow Yoga",
           description:
             "En skräddarsydd bokningsplattform och informationswebbplats för en yogastudio, som möjliggör enkel klassbokning och medlemshantering för deras kunder.",
           techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          liveUrl: "#",
-          caseStudyUrl: "#",
-          imageSrc: "/images/portfolio/sodermalm-flow.png",
+          url: "/sodermalm-flow-yoga",
+          imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
     },

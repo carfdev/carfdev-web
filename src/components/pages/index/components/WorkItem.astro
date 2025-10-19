@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+interface Props {
+  title: string;
+  description: string;
+  btn: string;
+  techStack: readonly string[];
+  url: string;
+  imageAlt: string;
+  // eslint-disable-next-line no-undef
+  imageSrc: ImageMetadata;
+}
+
+const { title, description, techStack, url, imageAlt, imageSrc, btn }: Props =
+  Astro.props;
+---
+
+<div class="group cursor-pointer">
+  <a href={url}>
+    <Image
+      class="mb-6 h-80 rounded-2xl object-cover object-top transition-transform group-hover:scale-105"
+      src={imageSrc}
+      alt={imageAlt}
+    />
+    <div>
+      <h3>{title}</h3>
+      <p class="text-muted-foreground mb-4 leading-relaxed">
+        {description}
+      </p>
+      <div class="mb-4 flex flex-wrap gap-2">
+        {techStack.map((tech) => <Badge variant="secondary">{tech}</Badge>)}
+      </div>
+      <Button
+        variant="ghost"
+        className="cursor-pointer transition group-hover:scale-105 group-hover:underline"
+      >
+        {btn}
+        <ArrowRight />
+      </Button>
+    </div>
+  </a>
+</div>

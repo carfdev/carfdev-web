@@ -1,0 +1,37 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import WorkExampleImage from "@/assets/images/work-example.webp";
+import WorkItem from "./WorkItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const work = t("portfolio");
+---
+
+<section id="work" class="bg-secondary px-6 py-20 lg:px-12">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-16 text-center">
+      <h2>{work.title}</h2>
+      <p class="subtitle">
+        {work.subtitle}
+      </p>
+    </div>
+
+    <div class="grid gap-12 lg:grid-cols-2">
+      {
+        work.items.map((item) => (
+          <WorkItem
+            title={item.title}
+            description={item.description}
+            techStack={item.techStack}
+            btn={work.btn}
+            url={item.url}
+            imageAlt={item.imageAlt}
+            imageSrc={WorkExampleImage}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
