@@ -221,7 +221,7 @@ export const ui = {
     hero: {
       title: "Desarrollo Web de Alta Calidad para tu Negocio en Estocolmo",
       subtitle:
-        "Desde el concepto hasta el lanzamiento, construyo sitios y aplicaciones personalizadas, rápidas y eficientes que generan resultados reales. Tu socio tecnológico local y a largo plazo.",
+        "Desde el concepto hasta el lanzamiento, construyo sitios y aplicaciones personalizadas, rápidas y eficientes que generan resultados reales.",
       primaryCta: "Hablemos de tu proyecto",
       secondaryCta: "Ver mis trabajos",
     },
