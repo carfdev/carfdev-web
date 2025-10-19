@@ -13,7 +13,7 @@ export default defineConfig({
         provider: fontProviders.fontsource(),
         name: "Inter",
         cssVariable: "--font-inter",
-        weights: [400, 700],
+        weights: [400],
         styles: ["normal"],
         subsets: ["latin"],
       },
