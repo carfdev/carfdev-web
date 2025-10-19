@@ -130,6 +130,33 @@ export const ui = {
         },
       ],
     },
+    process: {
+      title: "My Development Process",
+      subtitle:
+        "A proven methodology that ensures your project is delivered on time, on budget, and exceeds expectations.",
+      steps: [
+        {
+          title: "Discovery",
+          description:
+            "Understanding your business goals, target audience, and technical requirements through detailed consultation.",
+        },
+        {
+          title: "Planning",
+          description:
+            "Creating a comprehensive project plan, including timelines, milestones, and resource allocation to ensure smooth execution.",
+        },
+        {
+          title: "Development",
+          description:
+            "Building your website or application using best practices and modern technologies to ensure quality and performance.",
+        },
+        {
+          title: "Testing & Launch",
+          description:
+            "Thoroughly testing all features and functionalities before launching your project to ensure a seamless user experience.",
+        },
+      ],
+    },
     techStack: {
       title: "My Tech Toolbox",
       subtitle:
@@ -296,6 +323,33 @@ export const ui = {
         },
       ],
     },
+    process: {
+      title: "Mi Proceso de Desarrollo",
+      subtitle:
+        "Una metodología probada que asegura que tu proyecto se entregue a tiempo, dentro del presupuesto y supere las expectativas.",
+      steps: [
+        {
+          title: "Descubrimiento",
+          description:
+            "Comprender tus objetivos comerciales, audiencia objetivo y requisitos técnicos a través de una consulta detallada.",
+        },
+        {
+          title: "Planificación",
+          description:
+            "Crear un plan de proyecto integral, incluyendo cronogramas, hitos y asignación de recursos para asegurar una ejecución fluida.",
+        },
+        {
+          title: "Desarrollo",
+          description:
+            "Construir tu sitio web o aplicación utilizando las mejores prácticas y tecnologías modernas para garantizar calidad y rendimiento.",
+        },
+        {
+          title: "Pruebas y Lanzamiento",
+          description:
+            "Probar exhaustivamente todas las características y funcionalidades antes de lanzar tu proyecto para asegurar una experiencia de usuario perfecta.",
+        },
+      ],
+    },
     techStack: {
       title: "Mi Caja de Herramientas Tecnológicas",
       subtitle:
@@ -458,6 +512,33 @@ export const ui = {
           techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
           url: "/sodermalm-flow-yoga",
           imageAlt: "Södermalm Flow Yoga project screenshot",
+        },
+      ],
+    },
+    process: {
+      title: "Min utvecklingsprocess",
+      subtitle:
+        "En beprövad metodik som säkerställer att ditt projekt levereras i tid, inom budget och överträffar förväntningarna.",
+      steps: [
+        {
+          title: "Upptäckt",
+          description:
+            "Förstå dina affärsmål, målgrupp och tekniska krav genom detaljerad konsultation.",
+        },
+        {
+          title: "Planering",
+          description:
+            "Skapa en omfattande projektplan, inklusive tidslinjer, milstolpar och resursallokering för att säkerställa smidig genomförande.",
+        },
+        {
+          title: "Utveckling",
+          description:
+            "Bygga din webbplats eller applikation med bästa praxis och moderna teknologier för att säkerställa kvalitet och prestanda.",
+        },
+        {
+          title: "Testning och lansering",
+          description:
+            "Noggrant testa alla funktioner innan lansering för att säkerställa en sömlös användarupplevelse.",
         },
       ],
     },
