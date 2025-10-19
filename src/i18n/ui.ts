@@ -62,28 +62,48 @@ export const ui = {
       subtitle: "Custom solutions to bring your digital ideas to life.",
       items: [
         {
-          icon: "web-development",
+          icon: "Laptop",
           title: "Custom Web Development",
           description:
             "Bespoke websites built from scratch to meet your unique business needs, optimized for performance and user experience.",
+          checks: [
+            "Responsive design for all devices",
+            "SEO-optimized structure",
+            "Fast loading speeds",
+          ],
         },
         {
-          icon: "e-commerce",
+          icon: "ShoppingCart",
           title: "E-Commerce Solutions",
           description:
             "Powerful and easy-to-manage online stores that turn visitors into customers and help you sell your products effectively.",
+          checks: [
+            "Secure payment gateway integration",
+            "User-friendly product management",
+            "Scalable architecture for growth",
+          ],
         },
         {
-          icon: "mobile-apps",
+          icon: "Smartphone",
           title: "Mobile App Development",
           description:
             "Engaging cross-platform mobile apps for iOS and Android, built with technologies like React Native and Flutter.",
+          checks: [
+            "Intuitive user interfaces",
+            "Performance-optimized code",
+            "App Store and Google Play deployment",
+          ],
         },
         {
-          icon: "maintenance",
+          icon: "Rocket",
           title: "Maintenance & Support",
           description:
             "Ongoing support, security updates, and performance monitoring to ensure your website or app runs smoothly around the clock.",
+          checks: [
+            "Regular security patches",
+            "Performance optimization",
+            "24/7 monitoring and support",
+          ],
         },
       ],
     },
@@ -209,28 +229,48 @@ export const ui = {
         "Soluciones personalizadas para dar vida a tus ideas digitales.",
       items: [
         {
-          icon: "web-development",
+          icon: "Laptop",
           title: "Desarrollo Web Personalizado",
           description:
             "Sitios web creados desde cero para adaptarse a las necesidades únicas de tu negocio, optimizados para rendimiento y experiencia de usuario.",
+          checks: [
+            "Diseño responsivo para todos los dispositivos",
+            "Estructura optimizada para SEO",
+            "Velocidades de carga rápidas",
+          ],
         },
         {
-          icon: "e-commerce",
+          icon: "ShoppingCart",
           title: "Soluciones de Comercio Electrónico",
           description:
             "Tiendas en línea potentes y fáciles de administrar que convierten visitantes en clientes y aumentan tus ventas.",
+          checks: [
+            "Integración segura de pasarelas de pago",
+            "Gestión de productos fácil de usar",
+            "Arquitectura escalable para el crecimiento",
+          ],
         },
         {
-          icon: "mobile-apps",
+          icon: "Smartphone",
           title: "Desarrollo de Aplicaciones Móviles",
           description:
             "Aplicaciones móviles multiplataforma atractivas para iOS y Android, construidas con tecnologías como React Native y Flutter.",
+          checks: [
+            "Interfaces de usuario intuitivas",
+            "Código optimizado para rendimiento",
+            "Despliegue en App Store y Google Play",
+          ],
         },
         {
-          icon: "maintenance",
+          icon: "Rocket",
           title: "Mantenimiento y Soporte",
           description:
             "Soporte continuo, actualizaciones de seguridad y monitoreo de rendimiento para asegurar que tu sitio o app funcione sin problemas las 24 horas.",
+          checks: [
+            "Parches de seguridad regulares",
+            "Optimización del rendimiento",
+            "Monitoreo y soporte 24/7",
+          ],
         },
       ],
     },
@@ -355,28 +395,48 @@ export const ui = {
         "Skräddarsydda lösningar för att förverkliga dina digitala idéer.",
       items: [
         {
-          icon: "web-development",
+          icon: "Laptop",
           title: "Skräddarsydd webbutveckling",
           description:
             "Webbplatser byggda från grunden för att möta ditt företags unika behov, optimerade för prestanda och användarupplevelse.",
+          checks: [
+            "Responsiv design för alla enheter",
+            "SEO-optimerad struktur",
+            "Snabba laddningstider",
+          ],
         },
         {
-          icon: "e-commerce",
+          icon: "ShoppingCart",
           title: "E-handelslösningar",
           description:
             "Kraftfulla och lättanvända nätbutiker som omvandlar besökare till kunder och hjälper dig att sälja effektivt.",
+          checks: [
+            "Säker betalningsgateway-integration",
+            "Användarvänlig produktadministration",
+            "Skalbar arkitektur för tillväxt",
+          ],
         },
         {
-          icon: "mobile-apps",
+          icon: "Smartphone",
           title: "Utveckling av mobilappar",
           description:
             "Engagerande mobilappar för iOS och Android, byggda med tekniker som React Native och Flutter.",
+          checks: [
+            "Intuitiva användargränssnitt",
+            "Prestandaoptimerad kod",
+            "Lansering i App Store och Google Play",
+          ],
         },
         {
-          icon: "maintenance",
+          icon: "Rocket",
           title: "Underhåll och support",
           description:
             "Löpande support, säkerhetsuppdateringar och prestandaövervakning för att se till att din webbplats eller app fungerar smidigt dygnet runt.",
+          checks: [
+            "Regelbundna säkerhetspatchar",
+            "Prestandaoptimering",
+            "Övervakning och support dygnet runt",
+          ],
         },
       ],
     },

@@ -1,0 +1,33 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ServiceItem from "./ServiceItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const services = t("services");
+---
+
+<section id="services" class="bg-background px-6 py-20 lg:px-12">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-16 text-center">
+      <h2>{services.title}</h2>
+      <p class="subtitle">
+        {services.subtitle}
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      {
+        services.items.map((service) => (
+          <ServiceItem
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+            checks={service.checks}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

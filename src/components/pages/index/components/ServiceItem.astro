@@ -1,0 +1,36 @@
+---
+import { Check } from "lucide-react";
+import { Icon, type IconName } from "@/components/ui/icon";
+
+interface Props {
+  title: string;
+  description: string;
+  icon: IconName;
+  checks: readonly string[];
+}
+
+const { title, description, icon, checks }: Props = Astro.props;
+---
+
+<div
+  class="border-secondary bg-secondary rounded-2xl border p-8 transition-shadow hover:shadow-lg"
+>
+  <div
+    class="bg-input mb-6 flex h-12 w-12 items-center justify-center rounded-lg"
+  >
+    <Icon name={icon} />
+  </div>
+  <h3>{title}</h3>
+  <p class="text-muted-foreground mb-6 leading-relaxed">
+    {description}
+  </p>
+  <ul class="space-y-3">
+    {
+      checks.map((check) => (
+        <li class="text-muted-foreground flex items-center gap-2">
+          <Check className="size-4" /> {check}
+        </li>
+      ))
+    }
+  </ul>
+</div>
