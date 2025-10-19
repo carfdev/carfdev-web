@@ -1,0 +1,54 @@
+---
+import { Link } from "@/components/ui/link";
+import Developer from "@/assets/images/developer.webp";
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const about = t("about");
+---
+
+<section id="about" class="bg-secondary px-6 py-20 lg:px-12">
+  <div class="mx-auto max-w-7xl">
+    <div class="flex flex-col items-center justify-center gap-12 lg:flex-row">
+      <Image
+        src={Developer}
+        alt="Carfdev - Web Developer"
+        class="w-full max-w-xl rounded-2xl shadow-lg"
+      />
+
+      <div class="flex-1">
+        <h2>{about.title}</h2>
+        <p class="text-muted-foreground mb-6 leading-relaxed">
+          {about.description1}
+        </p>
+        <p class="text-muted-foreground mb-6 leading-relaxed">
+          {about.description2}
+        </p>
+
+        <div class="flex space-x-4">
+          <Link
+            size="lg"
+            className="cursor-pointer"
+            href="/cv.pdf"
+            download
+            target="_blank"
+            rel="noopener noreferrer">{about.btnTextPrimary}</Link
+          >
+          <Link
+            className="border-primary bg-secondary"
+            size="lg"
+            variant="outline"
+            href="https://www.linkedin.com/in/carfdev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {about.btnTextSecondary}
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

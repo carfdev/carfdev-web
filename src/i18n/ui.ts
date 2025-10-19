@@ -163,12 +163,13 @@ export const ui = {
         "I use a curated set of modern tools to ensure the highest quality, performance, and security for your project.",
     },
     about: {
-      title: "Hi, I'm Carfdev.",
+      title: "Hi, I'm Carfdev",
       description1:
         "I'm a full-stack developer and designer based in Stockholm with a passion for building beautiful, functional things for the web. I thrive on the challenge of turning a complex problem into an elegant, user-friendly solution.",
       description2:
         "My philosophy is simple: build strong, long-term relationships with my clients. I want to be your go-to tech partner, someone you can rely on to not only build your project but also to help you grow your business. When I'm not coding, you can find me exploring the city's cafes or cycling through its beautiful parks.",
-      buttonText: "Connect on LinkedIn",
+      btnTextPrimary: "Download CV",
+      btnTextSecondary: "View LinkedIn",
     },
     cta: {
       title: "Have a project in mind?",
@@ -356,12 +357,13 @@ export const ui = {
         "Uso un conjunto moderno y seleccionado de herramientas para garantizar la máxima calidad, rendimiento y seguridad en tu proyecto.",
     },
     about: {
-      title: "Hola, soy Carfdev.",
+      title: "Hola, soy Carfdev",
       description1:
         "Soy desarrollador full-stack y diseñador radicado en Estocolmo, apasionado por crear cosas bellas y funcionales para la web. Me motiva el reto de transformar problemas complejos en soluciones elegantes y fáciles de usar.",
       description2:
         "Mi filosofía es simple: construir relaciones sólidas y duraderas con mis clientes. Quiero ser tu socio tecnológico de confianza, alguien que no solo construya tu proyecto, sino que también te ayude a hacer crecer tu negocio. Cuando no estoy programando, me encontrarás explorando los cafés de la ciudad o recorriendo sus parques en bicicleta.",
-      buttonText: "Conectar en LinkedIn",
+      btnTextPrimary: "Descargar CV",
+      btnTextSecondary: "Ver LinkedIn",
     },
     cta: {
       title: "¿Tienes un proyecto en mente?",
@@ -548,12 +550,13 @@ export const ui = {
         "Jag använder ett noggrant utvalt set av moderna verktyg för att säkerställa högsta kvalitet, prestanda och säkerhet i ditt projekt.",
     },
     about: {
-      title: "Hej, jag är Carfdev.",
+      title: "Hej, jag är Carfdev",
       description1:
         "Jag är en fullstack-utvecklare och designer baserad i Stockholm med en passion för att skapa vackra och funktionella webblösningar. Jag trivs med att förvandla komplexa problem till eleganta och användarvänliga lösningar.",
       description2:
         "Min filosofi är enkel: bygg starka och långsiktiga relationer med mina kunder. Jag vill vara din pålitliga teknikpartner, någon du kan lita på för att inte bara bygga ditt projekt utan också hjälpa ditt företag att växa. När jag inte programmerar hittar du mig ofta på stadens kaféer eller cyklande genom dess vackra parker.",
-      buttonText: "Anslut på LinkedIn",
+      btnTextPrimary: "Ladda ner CV",
+      btnTextSecondary: "Visa LinkedIn",
     },
     cta: {
       title: "Har du ett projekt i åtanke?",
