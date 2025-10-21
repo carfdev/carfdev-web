@@ -97,6 +97,8 @@ export function ContactForm({ lang }: Props) {
     });
     // eslint-disable-next-line no-undef
     console.log({ values });
+
+    form.reset();
   }
   return (
     <Form {...form}>
@@ -161,6 +163,7 @@ export function ContactForm({ lang }: Props) {
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
+                  value={field.value}
                 >
                   <SelectTrigger
                     className={
@@ -209,6 +212,7 @@ export function ContactForm({ lang }: Props) {
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
+                  value={field.value}
                 >
                   <SelectTrigger
                     className={`w-full ${fieldState.error ? "border-destructive" : ""}`}
