@@ -1,6 +1,7 @@
 ---
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import { Toaster } from "@/components/ui/sonner";
 
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { CustomNavbar } from "@/components/customNavbar";
@@ -36,6 +37,7 @@ const navItems = t("nav").links.slice() as {
     </a>
     <CustomNavbar navItems={navItems} client:visible lang={lang} />
     <main id="main-content"><slot /></main>
+    <Toaster position="top-center" client:idle />
   </body>
 </html>
 

@@ -71,6 +71,10 @@ export interface Form {
   messageLabel: string;
   messagePlaceholder: string;
   submitButton: string;
+  successMessage: {
+    title: string;
+    description: string;
+  };
 }
 
 export interface Cta {

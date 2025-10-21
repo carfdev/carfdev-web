@@ -255,6 +255,10 @@ export const ui: UI = {
         messageLabel: "Project Details",
         messagePlaceholder: "Tell me a little about your project...",
         submitButton: "Send Message",
+        successMessage: {
+          title: "Message Received",
+          description: "I'll get back to you as soon as possible.",
+        },
       },
       details: {
         title: "Get in Touch",
@@ -548,6 +552,10 @@ export const ui: UI = {
         messageLabel: "Detalles del Proyecto",
         messagePlaceholder: "Cuéntame un poco sobre tu proyecto...",
         submitButton: "Enviar Mensaje",
+        successMessage: {
+          title: "Mensaje Recibido",
+          description: "Me pondré en contacto contigo lo antes posible.",
+        },
       },
       details: {
         title: "Ponte en Contacto",
@@ -839,6 +847,10 @@ export const ui: UI = {
         messageLabel: "Projektbeskrivning",
         messagePlaceholder: "Berätta lite om ditt projekt...",
         submitButton: "Skicka meddelande",
+        successMessage: {
+          title: "Meddelande mottaget",
+          description: "Jag återkommer till dig så snart som möjligt.",
+        },
       },
       details: {
         title: "Kontakta mig",
