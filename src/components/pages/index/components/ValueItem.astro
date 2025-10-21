@@ -1,10 +1,10 @@
 ---
-import { Icon, type IconName } from "@/components/ui/icon";
+import { LucideIcon, type LucideIconName } from "@/components/ui/lucide-icon";
 
 interface Props {
   title: string;
   description: string;
-  icon: IconName;
+  icon: LucideIconName;
 }
 
 const { title, description, icon }: Props = Astro.props;
@@ -15,7 +15,7 @@ const { title, description, icon }: Props = Astro.props;
     class="text-primary bg-input mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
     aria-hidden="true"
   >
-    <Icon name={icon} />
+    <LucideIcon name={icon} />
   </div>
   <h3>
     {title}

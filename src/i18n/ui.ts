@@ -1,3 +1,5 @@
+import type { UI } from "@/types/ui.interface";
+
 export const languages = {
   en: "English",
   es: "Español",
@@ -7,7 +9,7 @@ export const languages = {
 export const defaultLang = "en";
 export const showDefaultLang = false;
 
-export const ui = {
+export const ui: UI = {
   en: {
     meta: {
       title: "Carfdev | Custom Web Development for Stockholm Businesses",
@@ -161,6 +163,48 @@ export const ui = {
       title: "My Tech Toolbox",
       subtitle:
         "I use a curated set of modern tools to ensure the highest quality, performance, and security for your project.",
+      items: [
+        {
+          name: "React",
+          description: "Component-based UI library for interactive interfaces",
+          icon: "IconBrandReact",
+        },
+        {
+          name: "Node.js",
+          description: "Server-side JavaScript for robust backend solutions",
+          icon: "IconBrandNodejs",
+        },
+        {
+          name: "Astro",
+          description: "Modern static site generator for optimized websites",
+          icon: "IconBrandAstro",
+        },
+        {
+          name: "AWS",
+          description: "Cloud infrastructure for scalable hosting",
+          icon: "IconBrandAmazon",
+        },
+        {
+          name: "Typescript",
+          description: "Type-safe JavaScript for maintainable code",
+          icon: "IconBrandTypescript",
+        },
+        {
+          name: "Tailwind CSS",
+          description: "Utility-first CSS for rapid UI development",
+          icon: "IconBrandTailwind",
+        },
+        {
+          name: "Docker",
+          description: "Containerization for consistent deployments",
+          icon: "IconBrandDocker",
+        },
+        {
+          name: "Git",
+          description: "Version control for collaborative development",
+          icon: "IconBrandGit",
+        },
+      ],
     },
     about: {
       title: "Hi, I'm Carfdev",
@@ -355,6 +399,51 @@ export const ui = {
       title: "Mi Caja de Herramientas Tecnológicas",
       subtitle:
         "Uso un conjunto moderno y seleccionado de herramientas para garantizar la máxima calidad, rendimiento y seguridad en tu proyecto.",
+      items: [
+        {
+          name: "React",
+          description:
+            "Biblioteca de UI basada en componentes para interfaces interactivas",
+          icon: "IconBrandReact",
+        },
+        {
+          name: "Node.js",
+          description:
+            "JavaScript del lado del servidor para soluciones backend robustas",
+          icon: "IconBrandNodejs",
+        },
+        {
+          name: "Astro",
+          description:
+            "Generador moderno de sitios estáticos para sitios web optimizados",
+          icon: "IconBrandAstro",
+        },
+        {
+          name: "AWS",
+          description: "Infraestructura en la nube para alojamiento escalable",
+          icon: "IconBrandAmazon",
+        },
+        {
+          name: "Typescript",
+          description: "JavaScript con tipado para código mantenible",
+          icon: "IconBrandTypescript",
+        },
+        {
+          name: "Tailwind CSS",
+          description: "CSS utilitario para desarrollo rápido de UI",
+          icon: "IconBrandTailwind",
+        },
+        {
+          name: "Docker",
+          description: "Contenerización para despliegues consistentes",
+          icon: "IconBrandDocker",
+        },
+        {
+          name: "Git",
+          description: "Control de versiones para desarrollo colaborativo",
+          icon: "IconBrandGit",
+        },
+      ],
     },
     about: {
       title: "Hola, soy Carfdev",
@@ -548,6 +637,50 @@ export const ui = {
       title: "Min tekniska verktygslåda",
       subtitle:
         "Jag använder ett noggrant utvalt set av moderna verktyg för att säkerställa högsta kvalitet, prestanda och säkerhet i ditt projekt.",
+      items: [
+        {
+          name: "React",
+          description:
+            "Komponentbaserat UI-bibliotek för interaktiva gränssnitt",
+          icon: "IconBrandReact",
+        },
+        {
+          name: "Node.js",
+          description: "Server-side JavaScript för robusta backend-lösningar",
+          icon: "IconBrandNodejs",
+        },
+        {
+          name: "Astro",
+          description:
+            "Modern statisk webbplatsskapare för optimerade webbplatser",
+          icon: "IconBrandAstro",
+        },
+        {
+          name: "AWS",
+          description: "Molninfrastruktur för skalbar hosting",
+          icon: "IconBrandAmazon",
+        },
+        {
+          name: "Typescript",
+          description: "Typ-säker JavaScript för underhållbar kod",
+          icon: "IconBrandTypescript",
+        },
+        {
+          name: "Tailwind CSS",
+          description: "Utility-first CSS för snabb UI-utveckling",
+          icon: "IconBrandTailwind",
+        },
+        {
+          name: "Docker",
+          description: "Containerisering för konsekventa distributioner",
+          icon: "IconBrandDocker",
+        },
+        {
+          name: "Git",
+          description: "Versionskontroll för samarbetsutveckling",
+          icon: "IconBrandGit",
+        },
+      ],
     },
     about: {
       title: "Hej, jag är Carfdev",
@@ -587,4 +720,4 @@ export const ui = {
       },
     },
   },
-} as const;
+};

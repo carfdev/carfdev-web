@@ -7,6 +7,8 @@ import { Eye, Rocket } from "lucide-react";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const hero = t("hero");
 ---
 
 <section
@@ -19,11 +21,11 @@ const t = useTranslations(lang);
     <h1
       class="text-primary xs:leading-tight relative max-w-4xl text-center text-[clamp(1.5rem,5vw,3.75rem)] tracking-tighter text-pretty md:leading-none"
     >
-      {t("hero").title}
+      {hero.title}
     </h1>
-    <TextGenerateEffect client:visible words={t("hero").subtitle} />
+    <TextGenerateEffect client:visible words={hero.subtitle} />
     <p class="sr-only">
-      {t("hero").subtitle}
+      {hero.subtitle}
     </p>
     <div class="xs:flex-row mt-8 flex flex-col gap-4">
       <Link
@@ -32,7 +34,7 @@ const t = useTranslations(lang);
         size="lg"
       >
         <Rocket />
-        {t("hero").primaryCta}
+        {hero.primaryCta}
       </Link>
       <Link
         href="#work"
@@ -41,7 +43,7 @@ const t = useTranslations(lang);
         size="lg"
       >
         <Eye />
-        {t("hero").secondaryCta}
+        {hero.secondaryCta}
       </Link>
     </div>
   </article>
