@@ -21,6 +21,11 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
+import { useTranslations, type Lang } from "@/i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
 
 const formSchema = z.object({
   firstName: z.string().min(2, {
@@ -65,7 +70,9 @@ const formSchema = z.object({
   }),
 });
 
-export function ContactForm() {
+export function ContactForm({ lang }: Props) {
+  const t = useTranslations(lang);
+  const ui = t("contact").form;
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -94,9 +101,9 @@ export function ContactForm() {
             name="firstName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>First Name *</FormLabel>
+                <FormLabel>{ui.firstNameLabel} *</FormLabel>
                 <FormControl>
-                  <Input placeholder="Adam" {...field} />
+                  <Input placeholder={ui.firstNamePlaceholder} {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -106,9 +113,9 @@ export function ContactForm() {
             name="lastName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Last Name *</FormLabel>
+                <FormLabel>{ui.lastNameLabel} *</FormLabel>
                 <FormControl>
-                  <Input placeholder="Smith" {...field} />
+                  <Input placeholder={ui.lastNamePlaceholder} {...field} />
                 </FormControl>
               </FormItem>
             )}
@@ -119,9 +126,9 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email *</FormLabel>
+              <FormLabel>{ui.emailLabel} *</FormLabel>
               <FormControl>
-                <Input placeholder="adam@example.com" {...field} />
+                <Input placeholder={ui.emailPlaceholder} {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -131,9 +138,9 @@ export function ContactForm() {
           name="companyName"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Company Name</FormLabel>
+              <FormLabel>{ui.companyNameLabel}</FormLabel>
               <FormControl>
-                <Input placeholder="Carfdev" {...field} />
+                <Input placeholder={ui.companyNamePlaceholder} {...field} />
               </FormControl>
             </FormItem>
           )}
@@ -143,34 +150,42 @@ export function ContactForm() {
           name="projectType"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Project Type *</FormLabel>
+              <FormLabel>{ui.projectTypeLabel} *</FormLabel>
               <FormControl>
                 <Select
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
                   <SelectTrigger
-                    className={`w-full ${fieldState.error ? "border-destructive" : ""}`}
+                    className={
+                      fieldState.error ? "border-destructive w-full" : "w-full"
+                    }
                   >
-                    <SelectValue placeholder="Select project type" />
+                    <SelectValue placeholder={ui.projectTypePlaceholder} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>Select project type</SelectLabel>
-                      <SelectItem value="New Website">New Website</SelectItem>
-                      <SelectItem value="E-commerce Store">
-                        E-commerce Store
-                      </SelectItem>
-                      <SelectItem value="Website Redesign">
-                        Website Redesign
-                      </SelectItem>
-                      <SelectItem value="Web Application">
-                        Web Application
-                      </SelectItem>
-                      <SelectItem value="Performance Optimization">
-                        Performance Optimization
-                      </SelectItem>
-                      <SelectItem value="Other">Other</SelectItem>
+                      <SelectLabel>{ui.projectTypePlaceholder}</SelectLabel>
+                      {ui.projectTypeOptions.map(
+                        (option: string, index: number) => {
+                          const values = [
+                            "New Website",
+                            "E-commerce Store",
+                            "Website Redesign",
+                            "Web Application",
+                            "Performance Optimization",
+                            "Other",
+                          ];
+                          return (
+                            <SelectItem
+                              key={values[index]}
+                              value={values[index]}
+                            >
+                              {option}
+                            </SelectItem>
+                          );
+                        },
+                      )}
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -183,7 +198,7 @@ export function ContactForm() {
           name="budget"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Budget Range *</FormLabel>
+              <FormLabel>{ui.budgetLabel} *</FormLabel>
               <FormControl>
                 <Select
                   onValueChange={field.onChange}
@@ -192,13 +207,13 @@ export function ContactForm() {
                   <SelectTrigger
                     className={`w-full ${fieldState.error ? "border-destructive" : ""}`}
                   >
-                    <SelectValue placeholder="Select budget range" />
+                    <SelectValue placeholder={ui.budgetPlaceholder} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectLabel>Select budget range</SelectLabel>
+                      <SelectLabel>{ui.budgetPlaceholder}</SelectLabel>
                       <SelectItem value="Under 50,000 SEK">
-                        Under 50,000 SEK
+                        {ui.budgetOptions[0]}
                       </SelectItem>
                       <SelectItem value="50,000 - 100,000 SEK">
                         50,000 - 100,000 SEK
@@ -219,19 +234,16 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Project Details *</FormLabel>
+              <FormLabel>{ui.messageLabel} *</FormLabel>
               <FormControl>
-                <Textarea
-                  placeholder="Tell me about your project goals, requirements, and timeline..."
-                  {...field}
-                />
+                <Textarea placeholder={ui.messagePlaceholder} {...field} />
               </FormControl>
             </FormItem>
           )}
         />
         <Button type="submit" size="lg" className="w-full">
           <Send />
-          Send Message
+          {ui.submitButton}
         </Button>
       </form>
     </Form>

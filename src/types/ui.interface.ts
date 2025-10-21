@@ -32,16 +32,45 @@ export interface Contact {
   title: string;
   subtitle: string;
   form: Form;
-  submitButton: string;
+  details: ContactDetails;
+  card: ContactCard;
+}
+
+export interface ContactCard {
+  title: string;
+  items: string[];
+}
+
+export interface ContactDetails {
+  title: string;
+  items: ContactDetailsItems[];
+}
+
+export interface ContactDetailsItems {
+  label: string;
+  value: string;
+  note: string;
+  icon: LucideIconName;
 }
 
 export interface Form {
-  nameLabel: string;
-  namePlaceholder: string;
+  firstNameLabel: string;
+  firstNamePlaceholder: string;
+  lastNameLabel: string;
+  lastNamePlaceholder: string;
+  companyNameLabel: string;
+  companyNamePlaceholder: string;
   emailLabel: string;
   emailPlaceholder: string;
+  projectTypeLabel: string;
+  projectTypePlaceholder: string;
+  projectTypeOptions: string[];
+  budgetLabel: string;
+  budgetPlaceholder: string;
+  budgetOptions: string[];
   messageLabel: string;
   messagePlaceholder: string;
+  submitButton: string;
 }
 
 export interface Cta {

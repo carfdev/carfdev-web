@@ -1,85 +1,55 @@
 ---
-import { Check, Mail, MapPin, Phone } from "lucide-react";
+import { Check } from "lucide-react";
 import { ContactForm } from "./ContactForm";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import ContactDetail from "./ContactDetail.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const contact = t("contact");
 ---
 
 <section id="contact" class="bg-background px-6 py-20 lg:px-12">
   <div class="mx-auto max-w-4xl">
     <div class="mb-16 text-center">
-      <h2>Let's Start Your Project</h2>
+      <h2>{contact.title}</h2>
       <p class="subtitle">
-        Ready to transform your online presence? Fill out the form below and
-        I'll get back to you within 24 hours.
+        {contact.subtitle}
       </p>
     </div>
 
     <div class="grid gap-16 lg:grid-cols-2">
-      <ContactForm client:visible />
+      <ContactForm lang={lang} client:visible />
 
       <div class="space-y-8">
         <div>
-          <h3>Get in Touch</h3>
+          <h3>{contact.details.title}</h3>
           <div class="space-y-6">
-            <div class="flex items-start">
-              <div
-                class="bg-secondary mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
-              >
-                <Mail />
-              </div>
-              <div>
-                <h4 class="text-primary mb-1">Email</h4>
-                <p class="text-muted-foreground">hello@carfdev.se</p>
-                <p class="text-ring text-sm">I'll respond within 24 hours</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div
-                class="bg-secondary mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
-              >
-                <Phone />
-              </div>
-              <div>
-                <h4 class="text-primary mb-1">Phone</h4>
-                <p class="text-muted-foreground">+46 70 123 45 67</p>
-                <p class="text-ring text-sm">Available Mon-Fri, 9AM-6PM CET</p>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div
-                class="bg-secondary mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
-              >
-                <MapPin />
-              </div>
-              <div>
-                <h4 class="text-primary mb-1">Location</h4>
-                <p class="text-muted-foreground">Stockholm, Sweden</p>
-                <p class="text-ring text-sm">Available for local meetings</p>
-              </div>
-            </div>
+            {
+              contact.details.items.map((item) => (
+                <ContactDetail
+                  label={item.label}
+                  value={item.value}
+                  note={item.note}
+                  icon={item.icon}
+                />
+              ))
+            }
           </div>
         </div>
 
         <div class="bg-secondary rounded-2xl p-6">
-          <h4 class="text-primary mb-4">Why Choose Carfdev?</h4>
+          <h4 class="text-primary mb-4">{contact.card.title}</h4>
           <ul class="text-muted-foreground space-y-2">
-            <li class="flex items-center gap-2">
-              <Check className="size-4" />
-              <span> 8+ years of web development experience </span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="size-4" />
-              <span>Specialized in Stockholm market</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="size-4" />
-              <span>100% client satisfaction rate</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <Check className="size-4" />
-              <span>Ongoing support and maintenance</span>
-            </li>
+            {
+              contact.card.items.map((item) => (
+                <li class="flex items-center gap-2">
+                  <Check className="size-4" />
+                  <span>{item}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>

@@ -1,0 +1,21 @@
+---
+import { LucideIcon } from "@/components/ui/lucide-icon";
+import type { ContactDetailsItems } from "@/types/ui.interface";
+
+interface Props extends ContactDetailsItems {}
+
+const { label, value, note, icon }: Props = Astro.props;
+---
+
+<div class="flex items-start">
+  <div
+    class="bg-secondary mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
+  >
+    <LucideIcon name={icon} />
+  </div>
+  <div>
+    <h4 class="text-primary mb-1">{label}</h4>
+    <p class="text-muted-foreground">{value}</p>
+    <p class="text-ring text-sm">{note}</p>
+  </div>
+</div>
