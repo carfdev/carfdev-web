@@ -9,6 +9,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import {
@@ -23,57 +24,60 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { CircleCheck, Send } from "lucide-react";
 import { useTranslations, type Lang } from "@/i18n/utils";
+import { useMemo } from "react";
 
 interface Props {
   lang: Lang;
 }
 
-const formSchema = z.object({
-  firstName: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  lastName: z.string().min(2, {
-    message: "Last name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  companyName: z.string().optional(),
-  projectType: z
-    .string()
-    .refine(
-      (val) =>
-        [
-          "New Website",
-          "E-commerce Store",
-          "Website Redesign",
-          "Web Application",
-          "Performance Optimization",
-          "Other",
-        ].includes(val),
-      { message: "Please select a project type" },
-    ),
-
-  budget: z
-    .string()
-    .refine(
-      (val) =>
-        [
-          "Under 50,000 SEK",
-          "50,000 - 100,000 SEK",
-          "100,000 - 200,000 SEK",
-          "200,000+ SEK",
-        ].includes(val),
-      { message: "Please select a budget range" },
-    ),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-});
-
 export function ContactForm({ lang }: Props) {
   const t = useTranslations(lang);
   const ui = t("contact").form;
+
+  const formSchema = useMemo(() => {
+    return z.object({
+      firstName: z.string().min(2, {
+        message: ui.firstNameErrorMessage,
+      }),
+      lastName: z.string().min(2, {
+        message: ui.lastNameErrorMessage,
+      }),
+      email: z.string().email({
+        message: ui.emailErrorMessage,
+      }),
+      companyName: z.string().optional(),
+      projectType: z
+        .string()
+        .refine(
+          (val) =>
+            [
+              "New Website",
+              "E-commerce Store",
+              "Website Redesign",
+              "Web Application",
+              "Performance Optimization",
+              "Other",
+            ].includes(val),
+          { message: ui.projectTypeErrorMessage },
+        ),
+
+      budget: z
+        .string()
+        .refine(
+          (val) =>
+            [
+              "Under 50,000 SEK",
+              "50,000 - 100,000 SEK",
+              "100,000 - 200,000 SEK",
+              "200,000+ SEK",
+            ].includes(val),
+          { message: ui.budgetErrorMessage },
+        ),
+      message: z.string().min(10, {
+        message: ui.messageErrorMessage,
+      }),
+    });
+  }, [lang]);
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -113,6 +117,7 @@ export function ContactForm({ lang }: Props) {
                 <FormControl>
                   <Input placeholder={ui.firstNamePlaceholder} {...field} />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -125,6 +130,7 @@ export function ContactForm({ lang }: Props) {
                 <FormControl>
                   <Input placeholder={ui.lastNamePlaceholder} {...field} />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -142,6 +148,7 @@ export function ContactForm({ lang }: Props) {
                   autoComplete="email"
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -177,6 +184,7 @@ export function ContactForm({ lang }: Props) {
                     <SelectValue placeholder={ui.projectTypePlaceholder} />
                   </SelectTrigger>
                 </FormControl>
+                <FormMessage />
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>{ui.projectTypePlaceholder}</SelectLabel>
@@ -221,6 +229,7 @@ export function ContactForm({ lang }: Props) {
                     <SelectValue placeholder={ui.budgetPlaceholder} />
                   </SelectTrigger>
                 </FormControl>
+                <FormMessage />
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>{ui.budgetPlaceholder}</SelectLabel>
@@ -249,6 +258,7 @@ export function ContactForm({ lang }: Props) {
               <FormControl>
                 <Textarea placeholder={ui.messagePlaceholder} {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />

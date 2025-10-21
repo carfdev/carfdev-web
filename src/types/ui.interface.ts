@@ -56,20 +56,26 @@ export interface ContactDetailsItems {
 export interface Form {
   firstNameLabel: string;
   firstNamePlaceholder: string;
+  firstNameErrorMessage: string;
   lastNameLabel: string;
   lastNamePlaceholder: string;
+  lastNameErrorMessage: string;
   companyNameLabel: string;
   companyNamePlaceholder: string;
   emailLabel: string;
   emailPlaceholder: string;
+  emailErrorMessage: string;
   projectTypeLabel: string;
   projectTypePlaceholder: string;
   projectTypeOptions: string[];
+  projectTypeErrorMessage: string;
   budgetLabel: string;
   budgetPlaceholder: string;
   budgetOptions: string[];
+  budgetErrorMessage: string;
   messageLabel: string;
   messagePlaceholder: string;
+  messageErrorMessage: string;
   submitButton: string;
   successMessage: {
     title: string;

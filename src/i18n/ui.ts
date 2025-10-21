@@ -228,12 +228,15 @@ export const ui: UI = {
       form: {
         firstNameLabel: "First Name",
         firstNamePlaceholder: "What should I call you?",
+        firstNameErrorMessage: "Fill in your first name.",
         lastNameLabel: "Last Name",
         lastNamePlaceholder: "And your family name?",
+        lastNameErrorMessage: "Fill in your last name.",
         companyNameLabel: "Company Name",
         companyNamePlaceholder: "What's your company's name?",
         emailLabel: "Your Email",
         emailPlaceholder: "Where can I reach you?",
+        emailErrorMessage: "Please provide a valid email address.",
         projectTypeLabel: "Project Type",
         projectTypePlaceholder: "Select the type of project",
         projectTypeOptions: [
@@ -244,6 +247,7 @@ export const ui: UI = {
           "Performance Optimization",
           "Other",
         ],
+        projectTypeErrorMessage: "Please select a project type.",
         budgetLabel: "Budget",
         budgetPlaceholder: "Select your budget range",
         budgetOptions: [
@@ -252,8 +256,10 @@ export const ui: UI = {
           "100,000 - 200,000 SEK",
           "200,000+ SEK",
         ],
+        budgetErrorMessage: "Please select a budget range.",
         messageLabel: "Project Details",
         messagePlaceholder: "Tell me a little about your project...",
+        messageErrorMessage: "Please enter at least 10 characters.",
         submitButton: "Send Message",
         successMessage: {
           title: "Message Received",
@@ -525,12 +531,16 @@ export const ui: UI = {
       form: {
         firstNameLabel: "Primer Nombre",
         firstNamePlaceholder: "¿Cómo debo llamarte?",
+        firstNameErrorMessage: "Ingresa tu nombre.",
         lastNameLabel: "Apellido",
         lastNamePlaceholder: "¿Y tu apellido?",
+        lastNameErrorMessage: "Ingresa tu apellido.",
         companyNameLabel: "Nombre de la Empresa",
         companyNamePlaceholder: "¿Cómo se llama tu empresa?",
         emailLabel: "Tu Correo Electrónico",
         emailPlaceholder: "¿Dónde puedo contactarte?",
+        emailErrorMessage:
+          "Por favor, proporciona una dirección de correo válida.",
         projectTypeLabel: "Tipo de Proyecto",
         projectTypePlaceholder: "Selecciona el tipo de proyecto",
         projectTypeOptions: [
@@ -541,6 +551,7 @@ export const ui: UI = {
           "Optimización de Rendimiento",
           "Otro",
         ],
+        projectTypeErrorMessage: "Por favor, selecciona un tipo de proyecto.",
         budgetLabel: "Presupuesto",
         budgetPlaceholder: "Selecciona tu rango de presupuesto",
         budgetOptions: [
@@ -549,8 +560,10 @@ export const ui: UI = {
           "100,000 - 200,000 SEK",
           "Más de 200,000 SEK",
         ],
+        budgetErrorMessage: "Por favor, selecciona un rango de presupuesto.",
         messageLabel: "Detalles del Proyecto",
         messagePlaceholder: "Cuéntame un poco sobre tu proyecto...",
+        messageErrorMessage: "Por favor, ingresa al menos 10 caracteres.",
         submitButton: "Enviar Mensaje",
         successMessage: {
           title: "Mensaje Recibido",
@@ -820,12 +833,15 @@ export const ui: UI = {
       form: {
         firstNameLabel: "Ditt förnamn",
         firstNamePlaceholder: "Vad ska jag kalla dig?",
+        firstNameErrorMessage: "Fyll i ditt förnamn.",
         lastNameLabel: "Ditt efternamn",
         lastNamePlaceholder: "Och ditt familjenamn?",
+        lastNameErrorMessage: "Fyll i ditt efternamn.",
         companyNameLabel: "Företagsnamn",
         companyNamePlaceholder: "Vad heter ditt företag?",
         emailLabel: "Din e-postadress",
         emailPlaceholder: "Hur kan jag nå dig?",
+        emailErrorMessage: "Ange en giltig e-postadress.",
         projectTypeLabel: "Projekttyp",
         projectTypePlaceholder: "Välj projekttyp",
         projectTypeOptions: [
@@ -836,6 +852,7 @@ export const ui: UI = {
           "Prestandaoptimering",
           "Annat",
         ],
+        projectTypeErrorMessage: "Välj en projekttyp.",
         budgetLabel: "Budget",
         budgetPlaceholder: "Välj din budgetintervall",
         budgetOptions: [
@@ -844,8 +861,10 @@ export const ui: UI = {
           "100,000 - 200,000 SEK",
           "200,000+ SEK",
         ],
+        budgetErrorMessage: "Välj en budgetintervall.",
         messageLabel: "Projektbeskrivning",
         messagePlaceholder: "Berätta lite om ditt projekt...",
+        messageErrorMessage: "Ange minst 10 tecken.",
         submitButton: "Skicka meddelande",
         successMessage: {
           title: "Meddelande mottaget",
