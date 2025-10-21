@@ -136,7 +136,11 @@ export function ContactForm({ lang }: Props) {
             <FormItem>
               <FormLabel>{ui.emailLabel} *</FormLabel>
               <FormControl>
-                <Input placeholder={ui.emailPlaceholder} {...field} />
+                <Input
+                  placeholder={ui.emailPlaceholder}
+                  {...field}
+                  autoComplete="email"
+                />
               </FormControl>
             </FormItem>
           )}
@@ -159,12 +163,12 @@ export function ContactForm({ lang }: Props) {
           render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{ui.projectTypeLabel} *</FormLabel>
-              <FormControl>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  value={field.value}
-                >
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                {...field}
+              >
+                <FormControl>
                   <SelectTrigger
                     className={
                       fieldState.error ? "border-destructive w-full" : "w-full"
@@ -172,33 +176,30 @@ export function ContactForm({ lang }: Props) {
                   >
                     <SelectValue placeholder={ui.projectTypePlaceholder} />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>{ui.projectTypePlaceholder}</SelectLabel>
-                      {ui.projectTypeOptions.map(
-                        (option: string, index: number) => {
-                          const values = [
-                            "New Website",
-                            "E-commerce Store",
-                            "Website Redesign",
-                            "Web Application",
-                            "Performance Optimization",
-                            "Other",
-                          ];
-                          return (
-                            <SelectItem
-                              key={values[index]}
-                              value={values[index]}
-                            >
-                              {option}
-                            </SelectItem>
-                          );
-                        },
-                      )}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </FormControl>
+                </FormControl>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>{ui.projectTypePlaceholder}</SelectLabel>
+                    {ui.projectTypeOptions.map(
+                      (option: string, index: number) => {
+                        const values = [
+                          "New Website",
+                          "E-commerce Store",
+                          "Website Redesign",
+                          "Web Application",
+                          "Performance Optimization",
+                          "Other",
+                        ];
+                        return (
+                          <SelectItem key={values[index]} value={values[index]}>
+                            {option}
+                          </SelectItem>
+                        );
+                      },
+                    )}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </FormItem>
           )}
         />
@@ -208,34 +209,34 @@ export function ContactForm({ lang }: Props) {
           render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{ui.budgetLabel} *</FormLabel>
-              <FormControl>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                  value={field.value}
-                >
+              <Select
+                onValueChange={field.onChange}
+                defaultValue={field.value}
+                {...field}
+              >
+                <FormControl>
                   <SelectTrigger
                     className={`w-full ${fieldState.error ? "border-destructive" : ""}`}
                   >
                     <SelectValue placeholder={ui.budgetPlaceholder} />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>{ui.budgetPlaceholder}</SelectLabel>
-                      <SelectItem value="Under 50,000 SEK">
-                        {ui.budgetOptions[0]}
-                      </SelectItem>
-                      <SelectItem value="50,000 - 100,000 SEK">
-                        50,000 - 100,000 SEK
-                      </SelectItem>
-                      <SelectItem value="100,000 - 200,000 SEK">
-                        100,000 - 200,000 SEK
-                      </SelectItem>
-                      <SelectItem value="200,000+ SEK">200,000+ SEK</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </FormControl>
+                </FormControl>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>{ui.budgetPlaceholder}</SelectLabel>
+                    <SelectItem value="Under 50,000 SEK">
+                      {ui.budgetOptions[0]}
+                    </SelectItem>
+                    <SelectItem value="50,000 - 100,000 SEK">
+                      50,000 - 100,000 SEK
+                    </SelectItem>
+                    <SelectItem value="100,000 - 200,000 SEK">
+                      100,000 - 200,000 SEK
+                    </SelectItem>
+                    <SelectItem value="200,000+ SEK">200,000+ SEK</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
             </FormItem>
           )}
         />
