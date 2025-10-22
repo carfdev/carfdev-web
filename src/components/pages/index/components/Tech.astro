@@ -1,6 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import TechItem from "./TechItem.astro";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,16 +17,6 @@ const techStack = t("techStack");
       </p>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-4">
-      {
-        techStack.items.map((item) => (
-          <TechItem
-            name={item.name}
-            description={item.description}
-            icon={item.icon}
-          />
-        ))
-      }
-    </div>
+    <HoverEffect client:visible items={techStack.items} />
   </div>
 </section>

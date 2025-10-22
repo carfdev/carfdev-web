@@ -20,7 +20,11 @@ export function useTranslations<L extends Lang>(lang: L) {
 }
 
 export function useTranslatedPath(lang: Lang) {
-  return function translatePath(path: string, l: Lang = lang) {
-    return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`;
+  return function translatePath(path: string, l: Lang = lang): string {
+    if (showDefaultLang || l !== defaultLang) {
+      return `/${l}${path}`;
+    }
+
+    return path || "/";
   };
 }

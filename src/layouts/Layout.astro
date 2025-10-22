@@ -7,6 +7,7 @@ import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { CustomNavbar } from "@/components/customNavbar";
 
 import "@/styles/global.css";
+import Footer from "@/components/Footer.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -38,6 +39,7 @@ const navItems = t("nav").links.slice() as {
     <CustomNavbar navItems={navItems} client:visible lang={lang} />
     <main id="main-content"><slot /></main>
     <Toaster position="top-center" client:idle />
+    <Footer />
   </body>
 </html>
 

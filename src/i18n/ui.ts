@@ -168,41 +168,49 @@ export const ui: UI = {
           name: "React",
           description: "Component-based UI library for interactive interfaces",
           icon: "IconBrandReact",
+          link: "https://reactjs.org/",
         },
         {
           name: "Node.js",
           description: "Server-side JavaScript for robust backend solutions",
           icon: "IconBrandNodejs",
+          link: "https://nodejs.org/",
         },
         {
           name: "Astro",
           description: "Modern static site generator for optimized websites",
           icon: "IconBrandAstro",
+          link: "https://astro.build/",
         },
         {
           name: "AWS",
           description: "Cloud infrastructure for scalable hosting",
           icon: "IconBrandAmazon",
+          link: "https://aws.amazon.com/",
         },
         {
           name: "Typescript",
           description: "Type-safe JavaScript for maintainable code",
           icon: "IconBrandTypescript",
+          link: "https://www.typescriptlang.org/",
         },
         {
           name: "Tailwind CSS",
           description: "Utility-first CSS for rapid UI development",
           icon: "IconBrandTailwind",
+          link: "https://tailwindcss.com/",
         },
         {
           name: "Docker",
           description: "Containerization for consistent deployments",
           icon: "IconBrandDocker",
+          link: "https://www.docker.com/",
         },
         {
           name: "Git",
           description: "Version control for collaborative development",
           icon: "IconBrandGit",
+          link: "https://git-scm.com/",
         },
       ],
     },
@@ -224,7 +232,7 @@ export const ui: UI = {
     contact: {
       title: "Get in Touch",
       subtitle:
-        "Fill out the form below or email me directly at hello@carfdev.com. I'll get back to you within 24 hours.",
+        "Fill out the form below or email me directly at hello@carf.dev. I'll get back to you within 24 hours.",
       form: {
         firstNameLabel: "First Name",
         firstNamePlaceholder: "What should I call you?",
@@ -271,7 +279,7 @@ export const ui: UI = {
         items: [
           {
             label: "Email",
-            value: "hello@carfdev.se",
+            value: "hello@carf.dev",
             note: "I'll respond within 24 hours",
             icon: "Mail",
           },
@@ -292,20 +300,40 @@ export const ui: UI = {
       card: {
         title: "Why Choose Carfdev?",
         items: [
-          "8+ years of web development experience",
+          "Full-Stack Expertise (Design + Code)",
           "Specialized in Stockholm market",
-          "100% client satisfaction rate",
+          "Direct & Transparent Communication",
           "Ongoing support and maintenance",
         ],
       },
     },
     footer: {
-      copyright: "© {year} Carfdev. All rights reserved.",
-      location: "Based in Stockholm, Sweden",
-      socialLinks: {
-        github: "GitHub",
-        linkedin: "LinkedIn",
+      copyright:
+        "© 2025 Carfdev. All rights reserved. Based in Stockholm, Sweden.",
+      title:
+        "Professional web development services for Stockholm businesses. Creating modern, fast, and user-friendly websites that drive real results.",
+      services: {
+        name: "Services",
+        links: [
+          { text: "Web Development", href: "#services" },
+          { text: "E-commerce", href: "#services" },
+          { text: "Performance Optimization", href: "#services" },
+          { text: "Web Applications", href: "#services" },
+        ],
       },
+      company: {
+        name: "Company",
+        links: [
+          { text: "About", href: "#about" },
+          { text: "Portfolio", href: "#work" },
+          { text: "Tech Stack", href: "#technologies" },
+          { text: "Process", href: "#process" },
+        ],
+      },
+      legal: [
+        { text: "Privacy Policy", href: "/privacy-policy" },
+        { text: "Terms of Service", href: "/terms-of-service" },
+      ],
     },
   },
   es: {
@@ -469,43 +497,51 @@ export const ui: UI = {
           description:
             "Biblioteca de UI basada en componentes para interfaces interactivas",
           icon: "IconBrandReact",
+          link: "https://reactjs.org/",
         },
         {
           name: "Node.js",
           description:
             "JavaScript del lado del servidor para soluciones backend robustas",
           icon: "IconBrandNodejs",
+          link: "https://nodejs.org/",
         },
         {
           name: "Astro",
           description:
             "Generador moderno de sitios estáticos para sitios web optimizados",
           icon: "IconBrandAstro",
+          link: "https://astro.build/",
         },
         {
           name: "AWS",
           description: "Infraestructura en la nube para alojamiento escalable",
           icon: "IconBrandAmazon",
+          link: "https://aws.amazon.com/",
         },
         {
           name: "Typescript",
           description: "JavaScript con tipado para código mantenible",
           icon: "IconBrandTypescript",
+          link: "https://www.typescriptlang.org/",
         },
         {
           name: "Tailwind CSS",
           description: "CSS utilitario para desarrollo rápido de UI",
           icon: "IconBrandTailwind",
+          link: "https://tailwindcss.com/",
         },
         {
           name: "Docker",
           description: "Contenerización para despliegues consistentes",
           icon: "IconBrandDocker",
+          link: "https://www.docker.com/",
         },
         {
           name: "Git",
           description: "Control de versiones para desarrollo colaborativo",
           icon: "IconBrandGit",
+          link: "https://git-scm.com/",
         },
       ],
     },
@@ -527,7 +563,7 @@ export const ui: UI = {
     contact: {
       title: "Ponte en Contacto",
       subtitle:
-        "Rellena el formulario o envíame un correo directamente a hello@carfdev.com. Te responderé en menos de 24 horas.",
+        "Rellena el formulario o envíame un correo directamente a hello@carf.dev. Te responderé en menos de 24 horas.",
       form: {
         firstNameLabel: "Primer Nombre",
         firstNamePlaceholder: "¿Cómo debo llamarte?",
@@ -575,7 +611,7 @@ export const ui: UI = {
         items: [
           {
             label: "Correo Electrónico",
-            value: "hello@carfdev.se",
+            value: "hello@carf.dev",
             note: "Te responderé en menos de 24 horas",
             icon: "Mail",
           },
@@ -596,20 +632,40 @@ export const ui: UI = {
       card: {
         title: "¿Por qué elegir a Carfdev?",
         items: [
-          "Más de 8 años de experiencia",
+          "Experiencia Full-Stack (Diseño + Código)",
           "Especializado en el mercado de Estocolmo",
-          "100% de satisfacción del cliente",
+          "Comunicación Directa y Transparente",
           "Soporte y mantenimiento continuos",
         ],
       },
     },
     footer: {
-      copyright: "© {year} Carfdev. Todos los derechos reservados.",
-      location: "Con base en Estocolmo, Suecia",
-      socialLinks: {
-        github: "GitHub",
-        linkedin: "LinkedIn",
+      copyright:
+        "© 2025 Carfdev. Todos los derechos reservados. Con sede en Estocolmo, Suecia.",
+      title:
+        "Servicios profesionales de desarrollo web para negocios en Estocolmo. Creando sitios modernos, rápidos y fáciles de usar que generan resultados reales.",
+      services: {
+        name: "Servicios",
+        links: [
+          { text: "Desarrollo Web", href: "#services" },
+          { text: "Comercio Electrónico", href: "#services" },
+          { text: "Optimización de Rendimiento", href: "#services" },
+          { text: "Aplicaciones Web", href: "#services" },
+        ],
       },
+      company: {
+        name: "Compañía",
+        links: [
+          { text: "Sobre mí", href: "#about" },
+          { text: "Portafolio", href: "#work" },
+          { text: "Pila Tecnológica", href: "#technologies" },
+          { text: "Proceso", href: "#process" },
+        ],
+      },
+      legal: [
+        { text: "Política de Privacidad", href: "/privacy-policy" },
+        { text: "Términos de Servicio", href: "/terms-of-service" },
+      ],
     },
   },
   sv: {
@@ -772,42 +828,50 @@ export const ui: UI = {
           description:
             "Komponentbaserat UI-bibliotek för interaktiva gränssnitt",
           icon: "IconBrandReact",
+          link: "https://reactjs.org/",
         },
         {
           name: "Node.js",
           description: "Server-side JavaScript för robusta backend-lösningar",
           icon: "IconBrandNodejs",
+          link: "https://nodejs.org/",
         },
         {
           name: "Astro",
           description:
             "Modern statisk webbplatsskapare för optimerade webbplatser",
           icon: "IconBrandAstro",
+          link: "https://astro.build/",
         },
         {
           name: "AWS",
           description: "Molninfrastruktur för skalbar hosting",
           icon: "IconBrandAmazon",
+          link: "https://aws.amazon.com/",
         },
         {
           name: "Typescript",
           description: "Typ-säker JavaScript för underhållbar kod",
           icon: "IconBrandTypescript",
+          link: "https://www.typescriptlang.org/",
         },
         {
           name: "Tailwind CSS",
           description: "Utility-first CSS för snabb UI-utveckling",
           icon: "IconBrandTailwind",
+          link: "https://tailwindcss.com/",
         },
         {
           name: "Docker",
           description: "Containerisering för konsekventa distributioner",
           icon: "IconBrandDocker",
+          link: "https://www.docker.com/",
         },
         {
           name: "Git",
           description: "Versionskontroll för samarbetsutveckling",
           icon: "IconBrandGit",
+          link: "https://git-scm.com/",
         },
       ],
     },
@@ -829,7 +893,7 @@ export const ui: UI = {
     contact: {
       title: "Kontakta mig",
       subtitle:
-        "Fyll i formuläret nedan eller mejla mig direkt på hello@carfdev.com. Jag svarar inom 24 timmar.",
+        "Fyll i formuläret nedan eller mejla mig direkt på hello@carf.dev. Jag svarar inom 24 timmar.",
       form: {
         firstNameLabel: "Ditt förnamn",
         firstNamePlaceholder: "Vad ska jag kalla dig?",
@@ -876,7 +940,7 @@ export const ui: UI = {
         items: [
           {
             label: "E-post",
-            value: "hello@carfdev.se",
+            value: "hello@carf.dev",
             note: "Jag svarar inom 24 timmar",
             icon: "Mail",
           },
@@ -897,20 +961,40 @@ export const ui: UI = {
       card: {
         title: "Varför välja Carfdev?",
         items: [
-          "8+ års erfarenhet av webbutveckling",
+          "Fullstack-expertis (design + kod)",
           "Specialiserad på Stockholmsmarknaden",
-          "100% kundnöjdhet",
+          "Direkt & transparent kommunikation",
           "Löpande support och underhåll",
         ],
       },
     },
     footer: {
-      copyright: "© {year} Carfdev. Alla rättigheter förbehållna.",
-      location: "Baserad i Stockholm, Sverige",
-      socialLinks: {
-        github: "GitHub",
-        linkedin: "LinkedIn",
+      copyright:
+        "© 2025 Carfdev. Alla rättigheter förbehållna. Basera i Stockholm, Sverige.",
+      title:
+        "Professionella webbutvecklingstjänster för företag i Stockholm. Skapar moderna, snabba och användarvänliga webbplatser som ger verkliga resultat.",
+      services: {
+        name: "Tjänster",
+        links: [
+          { text: "Webbutveckling", href: "#services" },
+          { text: "E-handel", href: "#services" },
+          { text: "Prestandaoptimering", href: "#services" },
+          { text: "Webbapplikationer", href: "#services" },
+        ],
       },
+      company: {
+        name: "Företag",
+        links: [
+          { text: "Om mig", href: "#about" },
+          { text: "Portfölj", href: "#work" },
+          { text: "Teknisk stack", href: "#technologies" },
+          { text: "Process", href: "#process" },
+        ],
+      },
+      legal: [
+        { text: "Integritetspolicy", href: "/privacy-policy" },
+        { text: "Användarvillkor", href: "/terms-of-service" },
+      ],
     },
   },
 };

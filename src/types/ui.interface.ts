@@ -91,13 +91,16 @@ export interface Cta {
 
 export interface Footer {
   copyright: string;
-  location: string;
-  socialLinks: SocialLinks;
-}
-
-export interface SocialLinks {
-  github: string;
-  linkedin: string;
+  title: string;
+  services: {
+    name: string;
+    links: Link[];
+  };
+  company: {
+    name: string;
+    links: Link[];
+  };
+  legal: Link[];
 }
 
 export interface Hero {
@@ -174,4 +177,5 @@ export interface TechStackItem {
   name: string;
   description: string;
   icon: TablerIconName;
+  link: string;
 }

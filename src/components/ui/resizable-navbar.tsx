@@ -171,15 +171,16 @@ export const NavbarLogo = ({ lang }: NavbarLogoProps) => {
   const translatePath = useTranslatedPath(lang);
   const t = useTranslations(lang);
 
-  const href = useMemo(() => translatePath("/"), [translatePath]);
+  const href = useMemo(() => translatePath(""), [translatePath]);
   const ariaLabel = useMemo(() => t("nav").logoLabel, [t]);
 
   return (
     <a href={href} aria-label={ariaLabel}>
       <svg
-        className="w-24 dark:invert"
+        className="w-24"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 594 180"
+        fill="currentColor"
       >
         <title>Carfdev</title>
         <path d="M90.117.003a89.404 90 0 0 0-20.114 2.142l51.545 52.401a47.682 48 0 0 1 3.388 3.444v.003l6.188 6.29L160 34.781A89.404 90 0 0 0 90.117.003m-32.77 5.98C23.112 19.222.38 52.164.005 89.08c-.504 49.624 38.99 90.294 88.285 90.913 6.89.086 13.769-.63 20.497-2.135l-51.752-52.614-6.084-6.263c-4.4-4.551-9.316-16.77-9.227-29.472.268-26.466 21.768-47.719 48.06-47.507q1.56.012 3.117.127zM129.58 115.85a47.682 48 0 0 1-40.77 22.146 47.682 48 0 0 1-2.925-.128l35.561 36.153a89.404 90 0 0 0 38.203-28.347z" />
