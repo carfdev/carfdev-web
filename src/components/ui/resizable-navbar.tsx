@@ -1,6 +1,6 @@
 import { useTranslatedPath, useTranslations, type Lang } from "@/i18n/utils";
 import { cn } from "@/lib/utils";
-import { ChevronDownIcon, Globe, Menu, XIcon } from "lucide-react";
+import { ChevronDownIcon, Languages, Menu, XIcon } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import React, { useMemo, useRef, useState } from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
@@ -292,8 +292,8 @@ export const LanguageMenu = ({ lang }: LanguageMenuProps) => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="flex gap-2">
-            <Globe className="size-4" />
+          <NavigationMenuTrigger className="flex cursor-pointer gap-2">
+            <Languages className="size-4" />
             <span className="uppercase">{lang}</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent>

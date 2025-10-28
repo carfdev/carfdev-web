@@ -262,7 +262,7 @@ export function ContactForm({ lang }: Props) {
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-full">
+        <Button type="submit" size="lg" className="w-full cursor-pointer">
           <Send />
           {ui.submitButton}
         </Button>
