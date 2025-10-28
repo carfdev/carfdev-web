@@ -18,9 +18,9 @@ export const ui: UI = {
     },
     nav: {
       links: [
-        { text: "Services", href: "#services" },
-        { text: "Work", href: "#work" },
-        { text: "About", href: "#about" },
+        { text: "Services", href: "/#services" },
+        { text: "Work", href: "/#work" },
+        { text: "About", href: "/#about" },
       ],
       ctaButton: "Get in Touch",
       logoLabel: "Carfdev Home",
@@ -119,7 +119,7 @@ export const ui: UI = {
           description:
             "A sleek e-commerce and marketing site for a local Stockholm coffee roastery. The platform increased their online sales by 40% in the first three months.",
           techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          url: "/kaffe-klart-roasters",
+          url: "/project/kaffe-klart-roasters",
           imageAlt: "Kaffe & Klart Roasters project screenshot",
         },
         {
@@ -127,7 +127,7 @@ export const ui: UI = {
           description:
             "A custom booking platform and informational website for a boutique yoga studio, enabling easy class scheduling and membership management for their clients.",
           techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          url: "/sodermalm-flow-yoga",
+          url: "/project/sodermalm-flow-yoga",
           imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
@@ -315,19 +315,19 @@ export const ui: UI = {
       services: {
         name: "Services",
         links: [
-          { text: "Web Development", href: "#services" },
-          { text: "E-commerce", href: "#services" },
-          { text: "Performance Optimization", href: "#services" },
-          { text: "Web Applications", href: "#services" },
+          { text: "Web Development", href: "/#services" },
+          { text: "E-commerce", href: "/#services" },
+          { text: "Performance Optimization", href: "/#services" },
+          { text: "Web Applications", href: "/#services" },
         ],
       },
       company: {
         name: "Company",
         links: [
-          { text: "About", href: "#about" },
-          { text: "Portfolio", href: "#work" },
-          { text: "Tech Stack", href: "#technologies" },
-          { text: "Process", href: "#process" },
+          { text: "About", href: "/#about" },
+          { text: "Portfolio", href: "/#work" },
+          { text: "Tech Stack", href: "/#technologies" },
+          { text: "Process", href: "/#process" },
         ],
       },
       legal: [
@@ -345,9 +345,9 @@ export const ui: UI = {
     },
     nav: {
       links: [
-        { text: "Servicios", href: "#services" },
-        { text: "Proyectos", href: "#work" },
-        { text: "Sobre mí", href: "#about" },
+        { text: "Servicios", href: "/#services" },
+        { text: "Proyectos", href: "/#work" },
+        { text: "Sobre mí", href: "/#about" },
       ],
       ctaButton: "Contáctame",
       logoLabel: "Inicio de Carfdev",
@@ -447,7 +447,7 @@ export const ui: UI = {
           description:
             "Una tienda en línea moderna para una tostaduría local de café en Estocolmo. La plataforma aumentó sus ventas en línea un 40% en los primeros tres meses.",
           techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          url: "/kaffe-klart-roasters",
+          url: "/project/kaffe-klart-roasters",
           imageAlt: "Kaffe & Klart Roasters project screenshot",
         },
         {
@@ -455,7 +455,7 @@ export const ui: UI = {
           description:
             "Una plataforma de reservas personalizada y sitio informativo para un estudio boutique de yoga, facilitando la gestión de clases y membresías para sus clientes.",
           techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          url: "/sodermalm-flow-yoga",
+          url: "/project/sodermalm-flow-yoga",
           imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
@@ -647,19 +647,19 @@ export const ui: UI = {
       services: {
         name: "Servicios",
         links: [
-          { text: "Desarrollo Web", href: "#services" },
-          { text: "Comercio Electrónico", href: "#services" },
-          { text: "Optimización de Rendimiento", href: "#services" },
-          { text: "Aplicaciones Web", href: "#services" },
+          { text: "Desarrollo Web", href: "/#services" },
+          { text: "Comercio Electrónico", href: "/#services" },
+          { text: "Optimización de Rendimiento", href: "/#services" },
+          { text: "Aplicaciones Web", href: "#/services" },
         ],
       },
       company: {
         name: "Compañía",
         links: [
-          { text: "Sobre mí", href: "#about" },
-          { text: "Portafolio", href: "#work" },
-          { text: "Pila Tecnológica", href: "#technologies" },
-          { text: "Proceso", href: "#process" },
+          { text: "Sobre mí", href: "/#about" },
+          { text: "Portafolio", href: "/#work" },
+          { text: "Pila Tecnológica", href: "/#technologies" },
+          { text: "Proceso", href: "/#process" },
         ],
       },
       legal: [
@@ -676,9 +676,9 @@ export const ui: UI = {
     },
     nav: {
       links: [
-        { text: "Tjänster", href: "#services" },
-        { text: "Projekt", href: "#work" },
-        { text: "Om mig", href: "#about" },
+        { text: "Tjänster", href: "/#services" },
+        { text: "Projekt", href: "/#work" },
+        { text: "Om mig", href: "/#about" },
       ],
       ctaButton: "Kontakta mig",
       logoLabel: "Carfdev Hem",
@@ -778,7 +778,7 @@ export const ui: UI = {
           description:
             "En elegant e-handels- och marknadsföringswebbplats för ett lokalt kafferosteri i Stockholm. Plattformen ökade deras onlineförsäljning med 40 % under de första tre månaderna.",
           techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          url: "/kaffe-klart-roasters",
+          url: "/project/kaffe-klart-roasters",
           imageAlt: "Kaffe & Klart Roasters project screenshot",
         },
         {
@@ -786,7 +786,7 @@ export const ui: UI = {
           description:
             "En skräddarsydd bokningsplattform och informationswebbplats för en yogastudio, som möjliggör enkel klassbokning och medlemshantering för deras kunder.",
           techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          url: "/sodermalm-flow-yoga",
+          url: "/project/sodermalm-flow-yoga",
           imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
@@ -976,19 +976,19 @@ export const ui: UI = {
       services: {
         name: "Tjänster",
         links: [
-          { text: "Webbutveckling", href: "#services" },
-          { text: "E-handel", href: "#services" },
-          { text: "Prestandaoptimering", href: "#services" },
-          { text: "Webbapplikationer", href: "#services" },
+          { text: "Webbutveckling", href: "/#services" },
+          { text: "E-handel", href: "/#services" },
+          { text: "Prestandaoptimering", href: "/#services" },
+          { text: "Webbapplikationer", href: "/#services" },
         ],
       },
       company: {
         name: "Företag",
         links: [
-          { text: "Om mig", href: "#about" },
-          { text: "Portfölj", href: "#work" },
-          { text: "Teknisk stack", href: "#technologies" },
-          { text: "Process", href: "#process" },
+          { text: "Om mig", href: "/#about" },
+          { text: "Portfölj", href: "/#work" },
+          { text: "Teknisk stack", href: "/#technologies" },
+          { text: "Process", href: "/#process" },
         ],
       },
       legal: [

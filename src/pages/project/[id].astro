@@ -1,0 +1,14 @@
+---
+import ProjectPage from "@/components/pages/project/ProjectPage.astro";
+import { useTranslations } from "@/i18n/utils";
+
+export async function getStaticPaths() {
+  return useTranslations("en")("portfolio").items.map((item) => ({
+    params: { id: item.url.split("/")[2] },
+  }));
+}
+
+const { id } = Astro.params;
+---
+
+<ProjectPage projectId={id} />

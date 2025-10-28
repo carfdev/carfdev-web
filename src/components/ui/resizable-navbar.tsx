@@ -36,6 +36,7 @@ interface NavBodyProps {
 
 interface NavItemsProps {
   items: NavItem[];
+  lang: Lang;
 }
 
 interface MobileNavHeaderProps {
@@ -138,8 +139,9 @@ export const NavBody = ({
   );
 };
 
-export const NavItems = ({ items }: NavItemsProps) => {
+export const NavItems = ({ items, lang }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const translatePath = useTranslatedPath(lang);
 
   return (
     <motion.ul
@@ -151,7 +153,7 @@ export const NavItems = ({ items }: NavItemsProps) => {
           <a
             onMouseEnter={() => setHovered(idx)}
             className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
-            href={item.href}
+            href={translatePath(item.href)}
           >
             {hovered === idx && (
               <motion.div
@@ -254,14 +256,15 @@ export const MobileNavMenu = ({
   );
 };
 
-export const MobileNavItems = ({ items }: NavItemsProps) => {
+export const MobileNavItems = ({ items, lang }: NavItemsProps) => {
+  const translatePath = useTranslatedPath(lang);
   return (
     <nav className="mt-40 flex flex-col items-center justify-center gap-6">
       <ul>
         {items.map((item) => (
           <li key={item.href} className="py-2 text-center">
             <Button variant="ghost" asChild>
-              <a href={item.href}>{item.text}</a>
+              <a href={translatePath(item.href)}>{item.text}</a>
             </Button>
           </li>
         ))}

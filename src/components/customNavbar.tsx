@@ -53,7 +53,7 @@ export const CustomNavbar = ({ navItems, lang }: Props) => {
       <NavBody>
         <NavbarLogo lang={lang} />
 
-        <NavItems items={navItems} />
+        <NavItems items={navItems} lang={lang} />
 
         <div className="flex items-center space-x-3">
           <div className="hidden items-center space-x-3 md:flex">
@@ -80,7 +80,7 @@ export const CustomNavbar = ({ navItems, lang }: Props) => {
                 title={t("nav").title}
                 description={t("nav").description}
               />
-              <MobileNavItems items={navItems} />
+              <MobileNavItems items={navItems} lang={lang} />
 
               <div className="flex flex-col items-center justify-center gap-4">
                 <Button

@@ -75,7 +75,7 @@ const footer = t("footer");
             footer.services.links.map((link) => (
               <li>
                 <a
-                  href={link.href}
+                  href={translatedPath(link.href)}
                   class="cursor-pointer text-neutral-400 transition-colors hover:text-white"
                 >
                   {link.text}
@@ -93,7 +93,7 @@ const footer = t("footer");
             footer.company.links.map((link) => (
               <li>
                 <a
-                  href={link.href}
+                  href={translatedPath(link.href)}
                   class="cursor-pointer text-neutral-400 transition-colors hover:text-white"
                 >
                   {link.text}
