@@ -18,9 +18,7 @@ const hero = t("hero");
   <article
     class="pointer-events-none z-10 flex w-full flex-col items-center justify-center gap-4 px-4 py-40"
   >
-    <h1
-      class="text-primary xs:leading-tight relative max-w-4xl text-center text-[clamp(1.5rem,5vw,3.75rem)] tracking-tighter text-pretty md:leading-none"
-    >
+    <h1>
       {hero.title}
     </h1>
     <TextGenerateEffect client:visible words={hero.subtitle} />

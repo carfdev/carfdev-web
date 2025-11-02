@@ -184,6 +184,10 @@
     @apply bg-background text-foreground;
   }
 
+  h1 {
+    @apply text-primary xs:leading-tight relative max-w-4xl text-center text-[clamp(1.5rem,5vw,3.75rem)] tracking-tighter text-pretty md:leading-none;
+  }
+
   h2 {
     @apply text-primary mb-4 text-[clamp(1.4rem,4vw,3rem)] tracking-tighter text-pretty;
   }

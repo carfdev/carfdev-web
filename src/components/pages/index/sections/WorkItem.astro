@@ -26,7 +26,8 @@ const { title, description, techStack, url, imageAlt, imageSrc, btn }: Props =
 <div class="group cursor-pointer">
   <a href={translatePath(url)}>
     <Image
-      class="mb-6 h-80 rounded-2xl object-cover object-top transition-transform group-hover:scale-105"
+      transition:name={`image${url}`}
+      class="bg-input mb-6 h-80 rounded-2xl object-cover object-top transition-transform group-hover:scale-105"
       src={imageSrc}
       alt={imageAlt}
     />

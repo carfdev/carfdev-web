@@ -115,12 +115,13 @@ export const ui: UI = {
       btn: "View Project",
       items: [
         {
-          title: "Kaffe & Klart Roasters",
+          title: "EricReyes",
           description:
-            "A sleek e-commerce and marketing site for a local Stockholm coffee roastery. The platform increased their online sales by 40% in the first three months.",
-          techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          url: "/project/kaffe-klart-roasters",
-          imageAlt: "Kaffe & Klart Roasters project screenshot",
+            "A stylish portfolio website for professional barber Eric Reyes. It showcases his expertise, services, and client transformations, helping him attract more bookings and strengthen his personal brand.",
+          techStack: ["Astro", "Tailwind", "Go", "Cloudflare"],
+          url: "/project/eric-reyes",
+          imageAlt:
+            "Mockup of the professional barber Eric Reyes portfolio website",
         },
         {
           title: "Södermalm Flow Yoga",
@@ -443,12 +444,13 @@ export const ui: UI = {
       btn: "Ver Proyecto",
       items: [
         {
-          title: "Kaffe & Klart Roasters",
+          title: "EricReyes",
           description:
-            "Una tienda en línea moderna para una tostaduría local de café en Estocolmo. La plataforma aumentó sus ventas en línea un 40% en los primeros tres meses.",
-          techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          url: "/project/kaffe-klart-roasters",
-          imageAlt: "Kaffe & Klart Roasters project screenshot",
+            "Un elegante sitio web portafolio para el barbero profesional Eric Reyes. Muestra su experiencia, servicios y transformaciones de clientes, ayudándole a conseguir más reservas y fortalecer su marca personal.",
+          techStack: ["Astro", "Tailwind", "Go", "Cloudflare"],
+          url: "/project/eric-reyes",
+          imageAlt:
+            "Mockup del sitio web portafolio del barbero profesional Eric Reyes.",
         },
         {
           title: "Södermalm Flow Yoga",
@@ -774,12 +776,13 @@ export const ui: UI = {
       btn: "Visa projekt",
       items: [
         {
-          title: "Kaffe & Klart Roasters",
+          title: "EricReyes",
           description:
-            "En elegant e-handels- och marknadsföringswebbplats för ett lokalt kafferosteri i Stockholm. Plattformen ökade deras onlineförsäljning med 40 % under de första tre månaderna.",
-          techStack: ["Astro", "React", "Node.js", "PostgreSQL"],
-          url: "/project/kaffe-klart-roasters",
-          imageAlt: "Kaffe & Klart Roasters project screenshot",
+            "En stilren portföljsida för den professionella barberaren Eric Reyes. Den visar hans expertis, tjänster och kundförvandlingar, vilket hjälper honom att få fler bokningar och stärka sitt personliga varumärke.",
+          techStack: ["Astro", "Tailwind", "Go", "Cloudflare"],
+          url: "/project/eric-reyes",
+          imageAlt:
+            "Mockup av den professionella barberaren Eric Reyes portföljsida.",
         },
         {
           title: "Södermalm Flow Yoga",

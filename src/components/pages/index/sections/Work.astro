@@ -1,12 +1,15 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import WorkExampleImage from "@/assets/images/work-example.webp";
+import EricReyesImg from "@/assets/images/ericReyes.webp";
 import WorkItem from "./WorkItem.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const work = t("portfolio");
+
+const workImage = [EricReyesImg, WorkExampleImage];
 ---
 
 <section id="work" class="bg-secondary px-6 py-20 lg:px-12">
@@ -20,7 +23,7 @@ const work = t("portfolio");
 
     <div class="grid gap-12 lg:grid-cols-2">
       {
-        work.items.map((item) => (
+        work.items.map((item, index) => (
           <WorkItem
             title={item.title}
             description={item.description}
@@ -28,7 +31,7 @@ const work = t("portfolio");
             btn={work.btn}
             url={item.url}
             imageAlt={item.imageAlt}
-            imageSrc={WorkExampleImage}
+            imageSrc={workImage[index]}
           />
         ))
       }
