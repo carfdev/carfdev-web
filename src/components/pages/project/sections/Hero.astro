@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import WorkExampleImage from "@/assets/images/work-example.webp";
+import EricReyesImg from "@/assets/images/ericReyes.webp";
 
 interface Props {
   url: string;
@@ -10,16 +10,13 @@ const { url }: Props = Astro.props;
 
 <section id="project-header" class="bg-background py-16">
   <div class="container mx-auto grid max-w-4xl gap-8 px-6 text-center">
-    <h1>Bistro Gamla Stan - Website Redesign</h1>
-    <p class="subtitle">
-      A complete redesign focused on mobile-first reservations, resulting in a
-      40% increase in online bookings.
-    </p>
+    <h1>EricReyes Barbershop <br /> New Website</h1>
+
     <Image
-      transition:name={`image/porject${url}`}
-      class="h-96 rounded-lg object-cover object-top"
-      src={WorkExampleImage}
-      alt={"Bistro Gamla Stan Website Redesign"}
+      transition:name={`image/project${url}`}
+      class="bg-input h-96 rounded-lg object-cover object-top"
+      src={EricReyesImg}
+      alt="Mockup of the professional barber Eric Reyes portfolio website"
       loading="eager"
     />
   </div>

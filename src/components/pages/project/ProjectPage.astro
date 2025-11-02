@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Hero from "./sections/Hero.astro";
+import Overview from "./sections/Overview.astro";
 
 interface Props {
   projectId: string;
@@ -10,4 +11,5 @@ const { projectId } = Astro.props;
 
 <Layout>
   <Hero url={`/${projectId}`} />
+  <Overview />
 </Layout>

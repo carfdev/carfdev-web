@@ -1,4 +1,4 @@
-import { useTranslations, type Lang } from "@/i18n/utils";
+import { useTranslatedPath, useTranslations, type Lang } from "@/i18n/utils";
 import {
   MobileNav,
   MobileNavHeader,
@@ -48,6 +48,7 @@ const handleChangeTheme = () => {
 
 export const CustomNavbar = ({ navItems, lang }: Props) => {
   const t = useTranslations(lang);
+  const translatePath = useTranslatedPath(lang);
   return (
     <Navbar>
       <NavBody>
@@ -71,7 +72,7 @@ export const CustomNavbar = ({ navItems, lang }: Props) => {
           </div>
 
           <Button asChild>
-            <a href="#contact">{t("nav").ctaButton}</a>
+            <a href={translatePath("/#contact")}>{t("nav").ctaButton}</a>
           </Button>
           <MobileNav>
             <MobileNavToggle />
