@@ -7,6 +7,22 @@ export function getLangFromUrl(url: URL): Lang {
   return lang in ui ? (lang as Lang) : defaultLang;
 }
 
+export function getUrlWithoutLang(url: URL): string {
+  const segments = url.pathname.split("/");
+  const [, maybeLang, ...rest] = segments;
+
+  const isLangInUi = typeof maybeLang === "string" && maybeLang in ui;
+  const shouldStrip =
+    isLangInUi && (maybeLang !== defaultLang || showDefaultLang);
+
+  const pathnameWithoutLang = shouldStrip
+    ? `/${rest.join("/")}`
+    : url.pathname || "/";
+  const normalizedPath = pathnameWithoutLang === "" ? "/" : pathnameWithoutLang;
+
+  return `${normalizedPath}${url.search || ""}${url.hash || ""}`;
+}
+
 export function useTranslations<L extends Lang>(lang: L) {
   const langObj = ui[lang];
   const defaultObj = ui[defaultLang];

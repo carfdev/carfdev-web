@@ -3,13 +3,18 @@ import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import { Toaster } from "@/components/ui/sonner";
 
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import {
+  getLangFromUrl,
+  getUrlWithoutLang,
+  useTranslations,
+} from "@/i18n/utils";
 import { CustomNavbar } from "@/components/customNavbar";
 
 import "@/styles/global.css";
 import Footer from "@/components/Footer.astro";
 
 const lang = getLangFromUrl(Astro.url);
+const currentUrl = getUrlWithoutLang(Astro.url);
 const t = useTranslations(lang);
 
 const navItems = t("nav").links.slice() as {
@@ -43,8 +48,9 @@ const navItems = t("nav").links.slice() as {
       navItems={navItems}
       client:visible
       lang={lang}
+      currentUrl={currentUrl}
     />
-    <main id="main-content" class="mt-14"><slot /></main>
+    <main id="main-content"><slot /></main>
     <Toaster transition:persist position="top-center" client:idle />
     <Footer />
   </body>

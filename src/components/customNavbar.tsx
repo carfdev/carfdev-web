@@ -20,6 +20,7 @@ interface Props {
     href: string;
   }[];
   lang: Lang;
+  currentUrl: string;
 }
 
 const handleChangeTheme = () => {
@@ -46,7 +47,7 @@ const handleChangeTheme = () => {
   setTimeout(() => announcement.remove(), 1000);
 };
 
-export const CustomNavbar = ({ navItems, lang }: Props) => {
+export const CustomNavbar = ({ navItems, lang, currentUrl }: Props) => {
   const t = useTranslations(lang);
   const translatePath = useTranslatedPath(lang);
   return (
@@ -58,7 +59,7 @@ export const CustomNavbar = ({ navItems, lang }: Props) => {
 
         <div className="flex items-center space-x-3">
           <div className="hidden items-center space-x-3 md:flex">
-            <LanguageMenu lang={lang} />
+            <LanguageMenu lang={lang} currentUrl={currentUrl} />
 
             <Button
               variant="secondary"
@@ -93,7 +94,7 @@ export const CustomNavbar = ({ navItems, lang }: Props) => {
                   <SunMoon />
                 </Button>
 
-                <LanguageMenu lang={lang} />
+                <LanguageMenu lang={lang} currentUrl={currentUrl} />
               </div>
             </MobileNavMenu>
           </MobileNav>

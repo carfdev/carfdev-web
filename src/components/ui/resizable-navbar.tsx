@@ -50,6 +50,7 @@ interface NavbarLogoProps {
 
 interface LanguageMenuProps {
   lang: Lang;
+  currentUrl: string;
 }
 
 type SheetSide = "top" | "right" | "bottom" | "left";
@@ -173,7 +174,7 @@ export const NavbarLogo = ({ lang }: NavbarLogoProps) => {
   const translatePath = useTranslatedPath(lang);
   const t = useTranslations(lang);
 
-  const href = useMemo(() => translatePath(""), [translatePath]);
+  const href = useMemo(() => translatePath("/#main-content"), [translatePath]);
   const ariaLabel = useMemo(() => t("nav").logoLabel, [t]);
 
   return (
@@ -287,7 +288,7 @@ export const MobileNavToggle = () => {
 // Language Menu Component
 // ============================================================================
 
-export const LanguageMenu = ({ lang }: LanguageMenuProps) => {
+export const LanguageMenu = ({ lang, currentUrl }: LanguageMenuProps) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -302,7 +303,9 @@ export const LanguageMenu = ({ lang }: LanguageMenuProps) => {
                 <li key={code}>
                   <NavigationMenuLink asChild>
                     <a
-                      href={code === "en" ? "/" : `/${code}`}
+                      href={
+                        code === "en" ? currentUrl : `/${code}${currentUrl}`
+                      }
                       className="flex flex-row items-center gap-2"
                     >
                       <span>{flag}</span> {label}
