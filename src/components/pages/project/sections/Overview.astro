@@ -1,5 +1,60 @@
 ---
 import { Link } from "@/components/ui/link";
+import EricReyesMac from "@/assets/images/ericReyes-mac.webp";
+import EricReyesIphone from "@/assets/images/ericReyes-iphone.webp";
+import { Image } from "astro:assets";
+import { Badge } from "@/components/ui/badge";
+import type { TablerIconName } from "@/components/ui/tabler-icon";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
+
+interface Item {
+  name: string;
+  link: string;
+  icon: TablerIconName;
+}
+
+const items: Item[] = [
+  {
+    name: "Astro",
+    link: "https://astro.build",
+    icon: "IconBrandAstro",
+  },
+  {
+    name: "Tailwind CSS",
+    link: "https://tailwindcss.com",
+    icon: "IconBrandTailwind",
+  },
+  {
+    name: "Docker",
+    link: "https://www.docker.com",
+    icon: "IconBrandDocker",
+  },
+  {
+    name: "Git",
+    link: "https://git-scm.com",
+    icon: "IconBrandGit",
+  },
+  {
+    name: "Typescript",
+    link: "https://www.typescriptlang.org",
+    icon: "IconBrandTypescript",
+  },
+  {
+    name: "Go",
+    link: "https://go.dev",
+    icon: "IconBrandGolang",
+  },
+  {
+    name: "Cloudflare",
+    link: "https://www.cloudflare.com",
+    icon: "IconBrandCloudflare",
+  },
+  {
+    name: "Figma",
+    link: "https://www.figma.com",
+    icon: "IconBrandFigma",
+  },
+];
 ---
 
 <section id="overview" class="bg-secondary py-16">
@@ -31,12 +86,9 @@ import { Link } from "@/components/ui/link";
             </div>
           </div>
 
-          <div
-            class="flex h-80 items-center justify-center rounded-lg bg-neutral-300"
-          >
-            <span class="text-lg text-white"
-              >Mobile Mockup Showcase - Before &amp; After</span
-            >
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <Image class="h-64 object-contain" src={EricReyesMac} alt="" />
+            <Image class="h-64 object-contain" src={EricReyesIphone} alt="" />
           </div>
 
           <div>
@@ -70,63 +122,9 @@ import { Link } from "@/components/ui/link";
             </div>
           </div>
 
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div
-              class="flex h-64 items-center justify-center rounded-lg bg-neutral-300"
-            >
-              <span class="text-white">Desktop Menu Interface</span>
-            </div>
-            <div
-              class="flex h-64 items-center justify-center rounded-lg bg-neutral-300"
-            >
-              <span class="text-white">Reservation Flow Mockup</span>
-            </div>
-          </div>
-
           <div>
             <h2>Technologies Used</h2>
-            <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">Astro</span>
-              </div>
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">React</span>
-              </div>
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">Node.js</span>
-              </div>
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">PostgreSQL</span>
-              </div>
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">Tailwind CSS</span>
-              </div>
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">Figma</span>
-              </div>
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">Stripe</span>
-              </div>
-              <div class="rounded-lg bg-neutral-100 p-6 text-center">
-                <div class="mx-auto mb-3 h-12 w-12 rounded bg-neutral-400">
-                </div>
-                <span class="text-sm text-neutral-700">Vercel</span>
-              </div>
-            </div>
+            <HoverEffect client:visible items={items} />
           </div>
         </div>
       </div>
@@ -137,22 +135,10 @@ import { Link } from "@/components/ui/link";
             <div>
               <h3 class="mb-2">Services</h3>
               <div class="flex flex-wrap gap-2">
-                <span
-                  class="bg-secondary text-primary rounded-full px-3 py-1 text-sm"
-                  >Web Design</span
-                >
-                <span
-                  class="bg-secondary text-primary rounded-full px-3 py-1 text-sm"
-                  >Development</span
-                >
-                <span
-                  class="bg-secondary text-primary rounded-full px-3 py-1 text-sm"
-                  >UX/UI</span
-                >
-                <span
-                  class="bg-secondary text-primary rounded-full px-3 py-1 text-sm"
-                  >SEO</span
-                >
+                <Badge variant="secondary">Web Design</Badge>
+                <Badge variant="secondary">Development</Badge>
+                <Badge variant="secondary">UX/UI</Badge>
+                <Badge variant="secondary">SEO</Badge>
               </div>
             </div>
 

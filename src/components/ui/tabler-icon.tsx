@@ -7,6 +7,9 @@ import {
   IconBrandTailwind,
   IconBrandDocker,
   IconBrandGit,
+  IconBrandCloudflare,
+  IconBrandGolang,
+  IconBrandFigma,
   type IconProps,
 } from "@tabler/icons-react";
 
@@ -19,6 +22,9 @@ const Icons = {
   IconBrandTailwind,
   IconBrandDocker,
   IconBrandGit,
+  IconBrandCloudflare,
+  IconBrandGolang,
+  IconBrandFigma,
 } as const;
 
 export type TablerIconName = keyof typeof Icons;

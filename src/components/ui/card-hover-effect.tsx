@@ -11,7 +11,7 @@ export const HoverEffect = ({
 }: {
   items: {
     name: string;
-    description: string;
+    description?: string;
     link: string;
     icon: TablerIconName;
   }[];
@@ -51,7 +51,9 @@ export const HoverEffect = ({
           <Card>
             <CardIcon icon={item.icon} />
             <CardTitle>{item.name}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            {item.description && (
+              <CardDescription>{item.description}</CardDescription>
+            )}
           </Card>
         </a>
       ))}
@@ -85,7 +87,7 @@ export const CardTitle = ({
   className?: string;
   children: React.ReactNode;
 }) => {
-  return <h3>{children}</h3>;
+  return <h3 className="mb-0">{children}</h3>;
 };
 export const CardDescription = ({
   className,
@@ -95,7 +97,9 @@ export const CardDescription = ({
   children: React.ReactNode;
 }) => {
   return (
-    <p className={cn("text-muted-foreground text-sm", className)}>{children}</p>
+    <p className={cn("text-muted-foreground mt-4 text-sm", className)}>
+      {children}
+    </p>
   );
 };
 
