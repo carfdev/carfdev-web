@@ -4,13 +4,17 @@ import Hero from "./sections/Hero.astro";
 import Overview from "./sections/Overview.astro";
 import DesignProcess from "./sections/DesignProcess.astro";
 import { CustomBreadcrumb } from "./sections/custom-breadcrumb";
-import { getLangFromUrl } from "@/i18n/utils";
+import Testimonial from "./sections/Testimonial.astro";
+import CTA from "./sections/CTA.astro";
+import LessonsLearned from "./sections/LessonsLearned.astro";
+import type { projectUi } from "@/i18n/project-ui";
+import { getLangFromUrl } from "@/i18n/project-utils";
 
 interface Props {
-  projectId: string;
+  projectId: keyof (typeof projectUi)[typeof lang];
 }
-const { projectId } = Astro.props;
 
+const { projectId } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -18,7 +22,10 @@ const lang = getLangFromUrl(Astro.url);
   <div class="container mx-auto mt-24 px-4">
     <CustomBreadcrumb lang={lang} />
   </div>
-  <Hero url={`/${projectId}`} />
+  <Hero projectId={projectId} />
   <Overview />
   <DesignProcess />
+  <Testimonial />
+  <CTA />
+  <LessonsLearned />
 </Layout>

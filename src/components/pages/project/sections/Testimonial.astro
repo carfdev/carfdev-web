@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section id="testimonial" class="bg-secondary py-20">
+  <div class="container mx-auto px-6">
+    <div class="mx-auto max-w-4xl text-center">
+      <div class="mb-8">
+        <Image
+          src="https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=owner"
+          alt="EricReyes Owner"
+          class="mx-auto mb-6 h-20 w-20 rounded-full"
+          inferSize
+        />
+      </div>
+      <blockquote
+        class="text-primary mb-8 text-2xl leading-relaxed md:text-3xl"
+      >
+        "Working with Carfdev was seamless. Our new site is fast, beautiful, and
+        our customers love it. The reservation system has transformed how we
+        manage bookings, and we've seen a remarkable increase in online orders."
+      </blockquote>
+      <div class="text-muted-foreground">
+        <div class="text-lg">Eric Reyes</div>
+        <div>Owner, EricReyes Barbershop</div>
+      </div>
+    </div>
+  </div>
+</section>

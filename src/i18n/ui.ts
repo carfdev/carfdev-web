@@ -123,14 +123,6 @@ export const ui: UI = {
           imageAlt:
             "Mockup of the professional barber Eric Reyes portfolio website",
         },
-        {
-          title: "Södermalm Flow Yoga",
-          description:
-            "A custom booking platform and informational website for a boutique yoga studio, enabling easy class scheduling and membership management for their clients.",
-          techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          url: "/project/sodermalm-flow-yoga",
-          imageAlt: "Södermalm Flow Yoga project screenshot",
-        },
       ],
     },
     process: {
@@ -451,14 +443,6 @@ export const ui: UI = {
           url: "/project/eric-reyes",
           imageAlt:
             "Mockup del sitio web portafolio del barbero profesional Eric Reyes.",
-        },
-        {
-          title: "Södermalm Flow Yoga",
-          description:
-            "Una plataforma de reservas personalizada y sitio informativo para un estudio boutique de yoga, facilitando la gestión de clases y membresías para sus clientes.",
-          techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          url: "/project/sodermalm-flow-yoga",
-          imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
     },
@@ -783,14 +767,6 @@ export const ui: UI = {
           url: "/project/eric-reyes",
           imageAlt:
             "Mockup av den professionella barberaren Eric Reyes portföljsida.",
-        },
-        {
-          title: "Södermalm Flow Yoga",
-          description:
-            "En skräddarsydd bokningsplattform och informationswebbplats för en yogastudio, som möjliggör enkel klassbokning och medlemshantering för deras kunder.",
-          techStack: ["Next.js", "Tailwind CSS", "MongoDB", "Cloudflare"],
-          url: "/project/sodermalm-flow-yoga",
-          imageAlt: "Södermalm Flow Yoga project screenshot",
         },
       ],
     },

@@ -1,22 +1,29 @@
 ---
 import { Image } from "astro:assets";
-import EricReyesImg from "@/assets/images/ericReyes.webp";
+import { useTranslations, getLangFromUrl } from "@/i18n/project-utils";
+import type { projectUi } from "@/i18n/project-ui";
 
 interface Props {
-  url: string;
+  projectId: keyof (typeof projectUi)[typeof lang];
 }
-const { url }: Props = Astro.props;
+const { projectId }: Props = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const ui = t(projectId);
+const hero = ui.hero;
 ---
 
 <section id="project-header" class="bg-background py-12">
   <div class="container mx-auto grid max-w-4xl gap-8 px-6 text-center">
-    <h1>EricReyes Barbershop <br /> New Website</h1>
+    <h1 class="text-balance">{hero.title}</h1>
 
     <Image
-      transition:name={`image/project${url}`}
+      transition:name={`image/project/${projectId}`}
       class="bg-input h-96 rounded-lg object-cover object-top"
-      src={EricReyesImg}
-      alt="Mockup of the professional barber Eric Reyes portfolio website"
+      src={hero.image}
+      alt={hero.imageAlt}
       loading="eager"
     />
   </div>

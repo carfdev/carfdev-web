@@ -1,5 +1,6 @@
 ---
 import ProjectPage from "@/components/pages/project/ProjectPage.astro";
+import { projectUi } from "@/i18n/project-ui";
 import { useTranslations } from "@/i18n/utils";
 
 export async function getStaticPaths() {
@@ -8,7 +9,15 @@ export async function getStaticPaths() {
   }));
 }
 
-const { id } = Astro.params;
+const idRaw = Astro.params.id;
+const id =
+  idRaw in projectUi["sv"]
+    ? (idRaw as keyof (typeof projectUi)["sv"])
+    : undefined;
+
+if (!id) {
+  throw new Error(`Project ID "${idRaw}" don't exist`);
+}
 ---
 
 <ProjectPage projectId={id} />

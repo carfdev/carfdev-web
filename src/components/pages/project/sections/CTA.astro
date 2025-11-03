@@ -1,0 +1,25 @@
+---
+import { Link } from "@/components/ui/link";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatedPath = useTranslatedPath(lang);
+---
+
+<section id="next-project-cta" class="bg-primary py-20 text-white">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-primary-foreground">Ready to build your new website?</h2>
+    <p class="text-muted mx-auto mb-10 max-w-2xl text-xl">
+      Let's create something amazing together. From concept to launch, we'll
+      guide you through every step of the process.
+    </p>
+    <Link
+      href={translatedPath("/#contact")}
+      className="cursor-pointer"
+      variant="secondary"
+      size="lg"
+    >
+      Let's Talk
+    </Link>
+  </div>
+</section>
