@@ -9,6 +9,7 @@ import {
 import type { projectUi } from "@/i18n/project-ui";
 import { useTranslations } from "@/i18n/project-utils";
 import { useTranslatedPath, type Lang } from "@/i18n/utils";
+import { Fragment } from "react/jsx-runtime";
 
 interface Props {
   lang: Lang;
@@ -27,14 +28,14 @@ export function CustomBreadcrumb({ lang, projectId }: Props) {
     <Breadcrumb>
       <BreadcrumbList>
         {breadcrumb.map((item, index) => (
-          <>
+          <Fragment key={`breadcrumb-${index}`}>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
                 <a href={translatePath(path[index])}>{item}</a>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
-          </>
+          </Fragment>
         ))}
         <BreadcrumbItem>
           <BreadcrumbPage>{projectName}</BreadcrumbPage>

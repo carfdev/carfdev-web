@@ -244,7 +244,7 @@ export const ui: UI = {
           "New Website",
           "E-Commerce Store",
           "Website Redesign",
-          "web Application",
+          "Web Application",
           "Performance Optimization",
           "Other",
         ],

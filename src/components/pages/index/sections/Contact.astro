@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import ContactDetail from "./ContactDetail.astro";
-
+import { Toaster } from "@/components/ui/toaster";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -55,4 +55,5 @@ const contact = t("contact");
       </div>
     </div>
   </div>
+  <Toaster client:load />
 </section>

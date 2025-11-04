@@ -9,7 +9,6 @@ import About from "./sections/About.astro";
 import Tech from "./sections/Tech.astro";
 import CTA from "./sections/CTA.astro";
 import Contact from "./sections/Contact.astro";
-import { Toaster } from "@/components/ui/sonner";
 ---
 
 <Layout>
@@ -22,5 +21,4 @@ import { Toaster } from "@/components/ui/sonner";
   <Tech />
   <CTA />
   <Contact />
-  <Toaster transition:persist position="top-center" client:idle />
 </Layout>

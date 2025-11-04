@@ -2,7 +2,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
-import { toast } from "sonner";
 import {
   Form,
   FormControl,
@@ -22,9 +21,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { CircleCheck, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { useTranslations, type Lang } from "@/i18n/utils";
 import { useMemo } from "react";
+import { toast } from "@/components/ui/toaster";
 
 interface Props {
   lang: Lang;
@@ -95,9 +95,7 @@ export function ContactForm({ lang }: Props) {
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     toast(ui.successMessage.title, {
-      icon: <CircleCheck className="size-4" />,
       description: ui.successMessage.description,
-      richColors: true,
     });
     // eslint-disable-next-line no-undef
     console.log({ values });
