@@ -11,8 +11,7 @@ const { projectId }: Props = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const ui = t(projectId);
-const hero = ui.hero;
+const hero = t(projectId).hero;
 ---
 
 <section id="project-header" class="bg-background py-12">

@@ -1,60 +1,19 @@
 ---
 import { Link } from "@/components/ui/link";
-import EricReyesMac from "@/assets/images/ericReyes-mac.webp";
-import EricReyesIphone from "@/assets/images/ericReyes-iphone.webp";
 import { Image } from "astro:assets";
 import { Badge } from "@/components/ui/badge";
-import type { TablerIconName } from "@/components/ui/tabler-icon";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import type { projectUi } from "@/i18n/project-ui";
+import { getLangFromUrl, useTranslations } from "@/i18n/project-utils";
 
-interface Item {
-  name: string;
-  link: string;
-  icon: TablerIconName;
+interface Props {
+  projectId: keyof (typeof projectUi)[typeof lang];
 }
 
-const items: Item[] = [
-  {
-    name: "Astro",
-    link: "https://astro.build",
-    icon: "IconBrandAstro",
-  },
-  {
-    name: "Tailwind CSS",
-    link: "https://tailwindcss.com",
-    icon: "IconBrandTailwind",
-  },
-  {
-    name: "Docker",
-    link: "https://www.docker.com",
-    icon: "IconBrandDocker",
-  },
-  {
-    name: "Git",
-    link: "https://git-scm.com",
-    icon: "IconBrandGit",
-  },
-  {
-    name: "Typescript",
-    link: "https://www.typescriptlang.org",
-    icon: "IconBrandTypescript",
-  },
-  {
-    name: "Go",
-    link: "https://go.dev",
-    icon: "IconBrandGolang",
-  },
-  {
-    name: "Cloudflare",
-    link: "https://www.cloudflare.com",
-    icon: "IconBrandCloudflare",
-  },
-  {
-    name: "Figma",
-    link: "https://www.figma.com",
-    icon: "IconBrandFigma",
-  },
-];
+const { projectId } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const overview = t(projectId).overview;
 ---
 
 <section id="overview" class="bg-secondary py-16">
@@ -63,68 +22,34 @@ const items: Item[] = [
       <div class="lg:col-span-8">
         <div class="space-y-16">
           <div>
-            <h2>The Challenge</h2>
+            <h2>{overview.challenge.title}</h2>
             <div class="prose prose-lg text-muted-foreground space-y-4">
-              <p>
-                Eric Reyes, a professional barber known for his precision and
-                style, lacked an online presence that matched the quality of his
-                work. His previous social media pages showcased his skills but
-                didn’t provide a professional platform for clients to explore
-                his services or book appointments easily.
-              </p>
-              <p>
-                Without a dedicated website, potential clients struggled to find
-                detailed information, view his portfolio, or contact him
-                directly. Eric needed a sleek, modern portfolio that reflected
-                his craftsmanship and helped him build trust with new customers.
-              </p>
-              <p>
-                The goal was clear: create a personal brand website that
-                highlights his expertise, showcases his best transformations,
-                and makes booking an effortless experience for every client.
-              </p>
+              {overview.challenge.description.map((item) => <p>{item}</p>)}
             </div>
           </div>
 
           <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <Image class="h-64 object-contain" src={EricReyesMac} alt="" />
-            <Image class="h-64 object-contain" src={EricReyesIphone} alt="" />
+            {
+              overview.images.map((item) => (
+                <Image
+                  class="h-64 object-contain"
+                  src={item.image}
+                  alt={item.alt}
+                />
+              ))
+            }
           </div>
 
           <div>
-            <h2>The Solution</h2>
+            <h2>{overview.solution.title}</h2>
             <div class="prose prose-lg text-muted-foreground space-y-4">
-              <p>
-                Our approach focused on crafting a modern, mobile-first
-                portfolio that captures Eric Reyes’s professionalism and
-                artistic style. We started by analyzing how potential clients
-                search for barbers online and what inspires trust and conversion
-                in personal service websites.
-              </p>
-              <p>
-                The new design features clean navigation, bold visuals of Eric’s
-                best work, and a seamless appointment booking flow. Clients can
-                easily browse his services, view transformations, and schedule a
-                session—all from any device.
-              </p>
-              <p>
-                Visually, the site combines minimal aesthetics with
-                high-contrast photography to highlight the precision and detail
-                of his craft. Every section was built to reinforce Eric’s
-                personal brand while keeping the user experience simple and
-                intuitive.
-              </p>
-              <p>
-                Additionally, we optimized the website for local SEO, helping
-                Eric rank higher in barber-related searches in his area and
-                attract a steady stream of new clients.
-              </p>
+              {overview.solution.description.map((item) => <p>{item}</p>)}
             </div>
           </div>
 
           <div>
-            <h2>Technologies Used</h2>
-            <HoverEffect client:visible items={items} />
+            <h2>{overview.technologies.title}</h2>
+            <HoverEffect client:visible items={overview.technologies.items} />
           </div>
         </div>
       </div>
@@ -133,38 +58,50 @@ const items: Item[] = [
         <div class="bg-background sticky top-32 rounded-lg p-8 shadow">
           <div class="space-y-6">
             <div>
-              <h3 class="mb-2">Services</h3>
+              <h3 class="mb-2">{overview.card.services.title}</h3>
               <div class="flex flex-wrap gap-2">
-                <Badge variant="secondary">Web Design</Badge>
-                <Badge variant="secondary">Development</Badge>
-                <Badge variant="secondary">UX/UI</Badge>
-                <Badge variant="secondary">SEO</Badge>
+                {
+                  overview.card.services.items.map((item) => (
+                    <Badge variant="secondary">{item}</Badge>
+                  ))
+                }
               </div>
             </div>
 
             <div>
-              <h3 class="mb-0">Industry</h3>
-              <p class="text-muted-foreground">Services</p>
+              <h3 class="mb-0">{overview.card.industry.title}</h3>
+              {
+                overview.card.industry.items.map((item) => (
+                  <p class="text-muted-foreground">{item}</p>
+                ))
+              }
             </div>
 
             <div>
-              <h3 class="mb-0">Timeline</h3>
-              <p class="text-muted-foreground">1 Week</p>
+              <h3 class="mb-0">{overview.card.timeline.title}</h3>
+              {
+                overview.card.timeline.items.map((item) => (
+                  <p class="text-muted-foreground">{item}</p>
+                ))
+              }
             </div>
-
             <div>
-              <h3 class="mb-0">Project Scale</h3>
-              <p class="text-muted-foreground">25 000 kr</p>
+              <h3 class="mb-0">{overview.card.scale.title}</h3>
+              {
+                overview.card.scale.items.map((item) => (
+                  <p class="text-muted-foreground">{item}</p>
+                ))
+              }
             </div>
 
             <Link
               className="w-full cursor-pointer"
               size="lg"
-              href="https://www.ericreyes.se"
+              href={overview.card.btn.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              View Live Site
+              {overview.card.btn.text}
             </Link>
           </div>
         </div>

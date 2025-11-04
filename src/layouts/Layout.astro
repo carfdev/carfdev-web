@@ -1,7 +1,6 @@
 ---
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import { Toaster } from "@/components/ui/sonner";
 
 import {
   getLangFromUrl,
@@ -51,7 +50,6 @@ const navItems = t("nav").links.slice() as {
       currentUrl={currentUrl}
     />
     <main id="main-content"><slot /></main>
-    <Toaster transition:persist position="top-center" client:idle />
     <Footer />
   </body>
 </html>
