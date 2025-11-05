@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { getLangFromUrl, useTranslatedPath } from "@/i18n/index-ui";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   title: string;
@@ -12,7 +13,7 @@ interface Props {
   techStack: readonly string[];
   url: string;
   imageAlt: string;
-  // eslint-disable-next-line no-undef
+
   imageSrc: ImageMetadata;
 }
 
