@@ -23,8 +23,8 @@ const lang = getLangFromUrl(Astro.url);
   </div>
   <Hero projectId={projectId} />
   <Overview projectId={projectId} />
-  <DesignProcess />
-  <Testimonial />
-  <CTA />
-  <LessonsLearned />
+  <DesignProcess projectId={projectId} />
+  <Testimonial projectId={projectId} />
+  <CTA projectId={projectId} />
+  <LessonsLearned projectId={projectId} />
 </Layout>

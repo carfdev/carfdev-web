@@ -1,28 +1,35 @@
 ---
 import { Image } from "astro:assets";
+import {
+  useTranslations,
+  getLangFromUrl,
+  type projectUi,
+} from "@/i18n/project-ui";
+
+interface Props {
+  projectId: keyof (typeof projectUi)[typeof lang];
+}
+const { projectId }: Props = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const testimonial = t(projectId).testimonial;
 ---
 
 <section id="testimonial" class="bg-secondary py-20">
   <div class="container mx-auto px-6">
     <div class="mx-auto max-w-4xl text-center">
-      <div class="mb-8">
-        <Image
-          src="https://api.dicebear.com/7.x/notionists/svg?scale=200&seed=owner"
-          alt="EricReyes Owner"
-          class="mx-auto mb-6 h-20 w-20 rounded-full"
-          inferSize
-        />
-      </div>
-      <blockquote
-        class="text-primary mb-8 text-2xl leading-relaxed md:text-3xl"
-      >
-        "Working with Carfdev was seamless. Our new site is fast, beautiful, and
-        our customers love it. The reservation system has transformed how we
-        manage bookings, and we've seen a remarkable increase in online orders."
+      <Image
+        src={testimonial.img}
+        alt={testimonial.imgAlt}
+        class="mx-auto mb-14 h-20 w-20 rounded-full"
+      />
+      <blockquote class="text-primary mb-8 text-xl leading-relaxed md:text-2xl">
+        "{testimonial.testimonial}"
       </blockquote>
       <div class="text-muted-foreground">
-        <div class="text-lg">Eric Reyes</div>
-        <div>Owner, EricReyes Barbershop</div>
+        <div class="text-lg">{testimonial.name}</div>
+        <div>{testimonial.job}</div>
       </div>
     </div>
   </div>

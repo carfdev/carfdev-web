@@ -13,6 +13,43 @@ export interface Project {
   breadcrumb: Breadcrumb;
   hero: Hero;
   overview: Overview;
+  process: Process;
+  cta: CTA;
+  learned: Learned;
+  testimonial: Testimonial;
+}
+
+export interface Testimonial {
+  img: ImageMetadata;
+  imgAlt: string;
+  testimonial: string;
+  name: string;
+  job: string;
+}
+
+export interface Learned {
+  title: string;
+  items: LearnedItem[];
+}
+
+export interface LearnedItem {
+  title: string;
+  description: string;
+}
+
+export interface CTA {
+  title: string;
+  subtitle: string;
+  btn: Btn;
+}
+
+export interface Process {
+  items: ProcessItem[];
+}
+
+export interface ProcessItem {
+  title: string;
+  description: string;
 }
 
 type Breadcrumb = string[];
@@ -41,10 +78,12 @@ export interface Card {
   industry: CardItem;
   timeline: CardItem;
   scale: CardItem;
-  btn: {
-    href: string;
-    text: string;
-  };
+  btn: Btn;
+}
+
+export interface Btn {
+  href?: string;
+  text: string;
 }
 
 export interface CardItem {

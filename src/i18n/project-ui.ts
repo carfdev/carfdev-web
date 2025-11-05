@@ -2,6 +2,7 @@ import type { ProjectUI } from "@/types/project.interface";
 import EricReyesImg from "@/assets/images/ericReyes.webp";
 import EricReyesMacImg from "@/assets/images/ericReyes-mac.webp";
 import EricReyesIphoneImg from "@/assets/images/ericReyes-iphone.webp";
+import EricReyesAvatar from "@/assets/images/ericReyes-avatar.webp";
 import { createI18nUtils } from "./utils";
 
 export const projectUi: ProjectUI = {
@@ -111,6 +112,66 @@ export const projectUi: ProjectUI = {
           },
         },
       },
+      process: {
+        items: [
+          {
+            title: "Research",
+            description:
+              "User interviews, competitor analysis, and market research to understand dining preferences in Stockholm.",
+          },
+          {
+            title: "Design",
+            description:
+              "Wireframing, prototyping, and visual design focused on mobile-first reservation experience.",
+          },
+          {
+            title: "Development",
+            description:
+              "Custom booking system integration, performance optimization, and thorough testing across devices.",
+          },
+        ],
+      },
+      testimonial: {
+        img: EricReyesAvatar,
+        imgAlt: "EricReyes Owner",
+        testimonial:
+          "Working with Carfdev was seamless. Our new site is fast, beautiful, and our customers love it. The reservation system has transformed how we manage bookings, and we've seen a remarkable increase in online orders.",
+        name: "Eric Reyes",
+        job: "Owner, EricReyes Barbershop",
+      },
+      cta: {
+        title: "Ready to build your new website?",
+        subtitle:
+          "Let's create something amazing together. From concept to launch, we'll guide you through every step of the process.",
+        btn: {
+          text: "Let's Talk",
+        },
+      },
+      learned: {
+        title: "Lessons Learned",
+        items: [
+          {
+            title: "Mobile-First is Essential",
+            description:
+              "With 70% of restaurant searches happening on mobile, designing for mobile first wasn't just a best practice—it was critical for business success.",
+          },
+          {
+            title: "User Testing Pays Off",
+            description:
+              "Early user testing revealed friction points in the booking flow that we might have missed, leading to a much smoother final experience.",
+          },
+          {
+            title: "Performance Matters",
+            description:
+              "Restaurant customers are often making quick decisions. Fast loading times directly correlated with higher booking conversion rates.",
+          },
+          {
+            title: "Staff Integration is Key",
+            description:
+              "The booking system's success depended heavily on seamless integration with the restaurant's existing workflow and POS system.",
+          },
+        ],
+      },
     },
   },
   es: {
@@ -219,6 +280,66 @@ export const projectUi: ProjectUI = {
           },
         },
       },
+      process: {
+        items: [
+          {
+            title: "Investigación",
+            description:
+              "Entrevistas con usuarios, análisis de competidores y estudio de mercado para comprender las preferencias gastronómicas en Estocolmo.",
+          },
+          {
+            title: "Diseño",
+            description:
+              "Wireframes, prototipos y diseño visual enfocados en una experiencia de reservas optimizada para móviles.",
+          },
+          {
+            title: "Desarrollo",
+            description:
+              "Integración de un sistema de reservas personalizado, optimización del rendimiento y pruebas exhaustivas en distintos dispositivos.",
+          },
+        ],
+      },
+      testimonial: {
+        img: EricReyesAvatar,
+        imgAlt: "EricReyes Propietario",
+        testimonial:
+          "Trabajar con Carfdev fue muy fácil. Nuestro nuevo sitio es rápido, atractivo y a nuestros clientes les encanta. El sistema de reservas ha transformado la forma en que gestionamos las citas, y hemos visto un aumento notable en los pedidos en línea.",
+        name: "Eric Reyes",
+        job: "Propietario, EricReyes Barbershop",
+      },
+      cta: {
+        title: "¿Listo para crear tu nuevo sitio web?",
+        subtitle:
+          "Creamos algo increíble juntos. Desde el concepto hasta el lanzamiento, te guiaremos en cada paso del proceso.",
+        btn: {
+          text: "Hablemos",
+        },
+      },
+      learned: {
+        title: "Lecciones aprendidas",
+        items: [
+          {
+            title: "El enfoque móvil primero es esencial",
+            description:
+              "Con el 70% de las búsquedas de restaurantes ocurriendo en dispositivos móviles, diseñar con un enfoque mobile-first no solo fue una buena práctica, sino crucial para el éxito del negocio.",
+          },
+          {
+            title: "Las pruebas con usuarios valen la pena",
+            description:
+              "Las pruebas tempranas con usuarios revelaron puntos de fricción en el flujo de reservas que podríamos haber pasado por alto, lo que llevó a una experiencia final mucho más fluida.",
+          },
+          {
+            title: "El rendimiento importa",
+            description:
+              "Los clientes de restaurantes suelen tomar decisiones rápidamente. Los tiempos de carga rápidos se correlacionaron directamente con mayores tasas de conversión en reservas.",
+          },
+          {
+            title: "La integración del personal es clave",
+            description:
+              "El éxito del sistema de reservas dependió en gran medida de una integración fluida con el flujo de trabajo y el sistema POS existente del restaurante.",
+          },
+        ],
+      },
     },
   },
   sv: {
@@ -326,6 +447,66 @@ export const projectUi: ProjectUI = {
             href: "https://www.ericreyes.se",
           },
         },
+      },
+      process: {
+        items: [
+          {
+            title: "Forskning",
+            description:
+              "Användarintervjuer, konkurrentanalys och marknadsundersökning för att förstå matpreferenser i Stockholm.",
+          },
+          {
+            title: "Design",
+            description:
+              "Wireframing, prototypframtagning och visuell design med fokus på en mobilförst bokningsupplevelse.",
+          },
+          {
+            title: "Utveckling",
+            description:
+              "Integration av ett anpassat bokningssystem, prestandaoptimering och noggrann testning på olika enheter.",
+          },
+        ],
+      },
+      testimonial: {
+        img: EricReyesAvatar,
+        imgAlt: "EricReyes Ägare",
+        testimonial:
+          "Att arbeta med Carfdev var smidigt. Vår nya webbplats är snabb, snygg och våra kunder älskar den. Bokningssystemet har förändrat hur vi hanterar bokningar, och vi har sett en remarkabel ökning av onlinebeställningar.",
+        name: "Eric Reyes",
+        job: "Ägare, EricReyes Barbershop",
+      },
+      cta: {
+        title: "Redo att bygga din nya webbplats?",
+        subtitle:
+          "Låt oss skapa något fantastiskt tillsammans. Från koncept till lansering guidar vi dig genom varje steg i processen.",
+        btn: {
+          text: "Låt oss prata",
+        },
+      },
+      learned: {
+        title: "Lärdomar",
+        items: [
+          {
+            title: "Mobil-först är avgörande",
+            description:
+              "Med 70 % av restaurangsökningarna som sker på mobilen var mobil-först-design inte bara en bästa praxis – det var avgörande för affärsframgång.",
+          },
+          {
+            title: "Användartester lönar sig",
+            description:
+              "Tidiga användartester avslöjade friktionspunkter i bokningsflödet som vi annars kunde ha missat, vilket ledde till en mycket smidigare slutanvändarupplevelse.",
+          },
+          {
+            title: "Prestanda spelar roll",
+            description:
+              "Restauranggäster fattar ofta snabba beslut. Snabba laddningstider korrelerade direkt med högre bokningskonverteringsfrekvens.",
+          },
+          {
+            title: "Personalintegration är nyckeln",
+            description:
+              "Bokningssystemets framgång berodde starkt på sömlös integration med restaurangens befintliga arbetsflöde och kassasystem (POS).",
+          },
+        ],
       },
     },
   },

@@ -1,17 +1,29 @@
 ---
 import { Link } from "@/components/ui/link";
-import { getLangFromUrl, useTranslatedPath } from "@/i18n/project-ui";
+import {
+  getLangFromUrl,
+  projectUi,
+  useTranslatedPath,
+  useTranslations,
+} from "@/i18n/project-ui";
+
+interface Props {
+  projectId: keyof (typeof projectUi)[typeof lang];
+}
+const { projectId }: Props = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const translatedPath = useTranslatedPath(lang);
+const t = useTranslations(lang);
+
+const cta = t(projectId).cta;
 ---
 
 <section id="next-project-cta" class="bg-primary py-20 text-white">
   <div class="container mx-auto px-6 text-center">
-    <h2 class="text-primary-foreground">Ready to build your new website?</h2>
+    <h2 class="text-primary-foreground">{cta.title}</h2>
     <p class="text-muted mx-auto mb-10 max-w-2xl text-xl">
-      Let's create something amazing together. From concept to launch, we'll
-      guide you through every step of the process.
+      {cta.subtitle}
     </p>
     <Link
       href={translatedPath("/#contact")}
@@ -19,7 +31,7 @@ const translatedPath = useTranslatedPath(lang);
       variant="secondary"
       size="lg"
     >
-      Let's Talk
+      {cta.btn.text}
     </Link>
   </div>
 </section>

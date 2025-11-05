@@ -1,0 +1,27 @@
+---
+import type { LucideProps } from "lucide-react";
+import type { ForwardRefExoticComponent, RefAttributes } from "react";
+
+interface Props {
+  title: string;
+  description: string;
+  icon: ForwardRefExoticComponent<
+    // eslint-disable-next-line no-undef
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
+}
+
+const { title, description, icon: Icon } = Astro.props;
+---
+
+<div class="text-center">
+  <div
+    class="bg-secondary mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full"
+  >
+    <Icon />
+  </div>
+  <h3>{title}</h3>
+  <p class="text-muted-foreground">
+    {description}
+  </p>
+</div>
