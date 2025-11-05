@@ -1,10 +1,13 @@
 type UIObject = Record<string, any>;
 
-const defaultLang = "en";
-const showDefaultLang = false;
-
-export function createI18nUtils<T extends UIObject>(uiObject: T) {
+export function createI18nUtils<T extends UIObject>(
+  uiObject: T,
+  config?: { defaultLang?: string; showDefaultLang?: boolean },
+) {
   type Lang = string & keyof T;
+
+  const defaultLang = config?.defaultLang ?? "en";
+  const showDefaultLang = config?.showDefaultLang ?? false;
 
   function getLangFromUrl(url: URL): Lang {
     const [, lang] = url.pathname.split("/");
