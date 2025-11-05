@@ -15,7 +15,7 @@ interface Props {
   projectId: keyof (typeof projectUi)["en"];
 }
 
-const path = ["", "/project"];
+const path = ["", "/#work"];
 
 export function CustomBreadcrumb({ lang, projectId }: Props) {
   const translatePath = useTranslatedPath(lang);
