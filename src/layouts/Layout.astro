@@ -29,12 +29,7 @@ const navItems = t("nav").links.slice() as {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={t("meta").description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <Font
-      cssVariable="--font-inter"
-      preload
-      transition:name="font-inter"
-      transition:persist
-    />
+    <Font cssVariable="--font-inter" preload />
     <ClientRouter />
     <title>{t("meta").title}</title>
   </head>
@@ -77,6 +72,13 @@ const navItems = t("nav").links.slice() as {
       event.newDocument.documentElement.classList.add("dark");
     } else {
       event.newDocument.documentElement.classList.remove("dark");
+    }
+
+    const fontPreload = event.newDocument.querySelector(
+      'link[rel="preload"][as="font"]',
+    );
+    if (fontPreload) {
+      fontPreload.remove();
     }
   });
 </script>
