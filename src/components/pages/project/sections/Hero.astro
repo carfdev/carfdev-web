@@ -1,7 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import { useTranslations, getLangFromUrl } from "@/i18n/project-utils";
-import type { projectUi } from "@/i18n/project-ui";
+import {
+  useTranslations,
+  getLangFromUrl,
+  type projectUi,
+} from "@/i18n/project-ui";
 
 interface Props {
   projectId: keyof (typeof projectUi)[typeof lang];

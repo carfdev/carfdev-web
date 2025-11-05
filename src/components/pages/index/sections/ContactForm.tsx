@@ -22,12 +22,12 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
-import { useTranslations, type Lang } from "@/i18n/utils";
+import { useTranslations } from "@/i18n/index-ui";
 import { useMemo } from "react";
 import { toast } from "@/components/ui/toaster";
 
 interface Props {
-  lang: Lang;
+  lang: string;
 }
 
 export function ContactForm({ lang }: Props) {

@@ -3,8 +3,11 @@ import { Link } from "@/components/ui/link";
 import { Image } from "astro:assets";
 import { Badge } from "@/components/ui/badge";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import type { projectUi } from "@/i18n/project-ui";
-import { getLangFromUrl, useTranslations } from "@/i18n/project-utils";
+import {
+  getLangFromUrl,
+  useTranslations,
+  type projectUi,
+} from "@/i18n/project-ui";
 
 interface Props {
   projectId: keyof (typeof projectUi)[typeof lang];

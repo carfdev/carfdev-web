@@ -1,4 +1,4 @@
-import { useTranslatedPath, useTranslations, type Lang } from "@/i18n/utils";
+import { useTranslatedPath, useTranslations } from "@/i18n/index-ui";
 import {
   MobileNav,
   MobileNavHeader,
@@ -19,7 +19,7 @@ interface Props {
     text: string;
     href: string;
   }[];
-  lang: Lang;
+  lang: string;
   currentUrl: string;
 }
 

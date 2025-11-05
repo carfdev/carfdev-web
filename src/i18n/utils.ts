@@ -1,46 +1,58 @@
-import { ui, defaultLang, showDefaultLang } from "./ui";
+type UIObject = Record<string, any>;
 
-export type Lang = string & keyof typeof ui;
+const defaultLang = "en";
+const showDefaultLang = false;
 
-export function getLangFromUrl(url: URL): Lang {
-  const [, lang] = url.pathname.split("/");
-  return lang in ui ? (lang as Lang) : defaultLang;
-}
+export function createI18nUtils<T extends UIObject>(uiObject: T) {
+  type Lang = string & keyof T;
 
-export function getUrlWithoutLang(url: URL): string {
-  const segments = url.pathname.split("/");
-  const [, maybeLang, ...rest] = segments;
+  function getLangFromUrl(url: URL): Lang {
+    const [, lang] = url.pathname.split("/");
+    return lang in uiObject ? (lang as Lang) : defaultLang;
+  }
 
-  const isLangInUi = typeof maybeLang === "string" && maybeLang in ui;
-  const shouldStrip =
-    isLangInUi && (maybeLang !== defaultLang || showDefaultLang);
+  function getUrlWithoutLang(url: URL): string {
+    const segments = url.pathname.split("/");
+    const [, maybeLang, ...rest] = segments;
 
-  const pathnameWithoutLang = shouldStrip
-    ? `/${rest.join("/")}`
-    : url.pathname || "/";
-  const normalizedPath = pathnameWithoutLang === "" ? "/" : pathnameWithoutLang;
+    const isLangInUi = typeof maybeLang === "string" && maybeLang in uiObject;
+    const shouldStrip =
+      isLangInUi && (maybeLang !== defaultLang || showDefaultLang);
 
-  return `${normalizedPath}${url.search || ""}${url.hash || ""}`;
-}
+    const pathnameWithoutLang = shouldStrip
+      ? `/${rest.join("/")}`
+      : url.pathname || "/";
+    const normalizedPath =
+      pathnameWithoutLang === "" ? "/" : pathnameWithoutLang;
 
-export function useTranslations<L extends Lang>(lang: L) {
-  const langObj = ui[lang];
-  const defaultObj = ui[defaultLang];
+    return `${normalizedPath}${url.search || ""}${url.hash || ""}`;
+  }
 
-  return function t<K extends keyof typeof langObj>(
-    key: K,
-  ): (typeof langObj)[K] {
-    return (langObj[key] ??
-      defaultObj[key as keyof typeof defaultObj]) as (typeof langObj)[K];
-  };
-}
+  function useTranslations<L extends Lang>(lang: L) {
+    const langObj = uiObject[lang];
+    const defaultObj = uiObject[defaultLang];
 
-export function useTranslatedPath(lang: Lang) {
-  return function translatePath(path: string, l: Lang = lang): string {
-    if (showDefaultLang || l !== defaultLang) {
-      return `/${l}${path}`;
-    }
+    return function t<K extends keyof typeof langObj>(
+      key: K,
+    ): (typeof langObj)[K] {
+      return (langObj[key] ??
+        defaultObj[key as keyof typeof defaultObj]) as (typeof langObj)[K];
+    };
+  }
 
-    return path || "/";
+  function useTranslatedPath(lang: Lang) {
+    return function translatePath(path: string, l: Lang = lang): string {
+      if (showDefaultLang || l !== defaultLang) {
+        return `/${l}${path}`;
+      }
+      return path || "/";
+    };
+  }
+
+  return {
+    getLangFromUrl,
+    getUrlWithoutLang,
+    useTranslations,
+    useTranslatedPath,
   };
 }

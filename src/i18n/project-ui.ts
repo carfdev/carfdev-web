@@ -2,6 +2,7 @@ import type { ProjectUI } from "@/types/project.interface";
 import EricReyesImg from "@/assets/images/ericReyes.webp";
 import EricReyesMacImg from "@/assets/images/ericReyes-mac.webp";
 import EricReyesIphoneImg from "@/assets/images/ericReyes-iphone.webp";
+import { createI18nUtils } from "./utils";
 
 export const projectUi: ProjectUI = {
   en: {
@@ -329,3 +330,10 @@ export const projectUi: ProjectUI = {
     },
   },
 };
+
+export const {
+  getLangFromUrl,
+  getUrlWithoutLang,
+  useTranslations,
+  useTranslatedPath,
+} = createI18nUtils(projectUi);

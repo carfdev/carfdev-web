@@ -1,15 +1,7 @@
-import type { UI } from "@/types/ui.interface";
+import type { UI } from "@/types/index.interface";
+import { createI18nUtils } from "./utils";
 
-export const languages = {
-  en: "English",
-  es: "Español",
-  sv: "Svenska",
-};
-
-export const defaultLang = "en";
-export const showDefaultLang = false;
-
-export const ui: UI = {
+export const indexUi: UI = {
   en: {
     meta: {
       title: "Carfdev | Custom Web Development for Stockholm Businesses",
@@ -977,3 +969,10 @@ export const ui: UI = {
     },
   },
 };
+
+export const {
+  getLangFromUrl,
+  getUrlWithoutLang,
+  useTranslations,
+  useTranslatedPath,
+} = createI18nUtils(indexUi);

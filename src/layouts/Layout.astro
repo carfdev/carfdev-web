@@ -6,7 +6,7 @@ import {
   getLangFromUrl,
   getUrlWithoutLang,
   useTranslations,
-} from "@/i18n/utils";
+} from "@/i18n/index-ui";
 import { CustomNavbar } from "@/components/customNavbar";
 
 import "@/styles/global.css";
@@ -29,7 +29,12 @@ const navItems = t("nav").links.slice() as {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={t("meta").description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <Font cssVariable="--font-inter" preload />
+    <Font
+      cssVariable="--font-inter"
+      preload
+      transition:name="font-inter"
+      transition:persist
+    />
     <ClientRouter />
     <title>{t("meta").title}</title>
   </head>

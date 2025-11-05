@@ -1,7 +1,7 @@
 ---
 import ProjectPage from "@/components/pages/project/ProjectPage.astro";
 import { projectUi } from "@/i18n/project-ui";
-import { useTranslations } from "@/i18n/utils";
+import { useTranslations } from "@/i18n/index-ui";
 
 export async function getStaticPaths() {
   return useTranslations("es")("portfolio").items.map((item) => ({

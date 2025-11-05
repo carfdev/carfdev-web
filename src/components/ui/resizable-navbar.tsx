@@ -1,4 +1,4 @@
-import { useTranslatedPath, useTranslations, type Lang } from "@/i18n/utils";
+import { useTranslatedPath, useTranslations } from "@/i18n/index-ui";
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon, Languages, Menu, XIcon } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
@@ -36,7 +36,7 @@ interface NavBodyProps {
 
 interface NavItemsProps {
   items: NavItem[];
-  lang: Lang;
+  lang: string;
 }
 
 interface MobileNavHeaderProps {
@@ -45,11 +45,11 @@ interface MobileNavHeaderProps {
 }
 
 interface NavbarLogoProps {
-  lang: Lang;
+  lang: string;
 }
 
 interface LanguageMenuProps {
-  lang: Lang;
+  lang: string;
   currentUrl: string;
 }
 

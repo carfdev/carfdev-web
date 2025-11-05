@@ -7,12 +7,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import type { projectUi } from "@/i18n/project-ui";
-import { useTranslations } from "@/i18n/project-utils";
-import { useTranslatedPath, type Lang } from "@/i18n/utils";
+import { useTranslations, useTranslatedPath } from "@/i18n/project-ui";
 import { Fragment } from "react/jsx-runtime";
 
 interface Props {
-  lang: Lang;
+  lang: string;
   projectId: keyof (typeof projectUi)["en"];
 }
 
