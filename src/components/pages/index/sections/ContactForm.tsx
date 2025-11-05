@@ -25,10 +25,27 @@ import { Send } from "lucide-react";
 import { useTranslations } from "@/i18n/index-ui";
 import { useMemo } from "react";
 import { toast } from "@/components/ui/toaster";
+import { cn } from "@/lib/utils";
 
 interface Props {
   lang: string;
 }
+
+const PROJECT_TYPES = [
+  "new-website",
+  "e-commerce",
+  "redesign",
+  "web-app",
+  "optimization",
+  "other",
+] as const;
+
+const BUDGET_RANGES = [
+  "under-50k",
+  "50k-100k",
+  "100k-200k",
+  "200k-plus",
+] as const;
 
 export function ContactForm({ lang }: Props) {
   const t = useTranslations(lang);
@@ -46,39 +63,18 @@ export function ContactForm({ lang }: Props) {
         message: ui.emailErrorMessage,
       }),
       companyName: z.string().optional(),
-      projectType: z
-        .string()
-        .refine(
-          (val) =>
-            [
-              "New Website",
-              "E-commerce Store",
-              "Website Redesign",
-              "Web Application",
-              "Performance Optimization",
-              "Other",
-            ].includes(val),
-          { message: ui.projectTypeErrorMessage },
-        ),
-
-      budget: z
-        .string()
-        .refine(
-          (val) =>
-            [
-              "Under 50,000 SEK",
-              "50,000 - 100,000 SEK",
-              "100,000 - 200,000 SEK",
-              "200,000+ SEK",
-            ].includes(val),
-          { message: ui.budgetErrorMessage },
-        ),
+      projectType: z.enum(PROJECT_TYPES, {
+        errorMap: () => ({ message: ui.projectTypeErrorMessage }),
+      }),
+      budget: z.enum(BUDGET_RANGES, {
+        errorMap: () => ({ message: ui.budgetErrorMessage }),
+      }),
       message: z.string().min(10, {
         message: ui.messageErrorMessage,
       }),
     });
   }, [lang]);
-  // 1. Define your form.
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -86,22 +82,21 @@ export function ContactForm({ lang }: Props) {
       lastName: "",
       email: "",
       companyName: "",
-      projectType: "",
-      budget: "",
+      projectType: undefined,
+      budget: undefined,
       message: "",
     },
   });
 
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     toast(ui.successMessage.title, {
       description: ui.successMessage.description,
     });
     // eslint-disable-next-line no-undef
     console.log({ values });
-
     form.reset();
   }
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -133,6 +128,7 @@ export function ContactForm({ lang }: Props) {
             )}
           />
         </div>
+
         <FormField
           control={form.control}
           name="email"
@@ -150,6 +146,7 @@ export function ContactForm({ lang }: Props) {
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="companyName"
@@ -162,22 +159,20 @@ export function ContactForm({ lang }: Props) {
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="projectType"
           render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{ui.projectTypeLabel} *</FormLabel>
-              <Select
-                onValueChange={field.onChange}
-                defaultValue={field.value}
-                {...field}
-              >
+              <Select onValueChange={field.onChange} value={field.value || ""}>
                 <FormControl>
                   <SelectTrigger
-                    className={
-                      fieldState.error ? "border-destructive w-full" : "w-full"
-                    }
+                    className={cn(
+                      fieldState.error ? "border-destructive" : "",
+                      "w-full",
+                    )}
                   >
                     <SelectValue placeholder={ui.projectTypePlaceholder} />
                   </SelectTrigger>
@@ -186,43 +181,31 @@ export function ContactForm({ lang }: Props) {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>{ui.projectTypePlaceholder}</SelectLabel>
-                    {ui.projectTypeOptions.map(
-                      (option: string, index: number) => {
-                        const values = [
-                          "New Website",
-                          "E-commerce Store",
-                          "Website Redesign",
-                          "Web Application",
-                          "Performance Optimization",
-                          "Other",
-                        ];
-                        return (
-                          <SelectItem key={values[index]} value={values[index]}>
-                            {option}
-                          </SelectItem>
-                        );
-                      },
-                    )}
+                    {PROJECT_TYPES.map((value, index) => (
+                      <SelectItem key={value} value={value}>
+                        {ui.projectTypeOptions[index]}
+                      </SelectItem>
+                    ))}
                   </SelectGroup>
                 </SelectContent>
               </Select>
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="budget"
           render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{ui.budgetLabel} *</FormLabel>
-              <Select
-                onValueChange={field.onChange}
-                defaultValue={field.value}
-                {...field}
-              >
+              <Select onValueChange={field.onChange} value={field.value || ""}>
                 <FormControl>
                   <SelectTrigger
-                    className={`w-full ${fieldState.error ? "border-destructive" : ""}`}
+                    className={cn(
+                      fieldState.error ? "border-destructive" : "",
+                      "w-full",
+                    )}
                   >
                     <SelectValue placeholder={ui.budgetPlaceholder} />
                   </SelectTrigger>
@@ -231,22 +214,18 @@ export function ContactForm({ lang }: Props) {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>{ui.budgetPlaceholder}</SelectLabel>
-                    <SelectItem value="Under 50,000 SEK">
-                      {ui.budgetOptions[0]}
-                    </SelectItem>
-                    <SelectItem value="50,000 - 100,000 SEK">
-                      50,000 - 100,000 SEK
-                    </SelectItem>
-                    <SelectItem value="100,000 - 200,000 SEK">
-                      100,000 - 200,000 SEK
-                    </SelectItem>
-                    <SelectItem value="200,000+ SEK">200,000+ SEK</SelectItem>
+                    {BUDGET_RANGES.map((value, index) => (
+                      <SelectItem key={value} value={value}>
+                        {ui.budgetOptions[index]}
+                      </SelectItem>
+                    ))}
                   </SelectGroup>
                 </SelectContent>
               </Select>
             </FormItem>
           )}
         />
+
         <FormField
           control={form.control}
           name="message"
@@ -260,7 +239,8 @@ export function ContactForm({ lang }: Props) {
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-full cursor-pointer">
+
+        <Button type="submit" size="lg" className="w-full">
           <Send />
           {ui.submitButton}
         </Button>
