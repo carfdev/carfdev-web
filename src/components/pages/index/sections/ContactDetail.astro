@@ -14,8 +14,8 @@ const { label, value, note, icon }: Props = Astro.props;
     <LucideIcon name={icon} />
   </div>
   <div>
-    <h4 class="text-primary mb-1">{label}</h4>
-    <p class="text-muted-foreground">{value}</p>
-    <p class="text-ring text-sm">{note}</p>
+    <h4 class="text-primary text-lg">{label}</h4>
+    <p class="text-muted-foreground leading-tight">{value}</p>
+    <p class="text-ring/70 text-sm leading-tight">{note}</p>
   </div>
 </div>

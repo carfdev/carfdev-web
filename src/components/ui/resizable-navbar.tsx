@@ -130,7 +130,7 @@ export const NavBody = ({
       transition={NAV_BODY_TRANSITION}
       className={cn(
         "relative z-[60] mx-auto flex w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 dark:bg-transparent",
-        visible && "bg-white/80 dark:bg-neutral-950/80",
+        visible && "bg-background/80",
         className,
       )}
       aria-label="Main navigation"
@@ -147,19 +147,19 @@ export const NavItems = ({ items, lang }: NavItemsProps) => {
   return (
     <motion.ul
       onMouseLeave={() => setHovered(null)}
-      className="hidden flex-1 items-center justify-center space-x-2 text-sm font-normal text-zinc-600 transition duration-200 hover:text-zinc-800 md:flex"
+      className="text-muted-foreground hover:text-primary hidden flex-1 items-center justify-center space-x-2 text-sm font-normal transition duration-200 md:flex"
     >
       {items.map((item, idx) => (
         <li key={`link-${idx}`}>
           <a
             onMouseEnter={() => setHovered(idx)}
-            className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+            className="text-muted-foreground relative px-4 py-2"
             href={translatePath(item.href)}
           >
             {hovered === idx && (
               <motion.div
                 layoutId="hovered"
-                className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                className="bg-muted absolute inset-0 h-full w-full rounded-full"
               />
             )}
             <span className="relative z-20">{item.text}</span>
