@@ -50,8 +50,9 @@
 
   --breakpoint-xs: 30rem;
 
-  --font-inter: var(--font-inter);
-  --default-font-family: var(--font-inter);
+  --font-switzer: var(--font-switzer);
+  --font-plein: var(--font-plein);
+  --default-font-family: var(--font-switzer);
 
   --animate-cell-ripple: cell-ripple var(--duration, 200ms) ease-out none 1
     var(--delay, 0ms);
@@ -185,15 +186,15 @@
   }
 
   h1 {
-    @apply text-primary xs:leading-tight relative max-w-4xl text-center text-[clamp(1.5rem,5vw,3.75rem)] tracking-tighter text-pretty md:leading-none;
+    @apply text-primary font-plein relative max-w-4xl text-center text-[clamp(1.5rem,5vw,3.75rem)] font-bold tracking-tight text-pretty md:leading-[1.1];
   }
 
   h2 {
-    @apply text-primary mb-4 text-[clamp(1.4rem,4vw,3rem)] tracking-tighter text-pretty;
+    @apply text-primary font-plein mb-4 text-[clamp(1.4rem,4vw,3rem)] font-bold text-pretty;
   }
 
   h3 {
-    @apply text-primary mb-4 text-[clamp(1.25rem,2vw,1.5rem)];
+    @apply text-primary font-plein mb-4 text-[clamp(1.25rem,2vw,1.5rem)] font-bold;
   }
 
   .subtitle {

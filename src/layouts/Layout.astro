@@ -29,12 +29,13 @@ const navItems = t("nav").links.slice() as {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={t("meta").description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-switzer" preload />
+    <Font cssVariable="--font-plein" preload />
     <ClientRouter />
     <title>{t("meta").title}</title>
   </head>
   <body
-    class="bg-background font-inter relative grid min-h-screen grid-rows-[auto_1fr_auto]"
+    class="bg-background relative grid min-h-screen grid-rows-[auto_1fr_auto]"
   >
     <a
       href="#main-content"
@@ -74,11 +75,11 @@ const navItems = t("nav").links.slice() as {
       event.newDocument.documentElement.classList.remove("dark");
     }
 
-    const fontPreload = event.newDocument.querySelector(
+    const fontsPreload = event.newDocument.querySelectorAll(
       'link[rel="preload"][as="font"]',
     );
-    if (fontPreload) {
-      fontPreload.remove();
+    if (fontsPreload) {
+      fontsPreload.forEach((font) => font.remove());
     }
   });
 </script>

@@ -10,10 +10,18 @@ export default defineConfig({
   experimental: {
     fonts: [
       {
-        provider: fontProviders.fontsource(),
-        name: "Inter",
-        cssVariable: "--font-inter",
+        provider: fontProviders.fontshare(),
+        name: "Switzer",
+        cssVariable: "--font-switzer",
         weights: [400],
+        styles: ["normal"],
+        subsets: ["latin"],
+      },
+      {
+        provider: fontProviders.fontshare(),
+        name: "Plein",
+        cssVariable: "--font-plein",
+        weights: [700],
         styles: ["normal"],
         subsets: ["latin"],
       },

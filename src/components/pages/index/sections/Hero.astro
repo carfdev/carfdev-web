@@ -21,11 +21,7 @@ const hero = t("hero");
     <h1>
       {hero.title}
     </h1>
-    <TextGenerateEffect
-      client:visible
-      transition:persist
-      words={hero.subtitle}
-    />
+    <TextGenerateEffect client:load words={hero.subtitle} />
     <p class="sr-only">
       {hero.subtitle}
     </p>
