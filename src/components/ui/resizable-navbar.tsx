@@ -7,6 +7,7 @@ import * as SheetPrimitive from "@radix-ui/react-dialog";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { Button } from "./button";
+import "@/styles/flags.css";
 
 // ============================================================================
 // Types & Interfaces
@@ -60,9 +61,9 @@ type SheetSide = "top" | "right" | "bottom" | "left";
 // ============================================================================
 
 const LANGUAGES: Language[] = [
-  { code: "en", label: "English", flag: "🇺🇸" },
-  { code: "sv", label: "Svenska", flag: "🇸🇪" },
-  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "en", label: "English", flag: "us" },
+  { code: "sv", label: "Svenska", flag: "se" },
+  { code: "es", label: "Español", flag: "es" },
 ];
 
 const SCROLL_THRESHOLD = 30;
@@ -308,7 +309,8 @@ export const LanguageMenu = ({ lang, currentUrl }: LanguageMenuProps) => {
                       }
                       className="flex flex-row items-center gap-2"
                     >
-                      <span>{flag}</span> {label}
+                      <span className={`fi fi-${flag} rounded-full`}></span>
+                      {label}
                     </a>
                   </NavigationMenuLink>
                 </li>

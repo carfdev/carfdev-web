@@ -22,13 +22,12 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
-import { useTranslations } from "@/i18n/index-ui";
-import { useMemo } from "react";
 import { toast } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
+import type { Form as FormType } from "@/types/index.interface";
 
 interface Props {
-  lang: string;
+  ui: FormType;
 }
 
 const PROJECT_TYPES = [
@@ -47,33 +46,28 @@ const BUDGET_RANGES = [
   "200k-plus",
 ] as const;
 
-export function ContactForm({ lang }: Props) {
-  const t = useTranslations(lang);
-  const ui = t("contact").form;
-
-  const formSchema = useMemo(() => {
-    return z.object({
-      firstName: z.string().min(2, {
-        message: ui.firstNameErrorMessage,
-      }),
-      lastName: z.string().min(2, {
-        message: ui.lastNameErrorMessage,
-      }),
-      email: z.string().email({
-        message: ui.emailErrorMessage,
-      }),
-      companyName: z.string().optional(),
-      projectType: z.enum(PROJECT_TYPES, {
-        errorMap: () => ({ message: ui.projectTypeErrorMessage }),
-      }),
-      budget: z.enum(BUDGET_RANGES, {
-        errorMap: () => ({ message: ui.budgetErrorMessage }),
-      }),
-      message: z.string().min(10, {
-        message: ui.messageErrorMessage,
-      }),
-    });
-  }, [lang]);
+export function ContactForm({ ui }: Props) {
+  const formSchema = z.object({
+    firstName: z.string().min(2, {
+      message: ui.firstNameErrorMessage,
+    }),
+    lastName: z.string().min(2, {
+      message: ui.lastNameErrorMessage,
+    }),
+    email: z.string().email({
+      message: ui.emailErrorMessage,
+    }),
+    companyName: z.string().optional(),
+    projectType: z.enum(PROJECT_TYPES, {
+      errorMap: () => ({ message: ui.projectTypeErrorMessage }),
+    }),
+    budget: z.enum(BUDGET_RANGES, {
+      errorMap: () => ({ message: ui.budgetErrorMessage }),
+    }),
+    message: z.string().min(10, {
+      message: ui.messageErrorMessage,
+    }),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
