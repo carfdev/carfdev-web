@@ -21,10 +21,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { Send } from "lucide-react";
+import { CircleX, Send } from "lucide-react";
 import { toast } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import type { Form as FormType } from "@/types/index.interface";
+
+import type { SendContactResponse } from "@/types/axios.interface";
+import { request } from "@/lib/axios";
 
 interface Props {
   ui: FormType;
@@ -82,14 +85,21 @@ export function ContactForm({ ui }: Props) {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    toast(ui.successMessage.title, {
-      description: ui.successMessage.description,
-    });
-    // eslint-disable-next-line no-undef
-    console.log({ values });
-    form.reset();
-  }
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      await request<SendContactResponse>("post", "/email/send-contact", values);
+      toast(ui.successMessage.title, {
+        description: ui.successMessage.description,
+      });
+      form.reset();
+      // eslint-disable-next-line no-unused-vars
+    } catch (err) {
+      toast(ui.errorMessage.title, {
+        description: ui.errorMessage.description,
+        icon: <CircleX className="size-4" />,
+      });
+    }
+  };
 
   return (
     <Form {...form}>

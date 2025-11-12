@@ -77,10 +77,13 @@ export interface Form {
   messagePlaceholder: string;
   messageErrorMessage: string;
   submitButton: string;
-  successMessage: {
-    title: string;
-    description: string;
-  };
+  successMessage: Message;
+  errorMessage: Message;
+}
+
+export interface Message {
+  title: string;
+  description: string;
 }
 
 export interface Cta {

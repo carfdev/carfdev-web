@@ -258,6 +258,10 @@ export const indexUi: UI = {
           title: "Message Received",
           description: "I'll get back to you as soon as possible.",
         },
+        errorMessage: {
+          title: "Oops! Something went wrong",
+          description: "Error sending the message",
+        },
       },
       details: {
         title: "Get in Touch",
@@ -583,6 +587,10 @@ export const indexUi: UI = {
           title: "Mensaje Recibido",
           description: "Me pondré en contacto contigo lo antes posible.",
         },
+        errorMessage: {
+          title: "Ups! Algo no salió bien",
+          description: "Error al enviar el mensaje",
+        },
       },
       details: {
         title: "Ponte en Contacto",
@@ -904,6 +912,10 @@ export const indexUi: UI = {
         successMessage: {
           title: "Meddelande mottaget",
           description: "Jag återkommer till dig så snart som möjligt.",
+        },
+        errorMessage: {
+          title: "Oj! Något gick fel",
+          description: "Fel vid skickning av meddelandet",
         },
       },
       details: {
