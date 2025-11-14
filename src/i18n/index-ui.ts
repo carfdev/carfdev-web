@@ -217,7 +217,7 @@ export const indexUi: UI = {
     contact: {
       title: "Get in Touch",
       subtitle:
-        "Fill out the form below or email me directly at hello@carf.dev. I'll get back to you within 24 hours.",
+        "Fill out the form below or email me directly at info@carf.dev. I'll get back to you within 24 hours.",
       form: {
         firstNameLabel: "First Name",
         firstNamePlaceholder: "What should I call you?",
@@ -244,10 +244,10 @@ export const indexUi: UI = {
         budgetLabel: "Budget",
         budgetPlaceholder: "Select your budget range",
         budgetOptions: [
-          "Under 50,000 SEK",
-          "50,000 - 100,000 SEK",
-          "100,000 - 200,000 SEK",
-          "200,000+ SEK",
+          "Under 5,000 SEK",
+          "5,000 - 15,000 SEK",
+          "15,000 - 50,000 SEK",
+          "50,000+ SEK",
         ],
         budgetErrorMessage: "Please select a budget range.",
         messageLabel: "Project Details",
@@ -268,13 +268,13 @@ export const indexUi: UI = {
         items: [
           {
             label: "Email",
-            value: "hello@carf.dev",
+            value: "info@carf.dev",
             note: "I'll respond within 24 hours",
             icon: "Mail",
           },
           {
             label: "Phone",
-            value: "+46 70 123 45 67",
+            value: "+46 72 271 02 80",
             note: "Available Mon-Fri, 9AM-6PM CET",
             icon: "Phone",
           },
@@ -545,7 +545,7 @@ export const indexUi: UI = {
     contact: {
       title: "Ponte en Contacto",
       subtitle:
-        "Rellena el formulario o envíame un correo directamente a hello@carf.dev. Te responderé en menos de 24 horas.",
+        "Rellena el formulario o envíame un correo directamente a info@carf.dev. Te responderé en menos de 24 horas.",
       form: {
         firstNameLabel: "Primer Nombre",
         firstNamePlaceholder: "¿Cómo debo llamarte?",
@@ -573,10 +573,10 @@ export const indexUi: UI = {
         budgetLabel: "Presupuesto",
         budgetPlaceholder: "Selecciona tu rango de presupuesto",
         budgetOptions: [
-          "Menos de 50,000 SEK",
-          "50,000 - 100,000 SEK",
-          "100,000 - 200,000 SEK",
-          "Más de 200,000 SEK",
+          "Menos de 5,000 SEK",
+          "5,000 - 15,000 SEK",
+          "15,000 - 50,000 SEK",
+          "Más de 50,000 SEK",
         ],
         budgetErrorMessage: "Por favor, selecciona un rango de presupuesto.",
         messageLabel: "Detalles del Proyecto",
@@ -597,13 +597,13 @@ export const indexUi: UI = {
         items: [
           {
             label: "Correo Electrónico",
-            value: "hello@carf.dev",
+            value: "info@carf.dev",
             note: "Te responderé en menos de 24 horas",
             icon: "Mail",
           },
           {
             label: "Teléfono",
-            value: "+46 70 123 45 67",
+            value: "+46 72 271 02 80",
             note: "Disponible de lunes a viernes, 9AM-6PM CET",
             icon: "Phone",
           },
@@ -872,7 +872,7 @@ export const indexUi: UI = {
     contact: {
       title: "Kontakta mig",
       subtitle:
-        "Fyll i formuläret nedan eller mejla mig direkt på hello@carf.dev. Jag svarar inom 24 timmar.",
+        "Fyll i formuläret nedan eller mejla mig direkt på info@carf.dev. Jag svarar inom 24 timmar.",
       form: {
         firstNameLabel: "Ditt förnamn",
         firstNamePlaceholder: "Vad ska jag kalla dig?",
@@ -899,10 +899,10 @@ export const indexUi: UI = {
         budgetLabel: "Budget",
         budgetPlaceholder: "Välj din budgetintervall",
         budgetOptions: [
-          "Under 50,000 SEK",
-          "50,000 - 100,000 SEK",
-          "100,000 - 200,000 SEK",
-          "200,000+ SEK",
+          "Under 5,000 SEK",
+          "5,000 - 15,000 SEK",
+          "15,000 - 50,000 SEK",
+          "50,000+ SEK",
         ],
         budgetErrorMessage: "Välj en budgetintervall.",
         messageLabel: "Projektbeskrivning",
@@ -923,13 +923,13 @@ export const indexUi: UI = {
         items: [
           {
             label: "E-post",
-            value: "hello@carf.dev",
+            value: "info@carf.dev",
             note: "Jag svarar inom 24 timmar",
             icon: "Mail",
           },
           {
             label: "Telefon",
-            value: "+46 70 123 45 67",
+            value: "+46 72 271 02 80",
             note: "Tillgänglig mån-fre, 9AM-6PM CET",
             icon: "Phone",
           },

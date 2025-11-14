@@ -12,15 +12,16 @@ interface Props {
 const { title, description, icon, checks }: Props = Astro.props;
 ---
 
-<div
-  class="border-secondary bg-secondary rounded-2xl border p-8 transition-shadow hover:shadow-lg"
->
-  <div
-    class="bg-input mb-6 flex h-12 w-12 items-center justify-center rounded-lg"
-  >
-    <LucideIcon name={icon} />
+<div class="border-secondary bg-secondary rounded-2xl border p-8">
+  <div class="mb-4 flex items-center gap-4">
+    <div
+      class="bg-background flex h-12 w-12 items-center justify-center rounded-lg"
+    >
+      <LucideIcon name={icon} />
+    </div>
+    <h3 class="mb-0">{title}</h3>
   </div>
-  <h3>{title}</h3>
+
   <p class="text-muted-foreground mb-6 leading-relaxed">
     {description}
   </p>

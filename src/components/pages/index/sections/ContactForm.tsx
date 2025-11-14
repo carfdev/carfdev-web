@@ -42,12 +42,7 @@ const PROJECT_TYPES = [
   "other",
 ] as const;
 
-const BUDGET_RANGES = [
-  "under-50k",
-  "50k-100k",
-  "100k-200k",
-  "200k-plus",
-] as const;
+const BUDGET_RANGES = ["under-5k", "5k-15k", "15k-50k", "50k-plus"] as const;
 
 export function ContactForm({ ui }: Props) {
   const formSchema = z.object({

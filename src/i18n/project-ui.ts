@@ -11,16 +11,15 @@ export const projectUi: ProjectUI = {
       name: "EricReyes",
       breadcrumb: ["Home", "Projects"],
       hero: {
-        title: "EricReyes Barbershop New Website",
+        title: "EricReyes Barbershop - Professional Website",
         image: EricReyesImg,
-        imageAlt:
-          "Mockup of the professional barber Eric Reyes portfolio website",
+        imageAlt: "Mockup of professional barber Eric Reyes' portfolio website",
       },
       overview: {
         images: [
           {
             image: EricReyesMacImg,
-            alt: "Eric Reyes website mockup displayed on a MacBook Air.",
+            alt: "Eric Reyes website view displayed on a MacBook Air.",
           },
           {
             image: EricReyesIphoneImg,
@@ -30,18 +29,18 @@ export const projectUi: ProjectUI = {
         challenge: {
           title: "The Challenge",
           description: [
-            "Eric Reyes, a professional barber known for his precision and style, lacked an online presence that matched the quality of his work. His previous social media pages showcased his skills but didn’t provide a professional platform for clients to explore his services or book appointments easily.",
-            "Without a dedicated website, potential clients struggled to find detailed information, view his portfolio, or contact him directly. Eric needed a sleek, modern portfolio that reflected his craftsmanship and helped him build trust with new customers.",
-            "The goal was clear: create a personal brand website that highlights his expertise, showcases his best transformations, and makes booking an effortless experience for every client.",
+            "Eric Reyes, a professional barber renowned for his precision and style, needed to establish a digital presence that matched the quality of his craft. While his social media showcased his talent, he lacked a professional platform where clients could explore his background and services in a structured way.",
+            "Potential clients couldn't find a dedicated space to view his complete portfolio, learn about his work philosophy, or quickly access contact information. It was time to create a digital business card that conveyed professionalism and built trust from the first click.",
+            "The challenge was to design a website that not only showcased his best work but also reflected his personality and stood out in a competitive market, positioning him as the premium choice in his area.",
           ],
         },
         solution: {
           title: "The Solution",
           description: [
-            "Our approach focused on crafting a modern, mobile-first portfolio that captures Eric Reyes’s professionalism and artistic style. We started by analyzing how potential clients search for barbers online and what inspires trust and conversion in personal service websites.",
-            "The new design features clean navigation, bold visuals of Eric’s best work, and a seamless appointment booking flow. Clients can easily browse his services, view transformations, and schedule a session—all from any device.",
-            "Visually, the site combines minimal aesthetics with high-contrast photography to highlight the precision and detail of his craft. Every section was built to reinforce Eric’s personal brand while keeping the user experience simple and intuitive.",
-            "Additionally, we optimized the website for local SEO, helping Eric rank higher in barber-related searches in his area and attract a steady stream of new clients.",
+            "We developed a modern, fully responsive portfolio website that captures the essence of Eric's work: precision, style, and attention to detail. Every visual element was carefully selected to communicate professionalism and artistic quality.",
+            "The design features a clear information architecture that guides visitors through his services, standout transformations, and brand values. We implemented a striking visual gallery that allows clients to appreciate the quality and versatility of his work, while strategically placed calls-to-action facilitate direct contact.",
+            "We opted for a minimalist aesthetic with high-contrast photography that highlights the precision of each cut. The color palette and typography reinforce the masculine, sophisticated brand identity Eric wanted to project.",
+            "We implemented a robust local SEO strategy, optimizing content for specific barbershop searches in Stockholm. This ensures Eric appears in top results when potential clients search for premium barbering services in his area.",
           ],
         },
         technologies: {
@@ -92,19 +91,19 @@ export const projectUi: ProjectUI = {
         card: {
           services: {
             title: "Services",
-            items: ["Web Design", "Development", "UX/UI", "SEO"],
+            items: ["Web Design", "Frontend Development", "UX/UI", "Local SEO"],
           },
           industry: {
             title: "Industry",
-            items: ["Services"],
+            items: ["Personal Services"],
           },
           timeline: {
             title: "Timeline",
             items: ["1 Week"],
           },
           scale: {
-            title: "Project Scale",
-            items: ["25 000 kr"],
+            title: "Investment",
+            items: ["5 000 kr"],
           },
           btn: {
             text: "View Live Site",
@@ -115,60 +114,60 @@ export const projectUi: ProjectUI = {
       process: {
         items: [
           {
-            title: "Research",
+            title: "Research & Strategy",
             description:
-              "User interviews, competitor analysis, and market research to understand dining preferences in Stockholm.",
+              "Local competition analysis, target audience study, and brand objective definition to position Eric as a leader in his sector.",
           },
           {
-            title: "Design",
+            title: "UX/UI Design",
             description:
-              "Wireframing, prototyping, and visual design focused on mobile-first reservation experience.",
+              "Creation of wireframes and interactive prototypes with a mobile-first approach, prioritizing impactful visual experience and intuitive navigation.",
           },
           {
-            title: "Development",
+            title: "Development & Optimization",
             description:
-              "Custom booking system integration, performance optimization, and thorough testing across devices.",
+              "Implementation with modern technologies, web performance and local SEO optimization, ensuring ultra-fast loading times and maximum search engine visibility.",
           },
         ],
       },
       testimonial: {
         img: EricReyesAvatar,
-        imgAlt: "EricReyes Owner",
+        imgAlt: "Eric Reyes, Owner",
         testimonial:
-          "Working with Carfdev was seamless. Our new site is fast, beautiful, and our customers love it. The reservation system has transformed how we manage bookings, and we've seen a remarkable increase in online orders.",
+          "Working with Carfdev was easy and professional. My new website is exactly what I needed: fast, elegant, and perfectly represents my work. My clients constantly compliment the site and it has significantly improved my professional image.",
         name: "Eric Reyes",
-        job: "Owner, EricReyes Barbershop",
+        job: "Founder, EricReyes Barbershop",
       },
       cta: {
-        title: "Ready to build your new website?",
+        title: "Ready to Take Your Business to the Next Level?",
         subtitle:
-          "Let's create something amazing together. From concept to launch, we'll guide you through every step of the process.",
+          "Let's transform your vision into a website that delivers results. I'll guide you through every stage of the process, from strategy to launch.",
         btn: {
-          text: "Let's Talk",
+          text: "Start Your Project",
         },
       },
       learned: {
-        title: "Lessons Learned",
+        title: "Key Learnings",
         items: [
           {
-            title: "Mobile-First is Essential",
+            title: "Mobile-First isn't optional, it's fundamental",
             description:
-              "With 70% of restaurant searches happening on mobile, designing for mobile first wasn't just a best practice—it was critical for business success.",
+              "With over 70% of local service searches performed on mobile devices, designing mobile-first ensures the experience is exceptional where it matters most.",
           },
           {
-            title: "User Testing Pays Off",
+            title: "First impressions are digital",
             description:
-              "Early user testing revealed friction points in the booking flow that we might have missed, leading to a much smoother final experience.",
+              "A professional website acts as your best salesperson 24/7. Visual quality and loading speed directly impact the perception of professionalism and contact decisions.",
           },
           {
-            title: "Performance Matters",
+            title: "Performance translates to opportunities",
             description:
-              "Restaurant customers are often making quick decisions. Fast loading times directly correlated with higher booking conversion rates.",
+              "Each additional second of loading time reduces conversions. Optimizing performance isn't just technical—it's a business strategy that keeps potential clients engaged.",
           },
           {
-            title: "Staff Integration is Key",
+            title: "Local SEO makes the difference",
             description:
-              "The booking system's success depended heavily on seamless integration with the restaurant's existing workflow and POS system.",
+              "For local service businesses, appearing in top search positions in your geographic area is the difference between being invisible or receiving constant inquiries from qualified clients.",
           },
         ],
       },
@@ -179,7 +178,7 @@ export const projectUi: ProjectUI = {
       name: "EricReyes",
       breadcrumb: ["Inicio", "Proyectos"],
       hero: {
-        title: "EricReyes Barbershop Nuevo Sitio Web",
+        title: "EricReyes Barbershop - Sitio Web Profesional",
         image: EricReyesImg,
         imageAlt:
           "Maqueta del sitio web del portafolio del barbero profesional Eric Reyes",
@@ -198,18 +197,18 @@ export const projectUi: ProjectUI = {
         challenge: {
           title: "El Desafío",
           description: [
-            "Eric Reyes, un barbero profesional reconocido por su precisión y estilo, carecía de una presencia en línea que reflejara la calidad de su trabajo. Sus redes sociales mostraban su talento, pero no ofrecían una plataforma profesional donde los clientes pudieran explorar sus servicios o agendar citas fácilmente.",
-            "Sin un sitio web dedicado, los clientes potenciales tenían dificultades para encontrar información detallada, ver su portafolio o contactarlo directamente. Eric necesitaba un portafolio moderno y elegante que reflejara su habilidad y generara confianza en nuevos clientes.",
-            "El objetivo era claro: crear un sitio web personal que destacara su experiencia, mostrara sus mejores transformaciones y facilitara al máximo el proceso de reserva para cada cliente.",
+            "Eric Reyes, un barbero profesional reconocido por su precisión y estilo, necesitaba establecer una presencia digital que estuviera a la altura de la calidad de su trabajo. Aunque sus redes sociales mostraban su talento, carecía de una plataforma profesional donde los clientes pudieran explorar su trayectoria y servicios de manera estructurada.",
+            "Los clientes potenciales no encontraban un espacio donde ver su portafolio completo, conocer su filosofía de trabajo o encontrar información de contacto de forma rápida. Era momento de crear una carta de presentación digital que transmitiera profesionalismo y generara confianza desde el primer clic.",
+            "El reto era diseñar un sitio web que no solo mostrara su mejor trabajo, sino que también reflejara su personalidad y destacara en un mercado competitivo, posicionándolo como la opción premium en su área.",
           ],
         },
         solution: {
           title: "La Solución",
           description: [
-            "Nuestro enfoque se centró en desarrollar un portafolio moderno y optimizado para dispositivos móviles que capturara el profesionalismo y el estilo artístico de Eric Reyes. Comenzamos analizando cómo los clientes buscan barberos en línea y qué elementos generan confianza y conversión en sitios de servicios personales.",
-            "El nuevo diseño presenta una navegación limpia, imágenes impactantes del mejor trabajo de Eric y un flujo de reserva de citas fluido. Los clientes pueden explorar fácilmente sus servicios, ver transformaciones y agendar una sesión desde cualquier dispositivo.",
-            "Visualmente, el sitio combina una estética minimalista con fotografías de alto contraste para resaltar la precisión y el detalle de su trabajo. Cada sección fue diseñada para reforzar la marca personal de Eric manteniendo una experiencia de usuario simple e intuitiva.",
-            "Además, optimizamos el sitio para SEO local, ayudando a Eric a posicionarse mejor en búsquedas relacionadas con barberías en su área y atraer un flujo constante de nuevos clientes.",
+            "Desarrollamos un portafolio web moderno y completamente responsive que captura la esencia del trabajo de Eric: precisión, estilo y atención al detalle. Cada elemento visual fue cuidadosamente seleccionado para comunicar profesionalismo y calidad artística.",
+            "El diseño presenta una arquitectura de información clara que guía al visitante a través de sus servicios, transformaciones destacadas y valores de marca. Implementamos una galería visual impactante que permite a los clientes apreciar la calidad y versatilidad de su trabajo, mientras que las llamadas a la acción estratégicamente ubicadas facilitan el contacto directo.",
+            "Optamos por una estética minimalista con fotografías de alto contraste que destacan la precisión de cada corte. La paleta de colores y tipografía refuerzan la identidad de marca masculina y sofisticada que Eric buscaba proyectar.",
+            "Implementamos una estrategia de SEO local robusta, optimizando el contenido para búsquedas específicas de barberías en Estocolmo. Esto garantiza que Eric aparezca en los primeros resultados cuando clientes potenciales buscan servicios de barbería premium en su zona.",
           ],
         },
         technologies: {
@@ -260,22 +259,22 @@ export const projectUi: ProjectUI = {
         card: {
           services: {
             title: "Servicios",
-            items: ["Diseño Web", "Desarrollo", "UX/UI", "SEO"],
+            items: ["Diseño Web", "Desarrollo Frontend", "UX/UI", "SEO Local"],
           },
           industry: {
             title: "Industria",
-            items: ["Servicios"],
+            items: ["Servicios Personales"],
           },
           timeline: {
             title: "Duración",
             items: ["1 Semana"],
           },
           scale: {
-            title: "Escala del Proyecto",
-            items: ["25 000 kr"],
+            title: "Inversión",
+            items: ["5 000 kr"],
           },
           btn: {
-            text: "Ver Sitio Web",
+            text: "Ver Sitio en Vivo",
             href: "https://www.ericreyes.se",
           },
         },
@@ -283,60 +282,60 @@ export const projectUi: ProjectUI = {
       process: {
         items: [
           {
-            title: "Investigación",
+            title: "Investigación y Estrategia",
             description:
-              "Entrevistas con usuarios, análisis de competidores y estudio de mercado para comprender las preferencias gastronómicas en Estocolmo.",
+              "Análisis de competencia local, estudio del público objetivo y definición de objetivos de marca para posicionar a Eric como referente en su sector.",
           },
           {
-            title: "Diseño",
+            title: "Diseño UX/UI",
             description:
-              "Wireframes, prototipos y diseño visual enfocados en una experiencia de reservas optimizada para móviles.",
+              "Creación de wireframes y prototipos interactivos con enfoque mobile-first, priorizando una experiencia visual impactante y navegación intuitiva.",
           },
           {
-            title: "Desarrollo",
+            title: "Desarrollo y Optimización",
             description:
-              "Integración de un sistema de reservas personalizado, optimización del rendimiento y pruebas exhaustivas en distintos dispositivos.",
+              "Implementación con tecnologías modernas, optimización de rendimiento web y SEO local, garantizando tiempos de carga ultrarrápidos y máxima visibilidad en buscadores.",
           },
         ],
       },
       testimonial: {
         img: EricReyesAvatar,
-        imgAlt: "EricReyes Propietario",
+        imgAlt: "Eric Reyes, Propietario",
         testimonial:
-          "Trabajar con Carfdev fue muy fácil. Nuestro nuevo sitio es rápido, atractivo y a nuestros clientes les encanta. El sistema de reservas ha transformado la forma en que gestionamos las citas, y hemos visto un aumento notable en los pedidos en línea.",
+          "Trabajar con Carfdev fue muy fácil y profesional. Mi nuevo sitio web es exactamente lo que necesitaba: rápido, elegante y representa perfectamente mi trabajo. Mis clientes constantemente elogian el sitio y ha mejorado significativamente mi imagen profesional.",
         name: "Eric Reyes",
-        job: "Propietario, EricReyes Barbershop",
+        job: "Fundador, EricReyes Barbershop",
       },
       cta: {
-        title: "¿Listo para crear tu nuevo sitio web?",
+        title: "¿Listo para llevar tu negocio al siguiente nivel?",
         subtitle:
-          "Creamos algo increíble juntos. Desde el concepto hasta el lanzamiento, te guiaremos en cada paso del proceso.",
+          "Transformemos tu visión en un sitio web que genere resultados. Te acompaño en cada etapa del proceso, desde la estrategia hasta el lanzamiento.",
         btn: {
-          text: "Hablemos",
+          text: "Comencemos tu Proyecto",
         },
       },
       learned: {
-        title: "Lecciones aprendidas",
+        title: "Aprendizajes Clave",
         items: [
           {
-            title: "El enfoque móvil primero es esencial",
+            title: "Mobile-First no es opcional, es fundamental",
             description:
-              "Con el 70% de las búsquedas de restaurantes ocurriendo en dispositivos móviles, diseñar con un enfoque mobile-first no solo fue una buena práctica, sino crucial para el éxito del negocio.",
+              "Con más del 70% de las búsquedas de servicios locales realizadas desde dispositivos móviles, diseñar primero para móvil garantiza que la experiencia sea excepcional donde más importa.",
           },
           {
-            title: "Las pruebas con usuarios valen la pena",
+            title: "Las primeras impresiones son digitales",
             description:
-              "Las pruebas tempranas con usuarios revelaron puntos de fricción en el flujo de reservas que podríamos haber pasado por alto, lo que llevó a una experiencia final mucho más fluida.",
+              "Un sitio web profesional actúa como tu mejor vendedor 24/7. La calidad visual y la velocidad de carga impactan directamente en la percepción de profesionalismo y en la decisión de contacto.",
           },
           {
-            title: "El rendimiento importa",
+            title: "El rendimiento se traduce en oportunidades",
             description:
-              "Los clientes de restaurantes suelen tomar decisiones rápidamente. Los tiempos de carga rápidos se correlacionaron directamente con mayores tasas de conversión en reservas.",
+              "Cada segundo de carga adicional reduce las conversiones. Optimizar el rendimiento no es solo técnico, es una estrategia de negocio que mantiene la atención de clientes potenciales.",
           },
           {
-            title: "La integración del personal es clave",
+            title: "SEO local marca la diferencia",
             description:
-              "El éxito del sistema de reservas dependió en gran medida de una integración fluida con el flujo de trabajo y el sistema POS existente del restaurante.",
+              "Para negocios de servicios locales, aparecer en las primeras posiciones de búsqueda en tu área geográfica es la diferencia entre estar invisible o recibir consultas constantes de clientes calificados.",
           },
         ],
       },
@@ -345,18 +344,18 @@ export const projectUi: ProjectUI = {
   sv: {
     "eric-reyes": {
       name: "EricReyes",
-      breadcrumb: ["Hem", "projekt"],
+      breadcrumb: ["Hem", "Projekt"],
       hero: {
-        title: "EricReyes Barbershop Ny Webplats",
+        title: "EricReyes Barbershop - Professionell Webbplats",
         image: EricReyesImg,
         imageAlt:
-          "Mockup av den professionella barberarens Eric Reyes portfoliowebbplats",
+          "Mockup av den professionella barberaren Eric Reyes portföljwebbplats",
       },
       overview: {
         images: [
           {
             image: EricReyesMacImg,
-            alt: "Mockup av Eric Reyes webbplats visad på en MacBook Air.",
+            alt: "Eric Reyes webbplatsvy visad på en MacBook Air.",
           },
           {
             image: EricReyesIphoneImg,
@@ -366,18 +365,18 @@ export const projectUi: ProjectUI = {
         challenge: {
           title: "Utmaningen",
           description: [
-            "Eric Reyes, en professionell barberare känd för sin precision och stil, saknade en online-närvaro som motsvarade kvaliteten på hans arbete. Hans tidigare sociala mediesidor visade upp hans färdigheter men erbjöd ingen professionell plattform där kunder enkelt kunde utforska hans tjänster eller boka tider.",
-            "Utan en dedikerad webbplats hade potentiella kunder svårt att hitta detaljerad information, se hans portfölj eller kontakta honom direkt. Eric behövde en elegant och modern portfölj som speglade hans hantverk och byggde förtroende hos nya kunder.",
-            "Målet var tydligt: skapa en personlig varumärkessida som lyfter fram hans expertis, visar hans bästa transformationer och gör bokningsprocessen enkel för varje kund.",
+            "Eric Reyes, en professionell barberare känd för sin precision och stil, behövde etablera en digital närvaro som matchade kvaliteten på hans arbete. Även om hans sociala medier visade hans talang, saknade han en professionell plattform där kunder kunde utforska hans bakgrund och tjänster på ett strukturerat sätt.",
+            "Potentiella kunder kunde inte hitta ett dedikerat utrymme för att se hans kompletta portfölj, lära sig om hans arbetsfilosofi eller snabbt komma åt kontaktinformation. Det var dags att skapa ett digitalt visitkort som förmedlade professionalism och byggde förtroende från första klicket.",
+            "Utmaningen var att designa en webbplats som inte bara visade hans bästa arbete, utan också speglade hans personlighet och stack ut på en konkurrensutsatt marknad, och positionerade honom som det premiumalternativet i hans område.",
           ],
         },
         solution: {
           title: "Lösningen",
           description: [
-            "Vår strategi fokuserade på att skapa en modern, mobilanpassad portfölj som fångar Eric Reyes professionalism och konstnärliga stil. Vi började med att analysera hur potentiella kunder söker efter barberare online och vad som skapar förtroende och konvertering på personliga tjänstesidor.",
-            "Den nya designen har en ren navigering, kraftfulla bilder av Erics bästa arbeten och ett smidigt bokningsflöde. Kunder kan enkelt bläddra bland hans tjänster, se transformationer och boka en tid – från vilken enhet som helst.",
-            "Visuellt kombinerar webbplatsen en minimalistisk estetik med högkontrastfotografi för att framhäva precisionen och detaljen i hans hantverk. Varje sektion är utformad för att stärka Erics personliga varumärke samtidigt som användarupplevelsen hålls enkel och intuitiv.",
-            "Dessutom optimerade vi webbplatsen för lokal SEO, vilket hjälper Eric att rankas högre i sökningar relaterade till barberare i hans område och attrahera en stadig ström av nya kunder.",
+            "Vi utvecklade en modern, helt responsiv portföljwebbplats som fångar essensen av Erics arbete: precision, stil och uppmärksamhet på detaljer. Varje visuellt element valdes noggrant ut för att kommunicera professionalism och konstnärlig kvalitet.",
+            "Designen har en tydlig informationsarkitektur som guidar besökare genom hans tjänster, framstående transformationer och varumärkesvärden. Vi implementerade ett slående visuellt galleri som låter kunder uppskatta kvaliteten och mångsidigheten i hans arbete, medan strategiskt placerade uppmaningar till handling underlättar direkt kontakt.",
+            "Vi valde en minimalistisk estetik med högkontrast fotografi som lyfter fram precisionen i varje klippning. Färgpaletten och typografin förstärker den maskulina, sofistikerade varumärkesidentiteten som Eric ville projicera.",
+            "Vi implementerade en robust lokal SEO-strategi och optimerade innehållet för specifika barberarsökningar i Stockholm. Detta säkerställer att Eric dyker upp i topresultaten när potentiella kunder söker efter premium barbertjänster i hans område.",
           ],
         },
         technologies: {
@@ -428,22 +427,22 @@ export const projectUi: ProjectUI = {
         card: {
           services: {
             title: "Tjänster",
-            items: ["Webbdesign", "Utveckling", "UX/UI", "SEO"],
+            items: ["Webbdesign", "Frontend-utveckling", "UX/UI", "Lokal SEO"],
           },
           industry: {
             title: "Bransch",
-            items: ["Tjänster"],
+            items: ["Personliga Tjänster"],
           },
           timeline: {
-            title: "Tidsram",
+            title: "Tidslinje",
             items: ["1 Vecka"],
           },
           scale: {
-            title: "Projektets Omfattning",
-            items: ["25 000 kr"],
+            title: "Investering",
+            items: ["5 000 kr"],
           },
           btn: {
-            text: "Visa Webbplatsen",
+            text: "Visa Live-webbplats",
             href: "https://www.ericreyes.se",
           },
         },
@@ -451,60 +450,60 @@ export const projectUi: ProjectUI = {
       process: {
         items: [
           {
-            title: "Forskning",
+            title: "Forskning & Strategi",
             description:
-              "Användarintervjuer, konkurrentanalys och marknadsundersökning för att förstå matpreferenser i Stockholm.",
+              "Lokal konkurrensanalys, målgruppsstudie och definition av varumärkesmål för att positionera Eric som ledare inom sin sektor.",
           },
           {
-            title: "Design",
+            title: "UX/UI Design",
             description:
-              "Wireframing, prototypframtagning och visuell design med fokus på en mobilförst bokningsupplevelse.",
+              "Skapande av wireframes och interaktiva prototyper med ett mobile-first-tillvägagångssätt, prioritering av slagkraftig visuell upplevelse och intuitiv navigering.",
           },
           {
-            title: "Utveckling",
+            title: "Utveckling & Optimering",
             description:
-              "Integration av ett anpassat bokningssystem, prestandaoptimering och noggrann testning på olika enheter.",
+              "Implementering med moderna teknologier, webbprestanda och lokal SEO-optimering, vilket säkerställer ultrasnabba laddningstider och maximal synlighet i sökmotorer.",
           },
         ],
       },
       testimonial: {
         img: EricReyesAvatar,
-        imgAlt: "EricReyes Ägare",
+        imgAlt: "Eric Reyes, Ägare",
         testimonial:
-          "Att arbeta med Carfdev var smidigt. Vår nya webbplats är snabb, snygg och våra kunder älskar den. Bokningssystemet har förändrat hur vi hanterar bokningar, och vi har sett en remarkabel ökning av onlinebeställningar.",
+          "Att arbeta med Carfdev var enkelt och professionellt. Min nya webbplats är precis vad jag behövde: snabb, elegant och representerar mitt arbete perfekt. Mina kunder komplimenterar ständigt webbplatsen och den har avsevärt förbättrat min professionella image.",
         name: "Eric Reyes",
-        job: "Ägare, EricReyes Barbershop",
+        job: "Grundare, EricReyes Barbershop",
       },
       cta: {
-        title: "Redo att bygga din nya webbplats?",
+        title: "Redo att Ta Ditt Företag till Nästa Nivå?",
         subtitle:
-          "Låt oss skapa något fantastiskt tillsammans. Från koncept till lansering guidar vi dig genom varje steg i processen.",
+          "Låt oss förvandla din vision till en webbplats som levererar resultat. Jag guidar dig genom varje steg av processen, från strategi till lansering.",
         btn: {
-          text: "Låt oss prata",
+          text: "Starta Ditt Projekt",
         },
       },
       learned: {
-        title: "Lärdomar",
+        title: "Viktiga Lärdomar",
         items: [
           {
-            title: "Mobil-först är avgörande",
+            title: "Mobile-First är inte valfritt, det är grundläggande",
             description:
-              "Med 70 % av restaurangsökningarna som sker på mobilen var mobil-först-design inte bara en bästa praxis – det var avgörande för affärsframgång.",
+              "Med över 70% av lokala tjänstsökningar utförda på mobila enheter, säkerställer mobile-first-design att upplevelsen är exceptionell där den spelar störst roll.",
           },
           {
-            title: "Användartester lönar sig",
+            title: "Första intrycken är digitala",
             description:
-              "Tidiga användartester avslöjade friktionspunkter i bokningsflödet som vi annars kunde ha missat, vilket ledde till en mycket smidigare slutanvändarupplevelse.",
+              "En professionell webbplats fungerar som din bästa säljare 24/7. Visuell kvalitet och laddningshastighet påverkar direkt uppfattningen av professionalism och kontaktbeslut.",
           },
           {
-            title: "Prestanda spelar roll",
+            title: "Prestanda översätts till möjligheter",
             description:
-              "Restauranggäster fattar ofta snabba beslut. Snabba laddningstider korrelerade direkt med högre bokningskonverteringsfrekvens.",
+              "Varje extra sekund av laddningstid minskar konverteringar. Att optimera prestanda är inte bara tekniskt—det är en affärsstrategi som håller potentiella kunder engagerade.",
           },
           {
-            title: "Personalintegration är nyckeln",
+            title: "Lokal SEO gör skillnaden",
             description:
-              "Bokningssystemets framgång berodde starkt på sömlös integration med restaurangens befintliga arbetsflöde och kassasystem (POS).",
+              "För lokala tjänsteföretag är att dyka upp i topppositioner i ditt geografiska område skillnaden mellan att vara osynlig eller att få konstanta förfrågningar från kvalificerade kunder.",
           },
         ],
       },
