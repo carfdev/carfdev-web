@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/policy-ui";
+import { formatDateByLang } from "@/lib/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const lastUpdate = (lang: string): string => {
+  if (lang === "es") {
+    return "Ultima actualización:";
+  }
+  if (lang === "sv") {
+    return "Senaste uppdatering:";
+  }
+  return "Last updated:";
+};
+---
+
+<div class="mb-12 text-center">
+  <h1 class="mb-4">{t("title")}</h1>
+  <p class="text-muted-foreground text-lg">
+    {lastUpdate(lang)}
+    <time datetime={t("lastUpdated").toISOString().split("T")[0]}
+      >{formatDateByLang(t("lastUpdated"), lang)}</time
+    >
+  </p>
+</div>

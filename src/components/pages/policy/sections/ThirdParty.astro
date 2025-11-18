@@ -1,0 +1,33 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/policy-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["7_third_parties"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+  <p>{section.subtitle}</p>
+
+  <h3 class="mt-4 mb-1">{section.resend.title}</h3>
+  <p>
+    {section.resend.description}
+  </p>
+
+  <h3 class="mt-4 mb-1">{section.cloudflare.title}</h3>
+  <p>
+    {section.cloudflare.description}
+  </p>
+
+  <h3 class="mt-4 mb-1">{section.umami.title}</h3>
+  <p>
+    {section.umami.description}
+  </p>
+
+  <h3 class="mt-4 mb-1">{section.oracle.title}</h3>
+  <p>
+    {section.oracle.description}
+  </p>
+</section>

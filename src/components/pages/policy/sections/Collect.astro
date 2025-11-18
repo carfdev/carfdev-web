@@ -1,0 +1,52 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/policy-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["3_information_i_collect"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+
+  <h3 class="mt-4 mb-1">{section["3_1_provided"].title}</h3>
+  <p>{section["3_1_provided"].description}</p>
+  <ul>
+    {
+      section["3_1_provided"].items.map((item) => (
+        <li>
+          <strong>{item.label}</strong> {item.value}
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["3_2_analytics"].title}</h3>
+  <p>
+    {section["3_2_analytics"].description}
+  </p>
+  <ul>
+    {section["3_2_analytics"].items.map((item) => <li>{item}</li>)}
+  </ul>
+  <p>
+    {section["3_2_analytics"].note}
+  </p>
+
+  <h3 class="mt-4 mb-1">{section["3_3_technical"].title}</h3>
+  <p>
+    {section["3_3_technical"].description}
+  </p>
+  <ul>
+    {section["3_3_technical"].items.map((item) => <li>{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+  p {
+    margin: 0.25rem 0;
+  }
+</style>

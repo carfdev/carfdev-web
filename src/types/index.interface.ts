@@ -1,7 +1,7 @@
 import type { LucideIconName } from "@/components/ui/lucide-icon";
 import type { TablerIconName } from "@/components/ui/tabler-icon";
 
-export interface UI {
+export interface IndexUI {
   [key: string]: Locale;
 }
 
@@ -77,8 +77,18 @@ export interface Form {
   messagePlaceholder: string;
   messageErrorMessage: string;
   submitButton: string;
+  alert: Alert;
   successMessage: Message;
   errorMessage: Message;
+}
+
+export interface Alert {
+  title: string;
+  description_1: string;
+  privacyPolicy: Link;
+  description_2: string;
+  termsOfService: Link;
+  description_3: string;
 }
 
 export interface Message {

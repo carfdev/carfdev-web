@@ -1,0 +1,28 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/policy-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["5_legal_basis"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+  <p>{section.subtitle}</p>
+  <ul>
+    {
+      section.items.map((item) => (
+        <li>
+          <strong>{item.label}</strong> {item.value}
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>

@@ -1,7 +1,7 @@
-import type { UI } from "@/types/index.interface";
+import type { IndexUI } from "@/types/index.interface";
 import { createI18nUtils } from "./utils";
 
-export const indexUi: UI = {
+export const indexUi: IndexUI = {
   en: {
     meta: {
       title: "Carfdev | Custom Web Development for Stockholm Businesses",
@@ -254,6 +254,21 @@ export const indexUi: UI = {
         messagePlaceholder: "Tell me a little about your project...",
         messageErrorMessage: "Please enter at least 10 characters.",
         submitButton: "Send Message",
+        alert: {
+          title: "Your Privacy Matters",
+          description_1: "By submitting this form, you agree to our",
+          privacyPolicy: {
+            text: "Privacy Policy",
+            href: "/privacy-policy",
+          },
+          description_2: "and",
+          termsOfService: {
+            text: "Terms of Service",
+            href: "/terms-of-service",
+          },
+          description_3:
+            "Your data will be processed securely and only used to respond to your inquiry",
+        },
         successMessage: {
           title: "Message Received",
           description: "I'll get back to you as soon as possible.",
@@ -583,6 +598,21 @@ export const indexUi: UI = {
         messagePlaceholder: "Cuéntame un poco sobre tu proyecto...",
         messageErrorMessage: "Por favor, ingresa al menos 10 caracteres.",
         submitButton: "Enviar Mensaje",
+        alert: {
+          title: "Tu Privacidad es Importante",
+          description_1: "Al enviar este formulario, aceptas nuestra",
+          privacyPolicy: {
+            text: "Política de Privacidad",
+            href: "/es/privacy-policy",
+          },
+          description_2: "y nuestros",
+          termsOfService: {
+            text: "Términos de Servicio",
+            href: "/es/terms-of-service",
+          },
+          description_3:
+            "Tus datos serán procesados de forma segura y solo se utilizarán para responder a tu consulta",
+        },
         successMessage: {
           title: "Mensaje Recibido",
           description: "Me pondré en contacto contigo lo antes posible.",
@@ -909,6 +939,21 @@ export const indexUi: UI = {
         messagePlaceholder: "Berätta lite om ditt projekt...",
         messageErrorMessage: "Ange minst 10 tecken.",
         submitButton: "Skicka meddelande",
+        alert: {
+          title: "Din Integritet är Viktig",
+          description_1: "Genom att skicka detta formulär godkänner du vår",
+          privacyPolicy: {
+            text: "Integritetspolicy",
+            href: "/sv/privacy-policy",
+          },
+          description_2: "och våra",
+          termsOfService: {
+            text: "Användarvillkor",
+            href: "/sv/terms-of-service",
+          },
+          description_3:
+            "Dina uppgifter kommer att behandlas säkert och endast användas för att svara på din förfrågan",
+        },
         successMessage: {
           title: "Meddelande mottaget",
           description: "Jag återkommer till dig så snart som möjligt.",

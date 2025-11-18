@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/policy-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["12_changes"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+  {section.paragraphs.map((item) => <p class="my-2">{item}</p>)}
+</section>

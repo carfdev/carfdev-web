@@ -1,0 +1,23 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/policy-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["2_data_controller"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+  <p class="mb-2">
+    {section.subtitle}
+  </p>
+  <div class="bg-secondary not-prose rounded-lg p-6">
+    <p class="mb-2">
+      <strong>{section.info.name}</strong>
+    </p>
+    <p class="text-muted-foreground mb-1">{section.info.location}</p>
+    <p class="text-muted-foreground">{section.info.email}</p>
+    <p class="text-muted-foreground">{section.info.phone}</p>
+  </div>
+</section>

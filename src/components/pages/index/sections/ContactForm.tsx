@@ -21,13 +21,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { CircleX, Send } from "lucide-react";
+import { CircleX, Send, ShieldCheck } from "lucide-react";
 import { toast } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import type { Form as FormType } from "@/types/index.interface";
 
 import type { SendContactResponse } from "@/types/axios.interface";
 import { request } from "@/lib/axios";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 interface Props {
   ui: FormType;
@@ -238,6 +239,28 @@ export function ContactForm({ ui }: Props) {
             </FormItem>
           )}
         />
+
+        <Alert>
+          <ShieldCheck className="h-4 w-4" />
+          <AlertTitle>{ui.alert.title}</AlertTitle>
+          <AlertDescription>
+            <p>
+              {ui.alert.description_1}{" "}
+              <Button variant="link" className="inline h-auto p-0" asChild>
+                <a href={ui.alert.privacyPolicy.href}>
+                  {ui.alert.privacyPolicy.text}
+                </a>
+              </Button>{" "}
+              {ui.alert.description_2}{" "}
+              <Button variant="link" className="inline h-auto p-0" asChild>
+                <a href={ui.alert.termsOfService.href}>
+                  {ui.alert.termsOfService.text}
+                </a>
+              </Button>
+              . {ui.alert.description_3}.
+            </p>
+          </AlertDescription>
+        </Alert>
 
         <Button type="submit" size="lg" className="w-full cursor-pointer">
           <Send />

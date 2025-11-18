@@ -219,6 +219,10 @@
     @apply text-muted-foreground mx-auto max-w-2xl text-[clamp(1rem,2vw,1.5rem)] text-pretty;
   }
 
+  strong {
+    @apply font-plein font-bold;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-cell-ripple {
       animation: none !important;
