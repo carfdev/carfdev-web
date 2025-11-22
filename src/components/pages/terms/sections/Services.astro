@@ -1,0 +1,38 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["2_services"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+  <p>{section.intro}</p>
+
+  <h3 class="mt-4 mb-1">{section["2_1_development"].title}</h3>
+  <ul>
+    {section["2_1_development"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["2_2_ongoing"].title}</h3>
+  <ul>
+    {section["2_2_ongoing"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["2_3_hosting"].title}</h3>
+  <ul>
+    {section["2_3_hosting"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <p class="my-2">
+    {section.conclusion}
+  </p>
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>

@@ -1,26 +1,27 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Link } from "@/components/ui/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Contact } from "lucide-react";
 import {
   getLangFromUrl,
   useTranslations,
   useTranslatedPath,
 } from "@/i18n/policy-ui";
-import Hero from "./sections/Hero.astro";
-import Introduction from "./sections/Introduction.astro";
-import DataController from "./sections/DataController.astro";
-import Collect from "./sections/Collect.astro";
-import Information from "./sections/Information.astro";
-import Processing from "./sections/Processing.astro";
-import DataStorage from "./sections/DataStorage.astro";
-import ThirdParty from "./sections/ThirdParty.astro";
-import Cookies from "./sections/Cookies.astro";
-import Rights from "./sections/Rights.astro";
-import DataTransfer from "./sections/DataTransfer.astro";
-import Children from "./sections/Children.astro";
-import Changes from "./sections/Changes.astro";
-import Contact from "./sections/Contact.astro";
+import {
+  Changes,
+  Children,
+  Collect,
+  Cookies,
+  DataController,
+  DataStorage,
+  DataTransfer,
+  Hero,
+  Information,
+  Introduction,
+  Processing,
+  Rights,
+  ThirdParty,
+} from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

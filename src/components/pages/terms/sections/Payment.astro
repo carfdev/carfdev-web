@@ -1,0 +1,59 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["4_payment"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+
+  <h3 class="mt-4 mb-1">{section["4_1_structure"].title}</h3>
+  <p class="my-2">{section["4_1_structure"].description}</p>
+  <ul>
+    {
+      section["4_1_structure"].items.map((item) => (
+        <li>
+          <strong>{item.label}:</strong> {item.value}
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["4_2_ongoing"].title}</h3>
+
+  {section["4_2_ongoing"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["4_3_methods"].title}</h3>
+  <p class="my-2">{section["4_3_methods"].description}</p>
+  <ul>
+    {section["4_3_methods"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["4_4_currency"].title}</h3>
+  {section["4_4_currency"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["4_5_late"].title}</h3>
+  <p class="mb-2">
+    {section["4_5_late"].description}
+  </p>
+  <ul>
+    {section["4_5_late"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["4_6_additional"].title}</h3>
+  <p class="mb-2">
+    {section["4_6_additional"].description}
+  </p>
+  <ul>
+    {section["4_6_additional"].items.map((item) => <li>{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>

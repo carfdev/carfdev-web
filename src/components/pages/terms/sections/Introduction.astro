@@ -1,0 +1,13 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["1_introduction"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+  {section.paragraphs.map((item) => <p class="mb-2">{item}</p>)}
+</section>
