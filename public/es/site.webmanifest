@@ -1,14 +1,14 @@
 {
-  "name": "CarfDev - Full Stack Developer",
+  "name": "CarfDev - Desarrollador Full Stack",
   "short_name": "CarfDev",
-  "description": "Portfolio and services of Carlos Fernandez, Full Stack Developer specializing in modern web development",
-  "start_url": "/",
-  "scope": "/",
+  "description": "Portafolio y servicios de Carlos Fernández, Desarrollador Full Stack",
+  "start_url": "/es/",
+  "scope": "/es/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "lang": "en",
+  "lang": "es",
   "dir": "ltr",
   "icons": [
     {

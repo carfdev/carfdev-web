@@ -5,6 +5,7 @@ import { ClientRouter } from "astro:transitions";
 import {
   getLangFromUrl,
   getUrlWithoutLang,
+  useTranslatedPath,
   useTranslations,
 } from "@/i18n/index-ui";
 import { CustomNavbar } from "@/components/customNavbar";
@@ -15,6 +16,7 @@ import Footer from "@/components/Footer.astro";
 const lang = getLangFromUrl(Astro.url);
 const currentUrl = getUrlWithoutLang(Astro.url);
 const t = useTranslations(lang);
+const useTranslated = useTranslatedPath(lang);
 
 const navItems = t("nav").links.slice() as {
   text: string;
@@ -39,7 +41,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Carfdev" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href={useTranslated("/site.webmanifest")} />
     <Font cssVariable="--font-switzer" preload />
     <Font cssVariable="--font-plein" preload />
     <ClientRouter />
