@@ -1,0 +1,81 @@
+---
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/components/ui/link";
+import Layout from "@/layouts/Layout.astro";
+import { Home, Mail, RefreshCw } from "lucide-react";
+---
+
+<Layout
+  title="500 - Server Error | Carfdev"
+  description="Something went wrong on our end. We're working to fix it. Please try again later or contact me if the problem persists."
+>
+  <section
+    class="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 py-40"
+  >
+    <BackgroundRippleEffect client:visible />
+    <article
+      class="pointer-events-none z-10 flex w-full max-w-4xl flex-col items-center justify-center gap-6 text-center"
+    >
+      <h1
+        class="from-primary to-primary/50 bg-gradient-to-b bg-clip-text text-[clamp(6rem,20vw,12rem)] leading-none text-transparent"
+        aria-label="Error 500"
+      >
+        50x
+      </h1>
+      <h2>Server Error</h2>
+
+      <p class="subtitle">
+        Oops! Something went wrong on our end. Our servers are having a bit of
+        trouble right now. This isn't your fault – we're already working on
+        fixing it.
+      </p>
+      <div
+        class="pointer-events-auto mt-8 flex flex-col items-center gap-4 sm:flex-row"
+      >
+        <Link href="/" size="lg">
+          <Home />
+          Back to Home
+        </Link>
+
+        <Button
+          id="reload-btn"
+          className="cursor-pointer"
+          variant="secondary"
+          size="lg"
+        >
+          <RefreshCw />
+          Try Again
+        </Button>
+
+        <Link href="/#contact" variant="outline" size="lg">
+          <Mail />
+          Contact Me
+        </Link>
+      </div>
+      <div class="text-muted-foreground pointer-events-auto mt-12">
+        <p class="mb-4 text-sm">While we fix this, you can explore:</p>
+        <nav
+          class="flex flex-wrap items-center justify-center text-sm"
+          aria-label="Quick links"
+        >
+          <Link href="/#services" variant="link">Services</Link>
+          <span aria-hidden="true">•</span>
+          <Link href="/#work" variant="link">Portfolio</Link>
+          <span aria-hidden="true">•</span>
+          <Link href="/#about" variant="link">About Me</Link>
+          <span aria-hidden="true">•</span>
+          <Link href="/#technologies" variant="link">Tech Stack</Link>
+        </nav>
+      </div>
+    </article>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    document.getElementById("reload-btn")?.addEventListener("click", () => {
+      window.location.reload();
+    });
+  });
+</script>
