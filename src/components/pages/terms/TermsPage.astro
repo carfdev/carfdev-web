@@ -12,6 +12,7 @@ import {
   Intellectual,
   Responsibilities,
   Warranties,
+  Confidentiality,
 } from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
@@ -31,39 +32,7 @@ const t = useTranslations(lang);
         <Intellectual />
         <Responsibilities />
         <Warranties />
-
-        <!-- Confidentiality -->
-        <section>
-          <h2>9. Confidentiality</h2>
-          <p>
-            I understand that during the course of our engagement, I may have
-            access to confidential information about your business. I agree to:
-          </p>
-          <ul>
-            <li>Keep all confidential information private and secure</li>
-            <li>
-              Not disclose confidential information to third parties without
-              your consent
-            </li>
-            <li>
-              Use confidential information only for the purpose of providing
-              services to you
-            </li>
-            <li>
-              Return or destroy confidential information upon project completion
-              or termination
-            </li>
-          </ul>
-          <p>
-            Confidential information does not include information that is
-            publicly available, already known to me, or independently developed
-            by me.
-          </p>
-          <p>
-            If your project requires a separate Non-Disclosure Agreement (NDA),
-            please inform me before the project begins.
-          </p>
-        </section>
+        <Confidentiality />
 
         <!-- Force Majeure -->
         <section>

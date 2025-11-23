@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const confidentiality = t("sections")["9_confidentiality"];
+---
+
+<section>
+  <h2>{confidentiality.title}</h2>
+  <p class="mb-2">
+    {confidentiality.description}
+  </p>
+  <ul>
+    {confidentiality.items.map((item) => <li>{item}</li>)}
+  </ul>
+  {
+    confidentiality.paragraphs?.map((paragraph) => (
+      <p class="mt-2">{paragraph}</p>
+    ))
+  }
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>
