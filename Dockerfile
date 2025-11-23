@@ -7,8 +7,16 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 RUN pnpm run build
 
-FROM nginx:1.28.0-alpine3.21-slim AS runtime
+FROM nginx:alpine-slim AS runtime
+
+RUN adduser -D -H -s /sbin/nologin nginxuser
+
+RUN mkdir -p /run /var/cache/nginx /var/log/nginx && \
+    chown -R nginxuser:nginxuser /usr/share/nginx/html /run /var/cache/nginx /var/log/nginx
+
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build /app/dist /usr/share/nginx/html
+USER nginxuser
 EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
