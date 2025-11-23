@@ -26,6 +26,7 @@ import {
 } from "./sections";
 import { Link } from "@/components/ui/link";
 import { ArrowLeft } from "lucide-react";
+import { CustomBreadcrumb } from "@/components/custom-breadcrumb";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -36,6 +37,7 @@ const useTranslated = useTranslatedPath(lang);
   <section class="bg-background px-6 py-20 lg:px-12">
     <div class="mx-auto max-w-4xl">
       <Hero />
+      <CustomBreadcrumb lang={lang} page={t("title")} />
       <article class="max-w-none space-y-8">
         <Introduction />
         <Services />
