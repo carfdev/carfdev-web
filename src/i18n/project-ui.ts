@@ -8,6 +8,12 @@ import { createI18nUtils } from "./utils";
 export const projectUi: ProjectUI = {
   en: {
     "eric-reyes": {
+      meta: {
+        title:
+          "EricReyes Barbershop - Professional Website Development Case Study | Carfdev",
+        description:
+          "Discover how we created a modern, SEO-optimized portfolio website for Eric Reyes Barbershop in Stockholm. Professional web design that showcases precision barbering services and delivers real business results.",
+      },
       name: "EricReyes",
       breadcrumb: ["Home", "Projects"],
       hero: {
@@ -175,6 +181,12 @@ export const projectUi: ProjectUI = {
   },
   es: {
     "eric-reyes": {
+      meta: {
+        title:
+          "EricReyes Barbershop - Caso de Estudio de Desarrollo Web Profesional | Carfdev",
+        description:
+          "Descubre cómo creamos un sitio web moderno y optimizado para SEO para EricReyes Barbershop en Estocolmo. Diseño web profesional que destaca servicios de barbería de precisión y genera resultados comerciales reales.",
+      },
       name: "EricReyes",
       breadcrumb: ["Inicio", "Proyectos"],
       hero: {
@@ -343,6 +355,12 @@ export const projectUi: ProjectUI = {
   },
   sv: {
     "eric-reyes": {
+      meta: {
+        title:
+          "EricReyes Barbershop - Professionell Webbutveckling Fallstudie | Carfdev",
+        description:
+          "Upptäck hur vi skapade en modern, SEO-optimerad portföljwebbplats för EricReyes Barbershop i Stockholm. Professionell webbdesign som visar precision barberingstjänster och levererar verkliga affärsresultat.",
+      },
       name: "EricReyes",
       breadcrumb: ["Hem", "Projekt"],
       hero: {

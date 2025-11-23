@@ -9,6 +9,7 @@ export interface ProjectID {
   [key: string]: Project;
 }
 export interface Project {
+  meta: Meta;
   name: string;
   breadcrumb: Breadcrumb;
   hero: Hero;
@@ -17,6 +18,11 @@ export interface Project {
   cta: CTA;
   learned: Learned;
   testimonial: Testimonial;
+}
+
+export interface Meta {
+  title: string;
+  description: string;
 }
 
 export interface Testimonial {
