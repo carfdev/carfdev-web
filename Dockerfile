@@ -11,4 +11,4 @@ FROM nginx:1.28.0-alpine3.21-slim AS runtime
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 8080
+EXPOSE 80
