@@ -1,0 +1,43 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["5_refund"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+
+  <h3 class="mt-4 mb-1">{section["5_1_provider_cancel"].title}</h3>
+  {
+    section["5_1_provider_cancel"].paragraphs.map((p) => (
+      <p class="mb-2">{p}</p>
+    ))
+  }
+
+  <h3 class="mt-4 mb-1">{section["5_2_client_cancel"].title}</h3>
+  <p class="mb-2">{section["5_2_client_cancel"].description}</p>
+  <ul>
+    {
+      section["5_2_client_cancel"].items.map((item) => (
+        <li>
+          <strong>{item.label}</strong> {item.value}
+        </li>
+      ))
+    }
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["5_3_abandonment"].title}</h3>
+  {section["5_3_abandonment"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["5_4_ongoing"].title}</h3>
+  {section["5_4_ongoing"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>

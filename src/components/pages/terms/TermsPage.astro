@@ -3,6 +3,7 @@ import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
 import Layout from "@/layouts/Layout.astro";
 
 import { Hero, Introduction, Services, Process, Payment } from "./sections";
+import Refund from "./sections/Refund.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,53 +18,7 @@ const t = useTranslations(lang);
         <Services />
         <Process />
         <Payment />
-
-        <!-- Refund Policy -->
-        <section>
-          <h2>5. Refund and Cancellation Policy</h2>
-
-          <h3>5.1 Cancellation by Service Provider</h3>
-          <p>
-            If I need to cancel a project before starting work, you will receive
-            a full refund of any payments made, including the initial deposit.
-          </p>
-
-          <h3>5.2 Cancellation by Client</h3>
-          <p>If you decide to cancel the project:</p>
-          <ul>
-            <li>
-              <strong>Before work begins:</strong> You will receive a full refund
-              of the initial deposit minus any administrative costs incurred (maximum
-              10% of deposit)
-            </li>
-            <li>
-              <strong>After work has begun:</strong> No refund will be provided for
-              the initial deposit, as time and resources have already been invested
-              in your project. You will receive all work completed up to the cancellation
-              point
-            </li>
-            <li>
-              <strong>After 50% completion:</strong> The remaining 50% payment becomes
-              due, prorated based on work completed
-            </li>
-          </ul>
-
-          <h3>5.3 Project Abandonment</h3>
-          <p>
-            If you fail to respond to communications for more than 30 days, or
-            fail to provide necessary materials for more than 60 days, the
-            project may be considered abandoned. In such cases, no refunds will
-            be issued, and I reserve the right to close the project and retain
-            all payments made.
-          </p>
-
-          <h3>5.4 Refunds for Ongoing Services</h3>
-          <p>
-            Monthly subscriptions can be cancelled with 30 days' notice. No
-            refunds will be provided for partial months. Annual subscriptions
-            are non-refundable after the first 30 days.
-          </p>
-        </section>
+        <Refund />
 
         <!-- Intellectual Property -->
         <section>
