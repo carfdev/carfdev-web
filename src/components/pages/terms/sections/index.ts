@@ -13,6 +13,7 @@ import Termination from "./Termination.astro";
 import Indemnification from "./Indemnification.astro";
 import Dispute from "./Dispute.astro";
 import Miscellaneous from "./Miscellaneous.astro";
+import Contact from "./Contact.astro";
 
 export {
   Hero,
@@ -30,4 +31,5 @@ export {
   Indemnification,
   Dispute,
   Miscellaneous,
+  Contact,
 };

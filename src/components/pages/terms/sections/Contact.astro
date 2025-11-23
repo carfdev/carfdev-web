@@ -1,0 +1,39 @@
+---
+import { useTranslations, getLangFromUrl } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["15_contact"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+  <p class="mb-2">
+    {section.subtitle}
+  </p>
+  <div class="bg-secondary not-prose rounded-lg p-6">
+    <p class="mb-2">
+      <strong>{section.owner.name}</strong>
+    </p>
+    <p class="text-muted-foreground mb-1">{section.owner.location}</p>
+    <p class="text-muted-foreground mb-1">
+      {section.owner.email}: <a
+        href="mailto:info@carf.dev"
+        class="text-primary hover:underline"
+      >
+        info@carf.dev
+      </a>
+    </p>
+    <p class="text-muted-foreground">{section.owner.phone}: +46 72 271 02 80</p>
+  </div>
+
+  <div
+    class="bg-primary/10 dark:bg-primary/20 border-primary mt-6 rounded-lg border-l-4 p-6"
+  >
+    <p class="mb-2 font-semibold">{section.acceptance.title}</p>
+    <p class="text-muted-foreground text-sm">
+      {section.acceptance.text}
+    </p>
+  </div>
+</section>

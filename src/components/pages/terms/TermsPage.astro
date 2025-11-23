@@ -18,6 +18,7 @@ import {
   Indemnification,
   Dispute,
   Miscellaneous,
+  Contact,
 } from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
@@ -43,42 +44,7 @@ const t = useTranslations(lang);
         <Indemnification />
         <Dispute />
         <Miscellaneous />
-
-        <!-- Contact -->
-        <section>
-          <h2>15. Contact Information</h2>
-          <p>
-            If you have any questions about these Terms of Service, please
-            contact me:
-          </p>
-          <div class="bg-secondary not-prose rounded-lg p-6">
-            <p class="mb-2">
-              <strong>José Carlos Sanchez Fernandez (Carfdev)</strong>
-            </p>
-            <p class="text-muted-foreground mb-1">Stockholm, Sweden</p>
-            <p class="text-muted-foreground mb-1">
-              Email: <a
-                href="mailto:info@carf.dev"
-                class="text-primary hover:underline"
-              >
-                info@carf.dev
-              </a>
-            </p>
-            <p class="text-muted-foreground">Phone: +46 72 271 02 80</p>
-          </div>
-
-          <div
-            class="bg-primary/10 dark:bg-primary/20 border-primary mt-6 rounded-lg border-l-4 p-6"
-          >
-            <p class="mb-2 font-semibold">Acceptance of Terms</p>
-            <p class="text-muted-foreground text-sm">
-              By using my services, you acknowledge that you have read and
-              understood these Terms of Service and agree to be bound by them.
-              If you have any questions or concerns, please contact me before
-              engaging my services.
-            </p>
-          </div>
-        </section>
+        <Contact />
 
         <!-- Back to Home -->
         <div class="not-prose mt-12 flex justify-center">
