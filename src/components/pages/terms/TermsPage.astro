@@ -14,6 +14,7 @@ import {
   Warranties,
   Confidentiality,
   ForceMajeure,
+  Termination,
 } from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
@@ -35,45 +36,7 @@ const t = useTranslations(lang);
         <Warranties />
         <Confidentiality />
         <ForceMajeure />
-
-        <!-- Termination -->
-        <section>
-          <h2>11. Termination</h2>
-
-          <h3>11.1 Termination by Either Party</h3>
-          <p>
-            Either party may terminate the agreement for cause with written
-            notice if the other party:
-          </p>
-          <ul>
-            <li>Materially breaches these Terms</li>
-            <li>Fails to make required payments</li>
-            <li>Becomes insolvent or bankrupt</li>
-            <li>Engages in illegal or unethical conduct</li>
-          </ul>
-
-          <h3>11.2 Effect of Termination</h3>
-          <p>Upon termination:</p>
-          <ul>
-            <li>
-              You must pay for all work completed up to the termination date
-            </li>
-            <li>I will provide all work completed to that point</li>
-            <li>You will no longer have access to any ongoing services</li>
-            <li>
-              Sections related to payment, intellectual property, and
-              confidentiality survive termination
-            </li>
-          </ul>
-
-          <h3>11.3 Hosting Service Termination</h3>
-          <p>
-            If hosting services are terminated, you must migrate your website to
-            another provider within 30 days. I will assist with the migration
-            process at no additional charge if termination is not due to
-            non-payment.
-          </p>
-        </section>
+        <Termination />
 
         <!-- Indemnification -->
         <section>
