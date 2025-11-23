@@ -1,5 +1,9 @@
 ---
-import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@/i18n/terms-ui";
 import Layout from "@/layouts/Layout.astro";
 
 import {
@@ -20,9 +24,12 @@ import {
   Miscellaneous,
   Contact,
 } from "./sections";
+import { Link } from "@/components/ui/link";
+import { ArrowLeft } from "lucide-react";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const useTranslated = useTranslatedPath(lang);
 ---
 
 <Layout title={t("meta").title} description={t("meta").description}>
@@ -46,30 +53,11 @@ const t = useTranslations(lang);
         <Miscellaneous />
         <Contact />
 
-        <!-- Back to Home -->
-        <div class="not-prose mt-12 flex justify-center">
-          <a
-            href="/"
-            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-md px-6 text-sm font-normal whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-arrow-left"
-              aria-hidden="true"
-            >
-              <path d="m12 19-7-7 7-7"></path>
-              <path d="M19 12H5"></path>
-            </svg>
-            Back to Home
-          </a>
+        <div class="mt-12 flex justify-center">
+          <Link href={useTranslated("")} size="lg">
+            <ArrowLeft />
+            {t("btn").text}
+          </Link>
         </div>
       </article>
     </div>
