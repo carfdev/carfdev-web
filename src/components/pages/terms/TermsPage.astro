@@ -16,6 +16,7 @@ import {
   ForceMajeure,
   Termination,
   Indemnification,
+  Dispute,
 } from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
@@ -39,44 +40,7 @@ const t = useTranslations(lang);
         <ForceMajeure />
         <Termination />
         <Indemnification />
-
-        <!-- Dispute Resolution -->
-        <section>
-          <h2>13. Dispute Resolution and Governing Law</h2>
-
-          <h3>13.1 Governing Law</h3>
-          <p>
-            These Terms are governed by and construed in accordance with the
-            laws of Sweden, without regard to its conflict of law provisions.
-          </p>
-
-          <h3>13.2 Dispute Resolution</h3>
-          <p>
-            In the event of any dispute arising from these Terms or our
-            engagement:
-          </p>
-          <ol>
-            <li>
-              <strong>Negotiation:</strong> We agree to first attempt to resolve
-              the dispute through good-faith negotiation
-            </li>
-            <li>
-              <strong>Mediation:</strong> If negotiation fails, we agree to attempt
-              mediation before pursuing legal action
-            </li>
-            <li>
-              <strong>Legal Action:</strong> Any legal proceedings shall be brought
-              in the courts of Stockholm, Sweden
-            </li>
-          </ol>
-
-          <h3>13.3 Language</h3>
-          <p>
-            These Terms are written in English. In case of any discrepancies
-            between English and translated versions, the English version shall
-            prevail.
-          </p>
-        </section>
+        <Dispute />
 
         <!-- Miscellaneous -->
         <section>

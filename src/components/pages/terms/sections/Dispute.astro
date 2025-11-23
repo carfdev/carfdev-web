@@ -1,0 +1,44 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const dispute = t("sections")["13_dispute"];
+---
+
+<section>
+  <h2>{dispute.title}</h2>
+
+  <h3 class="mt-4 mb-1">{dispute["13_1_law"].title}</h3>
+  {
+    dispute["13_1_law"].paragraphs.map((paragraph) => (
+      <p class="mb-2">{paragraph}</p>
+    ))
+  }
+
+  <h3 class="mt-4 mb-1">{dispute["13_2_resolution"].title}</h3>
+  <p class="mb-2">{dispute["13_2_resolution"].description}</p>
+  <ol>
+    {
+      dispute["13_2_resolution"].steps.map((step) => (
+        <li>
+          <strong>{step.label}</strong> {step.value}
+        </li>
+      ))
+    }
+  </ol>
+
+  <h3 class="mt-4 mb-1">{dispute["13_3_language"].title}</h3>
+  {
+    dispute["13_3_language"].paragraphs.map((paragraph) => (
+      <p class="mt-2">{paragraph}</p>
+    ))
+  }
+</section>
+
+<style>
+  ol > li {
+    list-style: decimal;
+  }
+</style>
