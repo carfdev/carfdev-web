@@ -13,6 +13,7 @@ import {
   Responsibilities,
   Warranties,
   Confidentiality,
+  ForceMajeure,
 } from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
@@ -33,31 +34,7 @@ const t = useTranslations(lang);
         <Responsibilities />
         <Warranties />
         <Confidentiality />
-
-        <!-- Force Majeure -->
-        <section>
-          <h2>10. Force Majeure</h2>
-          <p>
-            I shall not be liable for any delay or failure to perform my
-            obligations due to circumstances beyond my reasonable control,
-            including but not limited to:
-          </p>
-          <ul>
-            <li>Natural disasters, pandemics, or epidemics</li>
-            <li>War, terrorism, or civil unrest</li>
-            <li>Government actions or regulations</li>
-            <li>
-              Failure of third-party services (internet providers, hosting
-              services, etc.)
-            </li>
-            <li>Power outages or hardware failures</li>
-            <li>Strikes or labor disputes</li>
-          </ul>
-          <p>
-            In such events, the timeline will be extended by a reasonable period
-            to account for the delay.
-          </p>
-        </section>
+        <ForceMajeure />
 
         <!-- Termination -->
         <section>

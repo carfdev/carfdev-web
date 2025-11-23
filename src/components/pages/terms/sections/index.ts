@@ -8,6 +8,7 @@ import Refund from "./Refund.astro";
 import Intellectual from "./Intellectual.astro";
 import Warranties from "./Warranties.astro";
 import Confidentiality from "./Confidentiality.astro";
+import ForceMajeure from "./ForceMajeure.astro";
 
 export {
   Hero,
@@ -20,4 +21,5 @@ export {
   Intellectual,
   Warranties,
   Confidentiality,
+  ForceMajeure,
 };

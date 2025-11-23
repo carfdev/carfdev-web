@@ -1,0 +1,27 @@
+---
+import { useTranslations, getLangFromUrl } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const forceMajeure = t("sections")["10_force_majeure"];
+---
+
+<section>
+  <h2>{forceMajeure.title}</h2>
+  <p class="mb-2">
+    {forceMajeure.description}
+  </p>
+  <ul>
+    {forceMajeure.items.map((item) => <li>{item}</li>)}
+  </ul>
+  <p class="mt-2">
+    {forceMajeure.conclusion}
+  </p>
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>
