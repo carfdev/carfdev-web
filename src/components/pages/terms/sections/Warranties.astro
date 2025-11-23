@@ -1,0 +1,80 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const warranties = t("sections")["8_warranties"];
+---
+
+<section>
+  <h2>{warranties.title}</h2>
+
+  <h3 class="mt-4 mb-1">{warranties["8_1_service"].title}</h3>
+  <p class="mb-2">{warranties["8_1_service"].description}</p>
+  <ul>
+    {warranties["8_1_service"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{warranties["8_2_bugs"].title}</h3>
+  <p class="font-plein mb-2 font-bold">
+    {warranties["8_2_bugs"].description}
+  </p>
+  <ul>
+    {warranties["8_2_bugs"].covered.map((item) => <li>{item}</li>)}
+  </ul>
+  <p class="font-plein my-2 font-bold">
+    {warranties["8_2_bugs"].notCovered.title}
+  </p>
+  <ul>
+    {warranties["8_2_bugs"].notCovered.items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{warranties["8_3_hosting"].title}</h3>
+  <p class="mb-2">{warranties["8_3_hosting"].description}</p>
+  <ul>
+    {warranties["8_3_hosting"].items.map((item) => <li>{item}</li>)}
+  </ul>
+  <p class="mt-2">
+    {warranties["8_3_hosting"].conclusion}
+  </p>
+
+  <h3 class="mt-4 mb-1">{warranties["8_4_disclaimer"].title}</h3>
+  <p class="mb-2">
+    {warranties["8_4_disclaimer"].description}
+  </p>
+  <ul>
+    {warranties["8_4_disclaimer"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{warranties["8_5_limitation"].title}</h3>
+  {
+    warranties["8_5_limitation"].paragraphs.map((paragraph) => (
+      <p class="mb-2">{paragraph}</p>
+    ))
+  }
+  <p class="font-plein mb-2 font-bold">
+    {warranties["8_5_limitation"].notLiable.title}
+  </p>
+  <ul>
+    {
+      warranties["8_5_limitation"].notLiable.items.map((item) => (
+        <li>{item}</li>
+      ))
+    }
+  </ul>
+
+  <h3 class="mt-4 mb-1">{warranties["8_6_content"].title}</h3>
+  <p class="mb-2">
+    {warranties["8_6_content"].description}
+  </p>
+  <ul>
+    {warranties["8_6_content"].items.map((item) => <li>{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>

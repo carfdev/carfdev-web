@@ -2,9 +2,17 @@
 import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
 import Layout from "@/layouts/Layout.astro";
 
-import { Hero, Introduction, Services, Process, Payment } from "./sections";
-import Refund from "./sections/Refund.astro";
-import Intellectual from "./sections/Intellectual.astro";
+import {
+  Hero,
+  Introduction,
+  Services,
+  Process,
+  Payment,
+  Refund,
+  Intellectual,
+  Responsibilities,
+  Warranties,
+} from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -21,160 +29,8 @@ const t = useTranslations(lang);
         <Payment />
         <Refund />
         <Intellectual />
-
-        <!-- Client Responsibilities -->
-        <section>
-          <h2>7. Client Responsibilities</h2>
-          <p>To ensure successful project completion, you agree to:</p>
-
-          <h3>7.1 Timely Communication</h3>
-          <ul>
-            <li>
-              Respond to inquiries and requests within a reasonable timeframe
-            </li>
-            <li>
-              Provide clear, constructive feedback on designs and deliverables
-            </li>
-            <li>Attend scheduled meetings and calls</li>
-          </ul>
-
-          <h3>7.2 Material Provision</h3>
-          <ul>
-            <li>
-              Provide all necessary materials, content, images, and information
-              in a timely manner
-            </li>
-            <li>Ensure all provided materials are properly licensed for use</li>
-            <li>Provide access to necessary accounts and systems</li>
-          </ul>
-
-          <h3>7.3 Decision Making</h3>
-          <ul>
-            <li>Make timely decisions on designs and functionality</li>
-            <li>Provide clear requirements and expectations</li>
-            <li>Notify me promptly of any changes to requirements or scope</li>
-          </ul>
-
-          <h3>7.4 Testing and Approval</h3>
-          <ul>
-            <li>Thoroughly test all functionality before final approval</li>
-            <li>Provide written approval of completed work</li>
-            <li>Report any issues or bugs in a timely manner</li>
-          </ul>
-
-          <p>
-            Delays caused by failure to fulfill these responsibilities may
-            result in project timeline extensions and are not my responsibility.
-          </p>
-        </section>
-
-        <!-- Warranties and Limitations -->
-        <section>
-          <h2>8. Warranties and Limitations of Liability</h2>
-
-          <h3>8.1 Service Warranty</h3>
-          <p>I warrant that:</p>
-          <ul>
-            <li>Services will be performed with professional skill and care</li>
-            <li>
-              The delivered work will substantially conform to the agreed
-              specifications
-            </li>
-            <li>
-              The code will be free from critical bugs and errors at the time of
-              delivery
-            </li>
-          </ul>
-
-          <h3>8.2 Bug Fixes and Support</h3>
-          <p>
-            I provide a 90-day warranty period from the date of project
-            completion for bug fixes related to:
-          </p>
-          <ul>
-            <li>Code errors or defects in the delivered work</li>
-            <li>Functionality not working as specified</li>
-            <li>Critical security vulnerabilities in my code</li>
-          </ul>
-          <p>This warranty does not cover:</p>
-          <ul>
-            <li>Issues caused by modifications made by you or third parties</li>
-            <li>
-              Problems arising from changes to third-party services or APIs
-            </li>
-            <li>
-              Compatibility issues with new browser versions released after
-              delivery
-            </li>
-            <li>
-              Issues caused by your hosting environment (unless I provide
-              hosting)
-            </li>
-            <li>Feature additions or enhancements beyond the original scope</li>
-          </ul>
-
-          <h3>8.3 Hosting Warranty</h3>
-          <p>For hosting services, I guarantee:</p>
-          <ul>
-            <li>99% uptime (excluding scheduled maintenance)</li>
-            <li>Daily backups retained for 30 days</li>
-            <li>SSL certificate management and renewal</li>
-            <li>Basic security monitoring</li>
-          </ul>
-          <p>
-            Scheduled maintenance will be announced at least 48 hours in advance
-            whenever possible. Emergency maintenance may be performed without
-            notice.
-          </p>
-
-          <h3>8.4 Disclaimer of Warranties</h3>
-          <p>
-            Except as expressly stated in these Terms, I provide services "as
-            is" without any warranties, express or implied, including but not
-            limited to:
-          </p>
-          <ul>
-            <li>
-              Warranties of merchantability or fitness for a particular purpose
-            </li>
-            <li>Guarantees of specific results or outcomes</li>
-            <li>Warranties regarding third-party services or components</li>
-            <li>Guarantees of error-free operation</li>
-          </ul>
-
-          <h3>8.5 Limitation of Liability</h3>
-          <p>
-            To the maximum extent permitted by Swedish law, my total liability
-            for any claims arising from or related to my services shall not
-            exceed the total amount paid by you for the specific service giving
-            rise to the claim.
-          </p>
-          <p>I shall not be liable for:</p>
-          <ul>
-            <li>
-              Indirect, incidental, special, consequential, or punitive damages
-            </li>
-            <li>Loss of profits, revenue, data, or business opportunities</li>
-            <li>Costs of procurement of substitute services</li>
-            <li>
-              Damages arising from your use or inability to use the services
-            </li>
-            <li>Third-party claims against you</li>
-            <li>Issues caused by factors beyond my reasonable control</li>
-          </ul>
-
-          <h3>8.6 Client Content Liability</h3>
-          <p>
-            You are solely responsible for all content you provide or publish
-            through your website or application. I am not responsible for:
-          </p>
-          <ul>
-            <li>The accuracy, legality, or appropriateness of your content</li>
-            <li>Copyright or trademark infringement in your content</li>
-            <li>Legal compliance of your business practices</li>
-            <li>Defamatory, offensive, or illegal content you publish</li>
-          </ul>
-        </section>
+        <Responsibilities />
+        <Warranties />
 
         <!-- Confidentiality -->
         <section>
