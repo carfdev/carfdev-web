@@ -15,6 +15,7 @@ import {
   Confidentiality,
   ForceMajeure,
   Termination,
+  Indemnification,
 } from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
@@ -37,25 +38,7 @@ const t = useTranslations(lang);
         <Confidentiality />
         <ForceMajeure />
         <Termination />
-
-        <!-- Indemnification -->
-        <section>
-          <h2>12. Indemnification</h2>
-          <p>
-            You agree to indemnify, defend, and hold me harmless from any
-            claims, damages, losses, liabilities, and expenses (including legal
-            fees) arising from:
-          </p>
-          <ul>
-            <li>Your use of the delivered services or products</li>
-            <li>
-              Content you provide or publish through your website or application
-            </li>
-            <li>Your violation of these Terms</li>
-            <li>Your violation of any third-party rights</li>
-            <li>Your business practices or operations</li>
-          </ul>
-        </section>
+        <Indemnification />
 
         <!-- Dispute Resolution -->
         <section>

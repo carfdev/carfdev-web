@@ -1,0 +1,24 @@
+---
+import { useTranslations, getLangFromUrl } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const indemnification = t("sections")["12_indemnification"];
+---
+
+<section>
+  <h2>{indemnification.title}</h2>
+  <p class="mb-2">
+    {indemnification.description}
+  </p>
+  <ul>
+    {indemnification.items.map((item) => <li>{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>

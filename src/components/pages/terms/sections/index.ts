@@ -10,6 +10,7 @@ import Warranties from "./Warranties.astro";
 import Confidentiality from "./Confidentiality.astro";
 import ForceMajeure from "./ForceMajeure.astro";
 import Termination from "./Termination.astro";
+import Indemnification from "./Indemnification.astro";
 
 export {
   Hero,
@@ -24,4 +25,5 @@ export {
   Confidentiality,
   ForceMajeure,
   Termination,
+  Indemnification,
 };
