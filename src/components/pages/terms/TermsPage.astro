@@ -17,6 +17,7 @@ import {
   Termination,
   Indemnification,
   Dispute,
+  Miscellaneous,
 } from "./sections";
 
 const lang = getLangFromUrl(Astro.url);
@@ -41,60 +42,7 @@ const t = useTranslations(lang);
         <Termination />
         <Indemnification />
         <Dispute />
-
-        <!-- Miscellaneous -->
-        <section>
-          <h2>14. Miscellaneous</h2>
-
-          <h3>14.1 Entire Agreement</h3>
-          <p>
-            These Terms, together with any project-specific agreements and
-            quotations, constitute the entire agreement between us and supersede
-            all prior agreements, understandings, and representations.
-          </p>
-
-          <h3>14.2 Amendments</h3>
-          <p>
-            I may update these Terms from time to time. Changes will be posted
-            on this page with an updated "Last updated" date. For ongoing
-            services, you will be notified of material changes at least 30 days
-            in advance.
-          </p>
-          <p>
-            Continued use of my services after changes constitutes acceptance of
-            the new Terms.
-          </p>
-
-          <h3>14.3 Severability</h3>
-          <p>
-            If any provision of these Terms is found to be unenforceable or
-            invalid, that provision will be limited or eliminated to the minimum
-            extent necessary, and the remaining provisions will remain in full
-            force and effect.
-          </p>
-
-          <h3>14.4 Waiver</h3>
-          <p>
-            No waiver of any term or condition shall be deemed a further or
-            continuing waiver of such term or any other term. My failure to
-            enforce any right or provision shall not constitute a waiver of such
-            right or provision.
-          </p>
-
-          <h3>14.5 Assignment</h3>
-          <p>
-            You may not assign or transfer these Terms or any rights hereunder
-            without my prior written consent. I may assign these Terms to any
-            successor entity in the event of a merger or acquisition.
-          </p>
-
-          <h3>14.6 Independent Contractor</h3>
-          <p>
-            I am an independent contractor and not an employee, partner, or
-            agent of yours. Nothing in these Terms creates an employment,
-            partnership, or agency relationship.
-          </p>
-        </section>
+        <Miscellaneous />
 
         <!-- Contact -->
         <section>

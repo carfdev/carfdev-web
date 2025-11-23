@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["14_miscellaneous"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+
+  <h3 class="mt-4 mb-1">{section["14_1_entire"].title}</h3>
+  {section["14_1_entire"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["14_2_amendments"].title}</h3>
+  {section["14_2_amendments"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["14_3_severability"].title}</h3>
+  {section["14_3_severability"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["14_4_waiver"].title}</h3>
+  {section["14_4_waiver"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["14_5_assignment"].title}</h3>
+  {section["14_5_assignment"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["14_6_contractor"].title}</h3>
+  {section["14_6_contractor"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+</section>
