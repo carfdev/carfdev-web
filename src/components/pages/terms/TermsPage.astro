@@ -4,6 +4,7 @@ import Layout from "@/layouts/Layout.astro";
 
 import { Hero, Introduction, Services, Process, Payment } from "./sections";
 import Refund from "./sections/Refund.astro";
+import Intellectual from "./sections/Intellectual.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,82 +14,13 @@ const t = useTranslations(lang);
   <section class="bg-background px-6 py-20 lg:px-12">
     <div class="mx-auto max-w-4xl">
       <Hero />
-      <article class="prose prose-slate dark:prose-invert max-w-none space-y-8">
+      <article class="max-w-none space-y-8">
         <Introduction />
         <Services />
         <Process />
         <Payment />
         <Refund />
-
-        <!-- Intellectual Property -->
-        <section>
-          <h2>6. Intellectual Property Rights</h2>
-
-          <h3>6.1 Code Ownership and Licensing</h3>
-          <p>
-            Upon full payment, you receive a perpetual, worldwide, non-exclusive
-            license to use, modify, and distribute the code developed for your
-            project. However:
-          </p>
-          <ul>
-            <li>
-              The code is published on my GitHub repository under the MIT
-              License in my name
-            </li>
-            <li>
-              I retain the right to reuse code, components, and techniques
-              developed for your project in future projects
-            </li>
-            <li>
-              You have full rights to use the code for your business purposes
-              without restriction
-            </li>
-            <li>
-              The MIT License allows anyone to use, copy, modify, merge,
-              publish, distribute, sublicense, and/or sell copies of the
-              software
-            </li>
-          </ul>
-
-          <h3>6.2 Open Source Components</h3>
-          <p>
-            I may use open-source libraries, frameworks, and tools in your
-            project. These components remain subject to their original licenses.
-            I will inform you of any significant open-source components used.
-          </p>
-
-          <h3>6.3 Client-Provided Materials</h3>
-          <p>
-            You retain all rights to materials you provide (text, images, logos,
-            etc.). You warrant that you have the legal right to use all
-            materials provided and that their use does not infringe on any
-            third-party rights.
-          </p>
-
-          <h3>6.4 Portfolio Rights</h3>
-          <p>
-            I reserve the right to include your project in my portfolio and
-            promotional materials, including:
-          </p>
-          <ul>
-            <li>Displaying screenshots and descriptions of the work</li>
-            <li>Linking to your live website</li>
-            <li>Using the project as a case study</li>
-            <li>Mentioning your company name (with your permission)</li>
-          </ul>
-          <p>
-            If you require confidentiality or do not wish your project to be
-            featured in my portfolio, please inform me in writing before the
-            project begins.
-          </p>
-
-          <h3>6.5 Third-Party Rights</h3>
-          <p>
-            You are responsible for ensuring that all content, images, text, and
-            other materials you provide do not infringe on any third-party
-            copyrights, trademarks, or other intellectual property rights.
-          </p>
-        </section>
+        <Intellectual />
 
         <!-- Client Responsibilities -->
         <section>

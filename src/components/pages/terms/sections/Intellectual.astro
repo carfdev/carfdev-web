@@ -1,0 +1,50 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/terms-ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const section = t("sections")["6_ip"];
+---
+
+<section>
+  <h2>{section.title}</h2>
+
+  <h3 class="mt-4 mb-1">{section["6_1_code"].title}</h3>
+  <p class="mb-2">
+    {section["6_1_code"].description}
+  </p>
+  <ul>
+    {section["6_1_code"].items.map((item) => <li>{item}</li>)}
+  </ul>
+
+  <h3 class="mt-4 mb-1">{section["6_2_opensource"].title}</h3>
+  {section["6_2_opensource"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+
+  <h3 class="mt-4 mb-1">{section["6_3_client_materials"].title}</h3>
+  {
+    section["6_3_client_materials"].paragraphs.map((p) => (
+      <p class="mb-2">{p}</p>
+    ))
+  }
+
+  <h3 class="mt-4 mb-1">{section["6_4_portfolio"].title}</h3>
+  <p class="mb-2">
+    {section["6_4_portfolio"].description}
+  </p>
+  <ul>
+    {section["6_4_portfolio"].items.map((item) => <li>{item}</li>)}
+  </ul>
+  <p class="my-2">
+    {section["6_4_portfolio"].note}
+  </p>
+
+  <h3 class="mt-4 mb-1">{section["6_5_third_party"].title}</h3>
+  {section["6_5_third_party"].paragraphs.map((p) => <p class="mb-2">{p}</p>)}
+</section>
+
+<style>
+  ul > li {
+    list-style: disc;
+  }
+</style>
