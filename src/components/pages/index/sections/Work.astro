@@ -1,6 +1,5 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/index-ui";
-import WorkExampleImage from "@/assets/images/work-example.webp";
 import EricReyesImg from "@/assets/images/ericReyes.webp";
 import WorkItem from "./WorkItem.astro";
 
@@ -9,7 +8,7 @@ const t = useTranslations(lang);
 
 const work = t("portfolio");
 
-const workImage = [EricReyesImg, WorkExampleImage];
+const workImage = [EricReyesImg];
 ---
 
 <section id="work" class="bg-background px-6 py-20 lg:px-12">
