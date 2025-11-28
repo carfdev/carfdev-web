@@ -27,6 +27,7 @@ import {
 import { Link } from "@/components/ui/link";
 import { ArrowLeft } from "lucide-react";
 import { CustomBreadcrumb } from "@/components/custom-breadcrumb";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -39,21 +40,51 @@ const useTranslated = useTranslatedPath(lang);
       <Hero />
       <CustomBreadcrumb lang={lang} page={t("title")} />
       <article class="max-w-none space-y-8">
-        <Introduction />
-        <Services />
-        <Process />
-        <Payment />
-        <Refund />
-        <Intellectual />
-        <Responsibilities />
-        <Warranties />
-        <Confidentiality />
-        <ForceMajeure />
-        <Termination />
-        <Indemnification />
-        <Dispute />
-        <Miscellaneous />
-        <Contact />
+        <ScrollReveal client:visible>
+          <Introduction />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Services />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Process />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Payment />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Refund />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Intellectual />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Responsibilities />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Warranties />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Confidentiality />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <ForceMajeure />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Termination />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Indemnification />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Dispute />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Miscellaneous />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Contact />
+        </ScrollReveal>
 
         <div class="mt-12 flex justify-center">
           <Link href={useTranslated("")} size="lg">

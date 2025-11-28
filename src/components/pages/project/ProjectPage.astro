@@ -12,6 +12,7 @@ import {
   type projectUi,
   useTranslations,
 } from "@/i18n/project-ui";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface Props {
   projectId: keyof (typeof projectUi)[typeof lang];
@@ -28,9 +29,19 @@ const ui = t(projectId);
     <CustomBreadcrumb lang={lang} projectId={projectId} />
   </div>
   <Hero projectId={projectId} />
-  <Overview projectId={projectId} />
-  <DesignProcess projectId={projectId} />
-  <Testimonial projectId={projectId} />
-  <CTA projectId={projectId} />
-  <LessonsLearned projectId={projectId} />
+  <ScrollReveal client:visible>
+    <Overview projectId={projectId} />
+  </ScrollReveal>
+  <ScrollReveal client:visible>
+    <DesignProcess projectId={projectId} />
+  </ScrollReveal>
+  <ScrollReveal client:visible>
+    <Testimonial projectId={projectId} />
+  </ScrollReveal>
+  <ScrollReveal client:visible>
+    <CTA projectId={projectId} />
+  </ScrollReveal>
+  <ScrollReveal client:visible>
+    <LessonsLearned projectId={projectId} />
+  </ScrollReveal>
 </Layout>

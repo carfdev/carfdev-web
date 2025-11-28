@@ -24,6 +24,7 @@ import {
   Contact,
 } from "./sections";
 import { CustomBreadcrumb } from "@/components/custom-breadcrumb";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -37,19 +38,45 @@ const useTranslated = useTranslatedPath(lang);
       <CustomBreadcrumb lang={lang} page={t("title")} />
 
       <article class="space-y-8">
-        <Introduction />
-        <DataController />
-        <Collect />
-        <Information />
-        <Processing />
-        <DataStorage />
-        <ThirdParty />
-        <Cookies />
-        <Rights />
-        <DataTransfer />
-        <Children />
-        <Changes />
-        <Contact />
+        <ScrollReveal client:visible>
+          <Introduction />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <DataController />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Collect />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Information />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Processing />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <DataStorage />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <ThirdParty />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Cookies />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Rights />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <DataTransfer />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Children />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Changes />
+        </ScrollReveal>
+        <ScrollReveal client:visible>
+          <Contact />
+        </ScrollReveal>
 
         <div class="mt-12 flex justify-center">
           <Link href={useTranslated("")} size="lg">
