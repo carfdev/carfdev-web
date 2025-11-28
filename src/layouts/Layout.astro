@@ -41,7 +41,7 @@ const {
   type = "website",
 } = Astro.props;
 
-const canonicalURL = new URL(PUBLIC_WEB_URL + useTranslated("") + currentUrl);
+const canonicalURL = new URL(PUBLIC_WEB_URL + useTranslated(currentUrl));
 const socialImageURL = new URL(PUBLIC_WEB_URL + image);
 const siteName = "Carfdev";
 ---
@@ -95,6 +95,7 @@ const siteName = "Carfdev";
       content={description ?? t("meta").description}
     />
     <meta name="twitter:image" content={socialImageURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body
     class="bg-background relative grid min-h-screen grid-rows-[auto_1fr_auto]"
