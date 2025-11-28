@@ -1,5 +1,6 @@
 ---
 import { Link } from "@/components/ui/link";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { getLangFromUrl, useTranslations } from "@/i18n/index-ui";
 import { Calendar } from "lucide-react";
 
@@ -10,7 +11,7 @@ const cta = t("cta");
 ---
 
 <section id="cta-banner" class="bg-primary px-6 py-20 lg:px-12">
-  <div class="mx-auto max-w-4xl text-center">
+  <ScrollReveal client:visible className="mx-auto max-w-4xl text-center">
     <h2 class="text-secondary">{cta.title}</h2>
     <p class="subtitle text-muted mb-8">
       {cta.subtitle}
@@ -21,5 +22,5 @@ const cta = t("cta");
         {cta.buttonText}
       </Link>
     </div>
-  </div>
+  </ScrollReveal>
 </section>

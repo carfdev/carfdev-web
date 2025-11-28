@@ -4,6 +4,7 @@ import { ContactForm } from "./ContactForm";
 import { getLangFromUrl, useTranslations } from "@/i18n/index-ui";
 import ContactDetail from "./ContactDetail.astro";
 import { Toaster } from "@/components/ui/toaster";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -11,7 +12,7 @@ const contact = t("contact");
 ---
 
 <section id="contact" class="bg-background px-6 py-20 lg:px-12">
-  <div class="mx-auto max-w-4xl">
+  <ScrollReveal client:visible className="mx-auto max-w-4xl">
     <div class="mb-16 text-center">
       <h2>{contact.title}</h2>
       <p class="subtitle">
@@ -54,6 +55,6 @@ const contact = t("contact");
         </div>
       </div>
     </div>
-  </div>
+  </ScrollReveal>
   <Toaster client:load />
 </section>

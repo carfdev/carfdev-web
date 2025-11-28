@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/index-ui";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -9,7 +10,7 @@ const techStack = t("techStack");
 ---
 
 <section id="technologies" class="bg-background px-6 py-20 lg:px-12">
-  <div class="mx-auto max-w-7xl">
+  <ScrollReveal client:visible className="mx-auto max-w-7xl">
     <div class="mb-16 text-center">
       <h2>{techStack.title}</h2>
       <p class="subtitle">
@@ -18,5 +19,5 @@ const techStack = t("techStack");
     </div>
 
     <HoverEffect client:visible items={techStack.items} />
-  </div>
+  </ScrollReveal>
 </section>

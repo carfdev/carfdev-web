@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/index-ui";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import ValueItem from "./ValueItem.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -9,26 +10,28 @@ const value = t("valueProposition");
 ---
 
 <section class="bg-secondary px-6 py-20 lg:px-12">
-  <article class="mx-auto max-w-7xl">
-    <header class="mb-16 text-center">
-      <h2>
-        {value.title}
-      </h2>
-      <p class="subtitle">
-        {value.subtitle}
-      </p>
-    </header>
+  <ScrollReveal client:visible className="mx-auto max-w-7xl">
+    <article>
+      <header class="mb-16 text-center">
+        <h2>
+          {value.title}
+        </h2>
+        <p class="subtitle">
+          {value.subtitle}
+        </p>
+      </header>
 
-    <div class="grid gap-12 md:grid-cols-3">
-      {
-        value.items.map((item) => (
-          <ValueItem
-            title={item.title}
-            description={item.description}
-            icon={item.icon}
-          />
-        ))
-      }
-    </div>
-  </article>
+      <div class="grid gap-12 md:grid-cols-3">
+        {
+          value.items.map((item) => (
+            <ValueItem
+              title={item.title}
+              description={item.description}
+              icon={item.icon}
+            />
+          ))
+        }
+      </div>
+    </article>
+  </ScrollReveal>
 </section>

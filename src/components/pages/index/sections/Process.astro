@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/index-ui";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import ProcessItem from "./ProcessItem.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -9,7 +10,7 @@ const process = t("process");
 ---
 
 <section id="process" class="bg-background px-6 py-20 lg:px-12">
-  <div class="mx-auto max-w-7xl">
+  <ScrollReveal client:visible className="mx-auto max-w-7xl">
     <div class="mb-16 text-center">
       <h2>{process.title}</h2>
       <p class="subtitle">
@@ -28,5 +29,5 @@ const process = t("process");
         ))
       }
     </div>
-  </div>
+  </ScrollReveal>
 </section>
