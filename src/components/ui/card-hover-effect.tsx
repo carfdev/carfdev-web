@@ -106,7 +106,7 @@ export const CardDescription = ({
 export const CardIcon = ({ icon }: { icon: TablerIconName }) => {
   return (
     <div className="bg-secondary mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
-      <TablerIcon name={icon} />
+      <TablerIcon name={icon} aria-hidden="true" />
     </div>
   );
 };

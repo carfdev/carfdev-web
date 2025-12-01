@@ -17,7 +17,7 @@ const { title, description, icon, checks }: Props = Astro.props;
     <div
       class="bg-background flex h-12 w-12 items-center justify-center rounded-lg"
     >
-      <LucideIcon name={icon} />
+      <LucideIcon name={icon} aria-hidden="true" />
     </div>
     <h3 class="mb-0">{title}</h3>
   </div>
@@ -30,7 +30,7 @@ const { title, description, icon, checks }: Props = Astro.props;
       checks &&
         checks.map((check) => (
           <li class="text-muted-foreground flex items-center gap-2">
-            <Check className="size-4" /> {check}
+            <Check className="size-4" aria-hidden="true" /> {check}
           </li>
         ))
     }

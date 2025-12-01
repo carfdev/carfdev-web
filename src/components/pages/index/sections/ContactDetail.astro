@@ -11,7 +11,7 @@ const { label, value, note, icon }: Props = Astro.props;
   <div
     class="bg-secondary mr-4 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg"
   >
-    <LucideIcon name={icon} />
+    <LucideIcon name={icon} aria-hidden="true" />
   </div>
   <div>
     <h4 class="text-primary text-lg">{label}</h4>
