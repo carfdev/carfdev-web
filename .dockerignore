@@ -1,0 +1,26 @@
+# Only production build inputs belong in the context.
+**
+!Dockerfile
+!.dockerignore
+!package.json
+!pnpm-lock.yaml
+!pnpm-workspace.yaml
+!astro.config.mjs
+!tsconfig.json
+!src/
+!src/**
+!public/
+!public/**
+!nginx/
+!nginx/nginx.conf
+
+# Never include local secrets or generated dependencies, even under source paths.
+**/node_modules
+**/.env*
+**/.aws
+**/.ssh
+**/.git
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx

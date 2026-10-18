@@ -19,6 +19,25 @@ pnpm astro dev logs
 pnpm astro dev stop
 ```
 
+## Docker
+
+Build and run the production site locally:
+
+```sh
+docker build -t carfdev-web:local .
+docker run --rm -p 127.0.0.1:8080:8080 carfdev-web:local
+```
+
+Open `http://localhost:8080`. Nginx serves the static output as its unprivileged
+`nginx` user on port 8080, including the custom 404 page. Node and pnpm are only
+used in the build stage. Dependency installation uses pnpm 12.3.4 and the frozen
+lockfile; the build needs network access for dependencies and Astro fonts.
+
+The `.dockerignore` allowlist includes only production build inputs, excluding
+local credentials, dependencies, build output and tests. Add new build-time
+configuration files to that allowlist when needed. Base image tags track updates;
+use image digests if you need immutable base images.
+
 ## Commands
 
 Run commands from the repository root.
