@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Check automation formatting
+        run: pnpm exec prettier '.github/workflows/*.yml' release-please-config.json .release-please-manifest.json --check
+      - run: pnpm astro check
+      - run: pnpm test:coverage
+      - run: pnpm test:integration
+      - run: pnpm build
+      - run: pnpm test:regression
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - name: Upload browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: browser-failure-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7

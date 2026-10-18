@@ -38,6 +38,59 @@ local credentials, dependencies, build output and tests. Add new build-time
 configuration files to that allowlist when needed. Base image tags track updates;
 use image digests if you need immutable base images.
 
+## GitHub Actions and releases
+
+Pull requests to `main` run CI: automation-file formatting, Astro diagnostics, unit coverage,
+integration tests, a production build, legacy regressions and Chromium E2E.
+Pushes to `main` run the same reusable CI before release automation. Browser
+failure evidence is retained for seven days. CI can also be run manually.
+
+The official [Google release-please action](https://github.com/googleapis/release-please-action)
+opens a release PR from Conventional Commits. Merge that PR to update
+`package.json`, the release manifest and `CHANGELOG.md`, then create a GitHub
+release and a `vX.Y.Z` tag. Nothing is published to npm. The manifest starts at
+the current package version, `0.0.1`; the first release considers existing commit
+history. `feat:` and `fix:` drive version changes; ordinary `ci:`/`chore:` commits
+alone do not request a new release.
+
+In GitHub repository **Settings → Actions → General**, allow Actions to create
+pull requests. Release automation uses `GITHUB_TOKEN` by default. Its generated
+PRs do not trigger CI automatically: run CI manually on the release PR branch,
+or configure the optional `RELEASE_PLEASE_TOKEN` secret with a fine-grained PAT
+for this repository with Contents, Issues and Pull requests read/write access.
+An organization may impose additional approval restrictions. Protect `main` with
+required CI checks if merges must always be gated.
+
+### Versioned Docker Hub images
+
+Create the Docker Hub repository, then configure these GitHub Actions settings:
+
+| Kind     | Name                 | Value                                                        |
+| -------- | -------------------- | ------------------------------------------------------------ |
+| Variable | `DOCKERHUB_USERNAME` | Docker Hub login username                                    |
+| Variable | `DOCKERHUB_IMAGE`    | Full image name, such as `your-namespace/carfdev-web`        |
+| Secret   | `DOCKERHUB_TOKEN`    | Docker Hub access token with write access to that repository |
+
+When both variables exist, each new release calls the Docker workflow directly,
+even with the default GitHub token. Missing variables skip image publication;
+missing credentials fail publication without removing the GitHub release.
+Buildx and QEMU build `linux/amd64` and `linux/arm64` into one image manifest.
+GitHub tag `v1.2.3` produces Docker tag `1.2.3`, built from the released commit.
+No `latest` alias is maintained. Multi-platform builds may take several minutes.
+
+If publishing fails or Docker Hub is configured later, manually run **Publish
+Docker image** with the existing release tag, for example `v1.2.3`. It builds
+that tag and verifies the package version before publishing; this can overwrite
+the same Docker version tag. Re-running Release alone may not publish an image
+for an already-created release. To inspect the combined manifest afterward:
+
+```sh
+docker buildx imagetools inspect your-namespace/carfdev-web:1.2.3
+```
+
+The workflows are prepared locally; repository settings, secrets, remote runs and
+actual publication must be configured and verified in GitHub/Docker Hub.
+
 ## Commands
 
 Run commands from the repository root.
