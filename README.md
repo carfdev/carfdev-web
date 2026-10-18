@@ -54,6 +54,29 @@ before each case. Render only the component under test with Astro's Container AP
 Do not add tests for static copy or Tailwind class inventories. Header's active-state
 class is an exception because it is the observable route-selection indicator.
 
+Run integration contracts separately:
+
+```sh
+pnpm test:integration
+```
+
+This command builds a fresh disposable copy of the real project under the system temporary
+folder, then removes it on success or failure. It never reads an existing `dist` build.
+Installed dependencies are reused; no additional packages are installed. Astro's font
+provider may need network access and starts an internal server during the build.
+
+The integration suite checks collection-to-card composition, generated detail routes,
+next-project sequencing, backend/frontend sections, emitted preview images and Layout/SEO
+contracts. The component case mocks only the collection boundary; the production-build
+cases use real content, helpers, components and integrations. A test-only endpoint in the
+temporary copy exposes validated collection data as the oracle; it is never added to the
+portfolio's routes. Assertions derive expected text from that collection rather than
+hardcoding editorial copy. These checks complement the unit tests instead of repeating
+sorter edge cases, Header matching, ActionLink props or isolated fallback behavior.
+
+Integration coverage describes these cross-module contracts; `pnpm test:coverage` still
+reports the configured unit TypeScript coverage, not coverage of built Astro templates.
+
 The legacy page regressions are separate and intentionally sensitive to editorial changes:
 
 ```sh
