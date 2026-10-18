@@ -1,0 +1,40 @@
+---
+interface Props {
+  name: string;
+  technologies: string[];
+  href?: string;
+}
+
+const { name, technologies, href } = Astro.props;
+
+const Element = href ? "a" : "div";
+---
+
+<article class="border-t border-border-foreground">
+  <Element
+    href={href}
+    class:list={[
+      "group flex min-w-0 flex-col gap-2 py-4",
+      "md:flex-row md:items-center md:justify-between",
+      "md:gap-8 md:py-5",
+      href &&
+        "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white",
+    ]}
+  >
+    <h3 class="min-w-0 text-2xl font-medium tracking-tight text-white">
+      {name}{" "}
+      {href && (
+        <span
+          aria-hidden="true"
+          class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+        >
+          ↗
+        </span>
+      )}
+    </h3>
+
+    <p class="min-w-0 font-mono text-xs leading-relaxed text-primary-foreground md:text-right">
+      {technologies.join(" / ")}
+    </p>
+  </Element>
+</article>

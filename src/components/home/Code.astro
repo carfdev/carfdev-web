@@ -1,0 +1,80 @@
+---
+import type { ComponentProps } from "astro/types";
+import CodeItem from "./CodeItem.astro";
+
+type Project = ComponentProps<typeof CodeItem>;
+
+const projects = [
+  {
+    name: "Invoice API",
+    technologies: ["Rust", "Axum", "mTLS"],
+    href: "/projects/invoice-api",
+  },
+  {
+    name: "CarfDev Gateway",
+    technologies: ["Go", "Gin", "NATS"],
+    href: "/projects/carfdev-gateway",
+  },
+  {
+    name: "Foodi",
+    technologies: ["Astro", "Vue", "Tailwind CSS"],
+    href: "/projects/foodi",
+  },
+] satisfies Project[];
+---
+
+<section aria-labelledby="projects-title" class="bg-primary">
+  <div class="mx-auto flex max-w-360 flex-col gap-2 px-6 py-11 md:gap-5 md:px-20 md:py-16">
+    <!-- Section index -->
+    <p class="font-mono text-xs tracking-mono text-primary-foreground">
+      02 / CODE
+    </p>
+
+    <!-- Section header -->
+    <header class="flex flex-col gap-7 md:flex-row md:items-end md:justify-between md:gap-8">
+      <div class="flex max-w-177.5 flex-col gap-4.5">
+        <h2
+          id="projects-title"
+          class="text-h3-fluid font-medium text-white text-balance"
+        >
+          Personal projects.
+          <br />
+          Practical learning.
+        </h2>
+
+        <p class="text-lg leading-relaxed text-primary-foreground md:text-xl">
+          A few things I've built to explore how the web works, from the
+          interface to the infrastructure.
+        </p>
+      </div>
+
+      <a
+        href="/projects"
+        class="group inline-flex w-fit shrink-0 items-center gap-2 text-sm font-medium text-white transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      >
+        <span>All projects</span>
+
+        <span
+          aria-hidden="true"
+          class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+        >
+          ↗
+        </span>
+      </a>
+    </header>
+
+    <!-- Projects -->
+    <ul class="flex flex-col gap-2 md:gap-5">
+      {projects.map((project) => (
+        <li>
+          <CodeItem {...project} />
+        </li>
+      ))}
+    </ul>
+
+    <!-- Section footer -->
+    <p class="border-t border-border-foreground pt-5 font-mono text-xs leading-relaxed tracking-mono text-primary-foreground">
+      SELECTED PERSONAL PROJECTS / SOURCE ON GITHUB
+    </p>
+  </div>
+</section>

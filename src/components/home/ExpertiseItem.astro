@@ -1,0 +1,36 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  description: string;
+  technologies: string[];
+}
+
+const { number, title, description, technologies } = Astro.props;
+---
+
+<div class="border-t border-border pt-6">
+  <div class="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-4 gap-y-5 lg:grid-cols-[2.5rem_minmax(14rem,20.625rem)_minmax(0,1fr)] lg:gap-x-8">
+    <!-- Number -->
+    <span
+      aria-hidden="true"
+      class="pt-1 font-mono text-xs tracking-mono text-secondary"
+    >
+      {number}
+    </span>
+
+    <!-- Title -->
+    <h3 class="min-w-0 text-2xl font-medium tracking-tight text-primary lg:text-[28px]">
+      {title}
+    </h3>
+
+    <!-- Description and technologies -->
+    <div class="col-start-2 flex min-w-0 flex-col gap-4.5 lg:col-start-3">
+      <p class="leading-relaxed text-secondary md:text-lg">{description}</p>
+
+      <p class="font-mono text-xs leading-relaxed text-primary md:text-sm">
+        {technologies.join(" · ")}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+---
+import { ArrowRight } from "@/components/icones";
+---
+
+<section
+  aria-labelledby="hero-title"
+  class="max-w-360 w-full m-auto flex flex-col gap-8 px-6 pt-12 pb-8 md:gap-10 md:px-20 md:pt-16 md:pb-12"
+>
+  <!-- Eyebrow -->
+  <p class="font-mono text-[11px] tracking-mono text-secondary md:text-xs">
+    FULLSTACK WEB DEVELOPER
+    <span class="hidden md:inline"> / STOCKHOLM, SE</span>
+  </p>
+
+  <!-- Main headline -->
+  <h1
+    id="hero-title"
+    class="max-w-6xl text-title-fluid font-medium text-primary"
+  >
+    From browser
+    <br />
+    to backend.
+  </h1>
+
+  <!-- Introduction and details -->
+  <div class="flex flex-col gap-12 pt-3 pb-2 md:flex-row md:items-end md:justify-between md:gap-10 md:pt-4 md:pb-8">
+    <div class="flex max-w-150 flex-col items-start gap-7">
+      <p class="text-lg leading-relaxed text-secondary md:text-[23px]/[33px]">
+        I'm carfdev, a Stockholm-based developer building web experiences and
+        backend systems with a focus on performance, simplicity, and clean
+        architecture.
+      </p>
+
+      <a
+        href="/projects"
+        class="group inline-flex min-h-12 items-center justify-between gap-9 bg-accent px-5.5 py-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+      >
+        <span>Explore my projects</span>
+
+        <span
+          aria-hidden="true"
+          class="transition-transform duration-200 group-hover:translate-x-1"
+        >
+          <ArrowRight />
+        </span>
+      </a>
+    </div>
+
+    <!-- Secondary info -->
+    <div class="flex shrink-0 flex-col gap-2.5">
+      <p class="font-mono text-xs tracking-mono text-secondary">
+        LEARNING BY BUILDING
+      </p>
+
+      <p class="text-sm text-primary">Personal projects. Open source.</p>
+
+      <a
+        href="https://github.com/carfdev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-fit text-sm text-secondary transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+        aria-label="Visit carfdev on GitHub (opens in a new tab)"
+      >
+        github.com/carfdev ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="border-t border-border pt-5">
+    <div class="flex items-center justify-between gap-4">
+      <p class="font-mono text-[10px] tracking-mono text-secondary md:text-xs">
+        BASED IN STOCKHOLM, SWEDEN
+      </p>
+
+      <p class="hidden items-center gap-2 font-mono text-xs tracking-mono text-secondary md:inline-flex">
+        SCROLL TO EXPLORE
+        <span aria-hidden="true" class="motion-safe:animate-bounce">
+          ↓
+        </span>
+      </p>
+    </div>
+  </div>
+</section>

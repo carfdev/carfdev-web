@@ -1,0 +1,93 @@
+---
+import "@/styles/global.css";
+import { Font } from "astro:assets";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Fullstack Web Developer",
+  description = "Stockholm-based fullstack developer building web interfaces, backend systems, and infrastructure.",
+} = Astro.props;
+
+const fullTitle = `carfdev | ${title}`;
+
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).href
+  : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <Font
+      cssVariable="--font-geist"
+      preload={[
+        {
+          weight: "400",
+          style: "normal",
+          subset: "latin",
+        },
+        {
+          weight: "500",
+          style: "normal",
+          subset: "latin",
+        },
+      ]}
+    />
+    <Font
+      cssVariable="--font-ibm-plex-mono"
+      preload={[
+        {
+          weight: "400",
+          style: "normal",
+          subset: "latin",
+        },
+      ]}
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+
+    <meta property="og:site_name" content="carfdev" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    {canonicalURL && <meta property="og:url" content={canonicalURL} />}
+  </head>
+
+  <body class="min-h-dvh bg-base font-sans">
+    <div class="flex min-h-dvh w-full flex-col">
+      <a
+        href="#main-content"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-base focus:p-3 focus:text-primary"
+      >
+        Skip to content
+      </a>
+      <Header />
+
+      <main id="main-content" class="flex-1">
+        <slot />
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>

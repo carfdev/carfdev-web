@@ -1,0 +1,71 @@
+---
+import type { ComponentProps } from "astro/types";
+import ExpertiseItem from "./ExpertiseItem.astro";
+
+type Expertise = Omit<ComponentProps<typeof ExpertiseItem>, "number">;
+
+const expertises = [
+  {
+    title: "Web interfaces",
+    description:
+      "Responsive, accessible web experiences built with semantic markup and modern frontend frameworks.",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Tailwind CSS",
+      "Astro",
+      "React",
+      "Vue",
+      "Next.js",
+      "Nuxt",
+    ],
+  },
+  {
+    title: "Backend & APIs",
+    description:
+      "Backend services and APIs designed with security, reliability, and maintainability in mind.",
+    technologies: ["Rust", "Go", "Node.js", "NestJS", "TLS", "mTLS", "JWT"],
+  },
+  {
+    title: "Infrastructure & workflow",
+    description:
+      "From isolated development environments to deployment, networking, and server infrastructure.",
+    technologies: [
+      "Linux",
+      "Docker",
+      "Dev Containers",
+      "Cloudflare",
+      "VPS",
+      "DNS",
+    ],
+  },
+] satisfies Expertise[];
+---
+
+<section
+  aria-labelledby="expertise-title"
+  class="max-w-360 w-full m-auto flex flex-col gap-8 px-6 pt-12 pb-14 md:gap-11 md:px-20 md:pt-18 md:pb-20"
+>
+  <header class="flex flex-col gap-3.5 md:flex-row md:items-end md:justify-between md:gap-8">
+    <h2
+      id="expertise-title"
+      class="text-h3-fluid font-medium text-primary text-balance"
+    >
+      The whole picture.
+    </h2>
+
+    <p class="shrink-0 font-mono text-xs tracking-mono text-secondary">
+      01 / EXPERTISE
+    </p>
+  </header>
+
+  <ol class="flex list-none flex-col gap-8 md:gap-11" role="list">
+    {expertises.map((item, index) => (
+      <li>
+        <ExpertiseItem number={String(index + 1).padStart(2, "0")} {...item} />
+      </li>
+    ))}
+  </ol>
+</section>
