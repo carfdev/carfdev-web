@@ -43,7 +43,14 @@ try {
     join(root, "node_modules"),
     "dir",
   );
-  await build({ root, logLevel: "error" });
+  // Astro places static prerender output relative to cwd, even with an explicit root.
+  process.chdir(root);
+  await build({
+    root,
+    cacheDir: join(root, ".cache/astro"),
+    vite: { cacheDir: join(root, ".cache/vite") },
+    logLevel: "error",
+  });
   server = await preview({
     root,
     server: { host: "127.0.0.1", port: 4174 },

@@ -87,6 +87,10 @@ pnpm test:e2e
 The suite runs Chromium at 320px and 1440px. Each test gets a fresh browser context.
 Playwright builds a disposable project and serves it only at `127.0.0.1:4174`; an
 existing server is rejected, and the temporary build is removed when the server stops.
+The server builds from that temporary directory and keeps its caches there, so the
+checkout and the system temporary folder can be on different filesystems (including
+Dev Containers). On Linux, `TMPDIR=/dev/shm pnpm test:e2e` exercises this boundary
+when `/dev/shm` is a separate writable mount with enough free space.
 Browser download and the font provider need network access on a cold setup.
 On a supported Linux distribution, install missing browser system libraries with
 `pnpm exec playwright install --with-deps chromium` if Playwright reports them missing.
