@@ -1,0 +1,42 @@
+{
+  "name": "Carfdev Web",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "[astro]": {
+          "editor.defaultFormatter": "astro-build.astro-vscode"
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[css]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
+    }
+  },
+
+  "postCreateCommand": "sudo corepack enable && pnpm install",
+
+  "forwardPorts": [4321],
+
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro Dev Server"
+    }
+  },
+
+  "remoteUser": "node"
+}
