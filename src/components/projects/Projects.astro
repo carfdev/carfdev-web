@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import Project from "./Project.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section
+  aria-label="Project list"
+  class="mx-auto w-full max-w-360 px-6 pb-8 md:px-20 md:pb-16"
+>
+  <ol class="flex list-none flex-col" role="list">
+    {projects.map((project, index) => (
+      <li>
+        <Project
+          number={String(index + 1).padStart(2, "0")}
+          name={project.data.title}
+          title={project.data.card.subtitle}
+          description={project.data.card.description}
+          technologies={project.data.card.technologies}
+          href={`/projects/${project.id}`}
+        />
+      </li>
+    ))}
+  </ol>
+</section>

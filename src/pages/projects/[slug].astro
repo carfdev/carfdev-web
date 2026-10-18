@@ -1,0 +1,53 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import ProjectHero from "@/components/project-detail/ProjectHero.astro";
+import ProjectMetadata from "@/components/project-detail/ProjectMetadata.astro";
+import BackendArchitecture from "@/components/project-detail/BackendArchitecture.astro";
+import FrontendPreview from "@/components/project-detail/FrontendPreview.astro";
+import ImplementationList from "@/components/project-detail/ImplementationList.astro";
+import ProjectScope from "@/components/project-detail/ProjectScope.astro";
+import ProjectNavigation from "@/components/project-detail/ProjectNavigation.astro";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  nextProject: { href: string; title: string } | null;
+}
+
+export async function getStaticPaths() {
+  const projects = (await getCollection("projects")).sort(
+    (a, b) => a.data.order - b.data.order,
+  );
+
+  return projects.map((project, index) => {
+    const next = projects[index + 1];
+    return {
+      params: { slug: project.id },
+      props: {
+        project,
+        nextProject: next
+          ? { title: next.data.title, href: `/projects/${next.id}/` }
+          : null,
+      },
+    };
+  });
+}
+
+const { project, nextProject } = Astro.props;
+const data = project.data;
+---
+
+<Layout title={data.title} description={data.description}>
+  <ProjectHero project={data} />
+  <ProjectMetadata items={data.metadata} />
+
+  {data.kind === "backend" ? (
+    <BackendArchitecture architecture={data.architecture} />
+  ) : (
+    <FrontendPreview preview={data.preview} demo={data.demo} />
+  )}
+
+  <ImplementationList items={data.details} />
+  <ProjectScope scope={data.scope} />
+  <ProjectNavigation nextProject={nextProject} />
+</Layout>

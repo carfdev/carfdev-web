@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  preview: {
+    label: string;
+    title: string;
+    description: string;
+    image: ImageMetadata;
+    alt: string;
+    attribution?: string;
+  };
+  demo?: string;
+}
+const { preview, demo } = Astro.props;
+---
+
+<section aria-labelledby="preview-title" class="bg-base-accent">
+  <div class="mx-auto grid w-full max-w-360 grid-cols-1 items-center gap-9 px-6 py-10 md:px-20 md:py-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
+    <figure class="min-w-0">
+      <Image
+        loading={"lazy"}
+        src={preview.image}
+        alt={preview.alt}
+        inferSize
+        class="block h-auto w-full max-w-full"
+      />
+    </figure>
+
+    <div class="flex min-w-0 flex-col items-start gap-5">
+      <p class="font-mono text-xs tracking-mono text-secondary">
+        {preview.label}
+      </p>
+      <h2
+        id="preview-title"
+        class="text-h3-fluid font-medium text-primary text-balance"
+      >
+        {preview.title}
+      </h2>
+      <p class="text-lg leading-relaxed text-secondary md:text-xl">
+        {preview.description}
+      </p>
+      {preview.attribution && (
+        <p class="text-sm leading-relaxed text-secondary">
+          {preview.attribution}
+        </p>
+      )}
+      <a
+        href={demo ?? "https://github.com/carfdev"}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-underline group inline-flex w-fit items-center gap-2 text-sm font-medium text-accent transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+      >
+        <span>
+          {demo ? "Browse the implementation" : "Explore repositories"}
+        </span>
+        <span
+          aria-hidden="true"
+          class="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 motion-reduce:transition-none"
+        >
+          ↗
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

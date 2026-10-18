@@ -1,0 +1,86 @@
+---
+interface Props {
+  architecture: {
+    title: string;
+    nodes: { title: string; description: string; connection?: string }[];
+    note?: string;
+  };
+}
+const { architecture } = Astro.props;
+// Four nodes switch to a horizontal flow at xl to avoid narrow boxes on tablet.
+const manyNodes = architecture.nodes.length > 3;
+const flowDirection = manyNodes ? "xl:flex-row" : "lg:flex-row";
+const arrowDownClass = manyNodes ? "xl:hidden" : "lg:hidden";
+const arrowRightClass = manyNodes ? "xl:block" : "lg:block";
+---
+
+<section aria-labelledby="architecture-title" class="bg-primary text-white">
+  <div class="mx-auto flex w-full max-w-360 flex-col gap-7 px-6 py-10 md:gap-9 md:px-20 md:py-14">
+    <p class="font-mono text-xs tracking-mono text-primary-foreground">
+      ARCHITECTURE / SIMPLIFIED
+    </p>
+    <h2
+      id="architecture-title"
+      class="text-h3-fluid font-medium text-white text-balance"
+    >
+      {architecture.title}
+    </h2>
+
+    <div
+      class:list={[
+        "flex min-w-0 flex-col items-stretch gap-4 py-2",
+        flowDirection,
+      ]}
+      aria-label="Architecture flow"
+    >
+      {architecture.nodes.map((node, index) => (
+        <>
+          <div class="flex min-w-0 flex-1 flex-col justify-center gap-3 border border-border-foreground px-5 py-6">
+            <h3 class="text-2xl font-medium text-white">{node.title}</h3>
+            <p class="text-sm leading-relaxed text-primary-foreground">
+              {node.description}
+            </p>
+          </div>
+          {index < architecture.nodes.length - 1 && (
+            <div
+              class="flex shrink-0 flex-col items-center justify-center gap-2 text-primary-foreground"
+              aria-hidden="true"
+            >
+              <span class="font-mono text-xs tracking-mono text-primary-foreground">
+                {node.connection ?? "Flow"}
+              </span>
+              <svg
+                class:list={["h-6 w-6", arrowDownClass]}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 4v16m-7-7 7 7 7-7" />
+              </svg>
+              <svg
+                class:list={["hidden h-6 w-6", arrowRightClass]}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12h16m-7-7 7 7-7 7" />
+              </svg>
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+
+    {architecture.note && (
+      <p class="font-mono text-xs leading-relaxed tracking-mono text-primary-foreground wrap-break-word">
+        {architecture.note}
+      </p>
+    )}
+  </div>
+</section>

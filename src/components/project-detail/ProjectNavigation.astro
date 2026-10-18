@@ -1,0 +1,21 @@
+---
+interface Props {
+  nextProject: { title: string; href: string } | null;
+}
+const { nextProject } = Astro.props;
+const href = nextProject?.href ?? "/projects";
+const label = nextProject?.title ?? "All personal projects";
+---
+
+<nav aria-label="Project navigation" class="mx-auto flex w-full max-w-360 flex-col gap-4 px-6 py-9 md:flex-row md:items-center md:justify-between md:gap-8 md:px-20 md:py-12">
+  <p class="font-mono text-xs tracking-mono text-secondary">
+    {nextProject ? "NEXT PROJECT" : "KEEP EXPLORING"}
+  </p>
+  <a
+    href={href}
+    class="link-underline group inline-flex w-fit max-w-full items-center gap-2 text-2xl font-medium tracking-tight text-accent transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none md:text-3xl"
+  >
+    <span>{label}</span>
+    <span aria-hidden="true" class="shrink-0 transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transition-none">→</span>
+  </a>
+</nav>
