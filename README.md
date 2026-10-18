@@ -76,12 +76,15 @@ even with the default GitHub token. Missing variables skip image publication;
 missing credentials fail publication without removing the GitHub release.
 Buildx and QEMU build `linux/amd64` and `linux/arm64` into one image manifest.
 GitHub tag `v1.2.3` produces Docker tag `1.2.3`, built from the released commit.
-No `latest` alias is maintained. Multi-platform builds may take several minutes.
+New automatic releases also update `latest` to the same multi-platform image.
+Multi-platform builds may take several minutes.
 
 If publishing fails or Docker Hub is configured later, manually run **Publish
 Docker image** with the existing release tag, for example `v1.2.3`. It builds
 that tag and verifies the package version before publishing; this can overwrite
-the same Docker version tag. Re-running Release alone may not publish an image
+the same Docker version tag. Manual publication preserves `latest` by default;
+select **update_latest** only when publishing the newest release to update that
+alias too. Re-running Release alone may not publish an image
 for an already-created release. To inspect the combined manifest afterward:
 
 ```sh
