@@ -1,0 +1,86 @@
+<section
+  aria-labelledby="contact-details-title"
+  class="mx-auto w-full max-w-360 border-t border-border px-6 py-12 md:px-20 md:pt-14 md:pb-20"
+>
+  <h2 id="contact-details-title" class="sr-only">
+    Contact information
+  </h2>
+
+  <address class="grid grid-cols-1 gap-12 not-italic lg:grid-cols-[minmax(0,1fr)_minmax(0,21.25rem)] lg:gap-16">
+    <!-- Primary contact -->
+    <div class="flex min-w-0 flex-col items-start gap-6">
+      <p class="font-mono text-xs tracking-mono text-secondary">
+        EMAIL / THE BEST PLACE TO START
+      </p>
+
+      <a
+        href="mailto:info@carf.dev"
+        class="link-underline inline-block w-fit max-w-full text-[clamp(1.5rem,5vw,4rem)] leading-tight tracking-tight text-accent transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none wrap-anywhere"
+      >
+        info@carf.dev
+      </a>
+
+      <a
+        href="mailto:info@carf.dev"
+        class="group inline-flex min-h-12 w-fit items-center justify-between gap-9 bg-accent px-6 py-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+      >
+        <span>Write an email</span>
+
+        <span
+          aria-hidden="true"
+          class="inline-block transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 motion-reduce:transition-none"
+        >
+          ↗
+        </span>
+      </a>
+    </div>
+
+    <!-- Secondary contact -->
+    <dl class="flex min-w-0 flex-col gap-8">
+      <!-- Phone -->
+      <div class="flex flex-col items-start gap-2">
+        <dt class="font-mono text-xs tracking-mono text-secondary">PHONE</dt>
+
+        <dd class="text-xl text-primary">
+          <a
+            href="tel:+46722710280"
+            class="link-underline transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+          >
+            072 271 02 80
+          </a>
+        </dd>
+      </div>
+
+      <!-- GitHub -->
+      <div class="flex flex-col items-start gap-2">
+        <dt class="font-mono text-xs tracking-mono text-secondary">GITHUB</dt>
+
+        <dd class="text-xl text-primary">
+          <a
+            href="https://github.com/carfdev"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit carfdev on GitHub (opens in a new tab)"
+            class="link-underline group inline-flex items-center gap-2 transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+          >
+            <span>github.com/carfdev</span>
+
+            <span
+              aria-hidden="true"
+              class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+            >
+              ↗
+            </span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Location -->
+      <div class="flex flex-col items-start gap-2">
+        <dt class="font-mono text-xs tracking-mono text-secondary">LOCATION</dt>
+
+        <dd class="text-xl text-primary">Stockholm, Sweden</dd>
+      </div>
+    </dl>
+  </address>
+</section>

@@ -1,0 +1,61 @@
+---
+import type { ComponentProps } from "astro/types";
+import LearningItem from "./LearningItem.astro";
+
+type Learning = Omit<ComponentProps<typeof LearningItem>, "number">;
+
+const learnings = [
+  {
+    title: "Clear interfaces",
+    description:
+      "Turning a design into a responsive website, then adding the interactions that make it useful.",
+    name: "Foodi",
+    technologies: ["Astro", "Vue"],
+    href: "/projects/foodi",
+  },
+  {
+    title: "Explicit boundaries",
+    description:
+      "Exploring where application logic, persistence and authentication belong in an API.",
+    name: "Invoice API",
+    technologies: ["Rust", "mTLS"],
+    href: "/projects/invoice-api",
+  },
+  {
+    title: "Connected systems",
+    description:
+      "Following a request from an HTTP endpoint through messaging to a separate service.",
+    name: "CarfDev Gateway",
+    technologies: ["Go", "NATS"],
+    href: "/projects/carfdev-gateway",
+  },
+] satisfies Learning[];
+---
+
+<section
+  aria-labelledby="learning-title"
+  class="mx-auto flex w-full max-w-360 flex-col gap-9 border-t border-border px-6 pt-14 pb-18 md:gap-11 md:px-20 md:pt-18 md:pb-20"
+>
+  <!-- Section heading -->
+  <header class="flex flex-col gap-4">
+    <p class="font-mono text-xs tracking-mono text-secondary">
+      WHAT I’M EXPLORING
+    </p>
+
+    <h2
+      id="learning-title"
+      class="text-h3-fluid font-medium text-primary text-balance"
+    >
+      Not just how. Why.
+    </h2>
+  </header>
+
+  <!-- Learning items -->
+  <ol class="flex list-none flex-col gap-8 md:gap-11" role="list">
+    {learnings.map((item, index) => (
+      <li>
+        <LearningItem number={String(index + 1).padStart(2, "0")} {...item} />
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,65 @@
+---
+const details = [
+  {
+    label: "BASED IN",
+    value: "Stockholm, Sweden",
+  },
+  {
+    label: "EXPERIENCE",
+    value: "Personal projects",
+  },
+  {
+    label: "NEXT STEP",
+    value: "First developer role",
+  },
+] as const;
+---
+
+<section
+  aria-labelledby="about-title"
+  class="mx-auto flex w-full max-w-360 flex-col gap-6 px-6 py-12 md:gap-8 md:px-20 md:pt-18 md:pb-20"
+>
+  <!-- Section label -->
+  <p class="font-mono text-xs tracking-mono text-secondary">02 / ABOUT</p>
+
+  <!-- Main heading -->
+  <h1
+    id="about-title"
+    class="text-subtitle-fluid font-medium text-primary text-balance"
+  >
+    Learning in public.
+    <br />
+    Building with intent.
+  </h1>
+
+  <!-- Introduction and details -->
+  <div class="grid grid-cols-1 gap-10 pt-3 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16 lg:pt-4">
+    <!-- About text -->
+    <div class="flex min-w-0 max-w-187.5 flex-col gap-6">
+      <p class="text-xl leading-[1.45] text-secondary md:text-2xl">
+        I’m carfdev, a fullstack web developer based in Stockholm. I’m building
+        practical experience through personal projects as I work toward my first
+        developer role.
+      </p>
+
+      <p class="text-lg leading-relaxed text-secondary md:text-xl">
+        I build across the stack: interfaces with Astro and Vue, APIs with Rust
+        and Go, and the connections between them. My repositories show where I
+        am today—and what I’m exploring next.
+      </p>
+    </div>
+
+    <!-- Quick facts -->
+    <dl class="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-1 lg:gap-8">
+      {details.map(({ label, value }) => (
+        <div class="flex min-w-0 flex-col gap-2">
+          <dt class="font-mono text-xs tracking-mono text-secondary">
+            {label}
+          </dt>
+
+          <dd class="text-xl leading-snug text-primary">{value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
