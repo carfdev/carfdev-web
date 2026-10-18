@@ -5,23 +5,38 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<section aria-labelledby="implementation-title" class="mx-auto flex w-full max-w-360 flex-col gap-8 px-6 py-11 md:gap-10 md:px-20 md:py-16">
+<section
+  aria-labelledby="implementation-title"
+  class="content-container flex w-full flex-col gap-8 py-11 md:gap-10 md:py-16"
+>
   <header class="flex flex-col gap-4">
     <p class="font-mono text-xs tracking-mono text-secondary">A CLOSER LOOK</p>
-    <h2 id="implementation-title" class="text-h3-fluid font-medium text-primary text-balance">What’s in the repository.</h2>
+    <h2
+      id="implementation-title"
+      class="text-h3-fluid font-medium text-primary text-balance"
+    >
+      What’s in the repository.
+    </h2>
   </header>
 
   <ol class="flex list-none flex-col gap-8 md:gap-10" role="list">
-    {
-      items.map((item, index) => (
-        <li class="border-t border-border pt-6">
-          <div class="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-4 gap-y-4 lg:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-x-8">
-            <span aria-hidden="true" class="pt-1 font-mono text-xs tracking-mono text-secondary">{String(index + 1).padStart(2, "0")}</span>
-            <h3 class="min-w-0 text-2xl font-medium tracking-tight text-primary lg:text-[28px]">{item.title}</h3>
-            <p class="col-start-2 min-w-0 text-lg leading-relaxed text-secondary lg:col-start-3">{item.description}</p>
-          </div>
-        </li>
-      ))
-    }
+    {items.map((item, index) => (
+      <li class="border-t border-border pt-6">
+        <div class="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-4 gap-y-4 lg:grid-cols-[2.5rem_minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-x-8">
+          <span
+            aria-hidden="true"
+            class="pt-1 font-mono text-xs tracking-mono text-secondary"
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <h3 class="min-w-0 text-2xl font-medium tracking-tight text-primary lg:text-[28px]">
+            {item.title}
+          </h3>
+          <p class="col-start-2 min-w-0 text-lg leading-relaxed text-secondary lg:col-start-3">
+            {item.description}
+          </p>
+        </div>
+      </li>
+    ))}
   </ol>
 </section>

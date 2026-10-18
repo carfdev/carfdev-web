@@ -77,7 +77,7 @@ Project entries live in `src/content/projects/` and are validated by `src/conten
 
 ## Styling and configuration
 
-Tailwind is integrated through its Vite plugin. Shared colors, typography, and utilities are defined in `src/styles/global.css`; components also use Tailwind classes directly. Geist and IBM Plex Mono are configured in `astro.config.mjs`.
+Tailwind is integrated through its Vite plugin. Shared colors, typography, and utilities are defined in `src/styles/global.css`; components also use Tailwind classes directly. Use `content-container` for the shared maximum width, horizontal centering and responsive padding. Keep grids, vertical spacing, backgrounds and semantic elements in each section. Geist and IBM Plex Mono are configured in `astro.config.mjs`.
 
 TypeScript uses Astro's strict configuration and the `@/*` alias for `src/*`. Prettier is configured with Astro and Tailwind plugins.
 

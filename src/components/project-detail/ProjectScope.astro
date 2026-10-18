@@ -6,9 +6,16 @@ const { scope } = Astro.props;
 ---
 
 <section aria-labelledby="project-scope-title" class="bg-base-accent">
-  <div class="mx-auto flex w-full max-w-360 flex-col gap-5 px-6 py-10 md:gap-6 md:px-20 md:py-14">
+  <div class="content-container flex w-full flex-col gap-5 py-10 md:gap-6 md:py-14">
     <p class="font-mono text-xs tracking-mono text-secondary">CURRENT SCOPE</p>
-    <h2 id="project-scope-title" class="max-w-240 text-cta-fluid font-medium text-primary text-balance">{scope.title}</h2>
-    <p class="max-w-240 text-lg leading-relaxed text-secondary md:text-xl">{scope.description}</p>
+    <h2
+      id="project-scope-title"
+      class="max-w-240 text-cta-fluid font-medium text-primary text-balance"
+    >
+      {scope.title}
+    </h2>
+    <p class="max-w-240 text-lg leading-relaxed text-secondary md:text-xl">
+      {scope.description}
+    </p>
   </div>
 </section>
