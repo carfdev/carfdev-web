@@ -34,7 +34,13 @@ Run commands from the repository root.
 
 `--host` exposes the server beyond localhost. Use `pnpm astro dev --background` for background development without that flag.
 
-There is currently no test script in `package.json`.
+Run focused data regression tests without installing a test framework:
+
+```sh
+node --experimental-strip-types --test tests/*.test.mjs
+```
+
+Astro diagnostics and the production build are separate checks; they are not a test suite.
 
 ## Project structure
 
@@ -65,7 +71,8 @@ Project entries live in `src/content/projects/` and are validated by `src/conten
 
 - The project list and detail routes use the collection, sorted by `order`.
 - Backend entries provide an architecture diagram; frontend entries provide an image preview.
-- Home page featured projects are maintained separately in `src/components/home/Code.astro`.
+- `src/lib/projects.ts` provides the shared collection ordering. Project identity comes from the collection; Home and About select IDs while keeping their own editorial order and technology lists. Unknown selected IDs fail the build.
+- `src/data/site.ts` owns identity and contact facts. Keep contextual sentences in their sections; derive shared names, locations and destinations from this module.
 - Contact details are links, not a submission form.
 
 ## Styling and configuration

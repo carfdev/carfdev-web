@@ -1,4 +1,5 @@
 ---
+import { locationLabel, site } from "@/data/site";
 import { ArrowRight } from "@/components/icones";
 ---
 
@@ -9,7 +10,10 @@ import { ArrowRight } from "@/components/icones";
   <!-- Eyebrow -->
   <p class="font-mono text-[11px] tracking-mono text-secondary md:text-xs">
     FULLSTACK WEB DEVELOPER
-    <span class="hidden md:inline"> / STOCKHOLM, SE</span>
+    <span class="hidden md:inline">
+      {" "}
+      / {site.location.city.toUpperCase()}, {site.location.countryCode}
+    </span>
   </p>
 
   <!-- Main headline -->
@@ -26,9 +30,9 @@ import { ArrowRight } from "@/components/icones";
   <div class="flex flex-col gap-12 pt-3 pb-2 md:flex-row md:items-end md:justify-between md:gap-10 md:pt-4 md:pb-8">
     <div class="flex max-w-150 flex-col items-start gap-7">
       <p class="text-lg leading-relaxed text-secondary md:text-[23px]/[33px]">
-        I'm carfdev, a Stockholm-based developer building web experiences and
-        backend systems with a focus on performance, simplicity, and clean
-        architecture.
+        I'm {site.name}, a {site.location.city}-based developer building web
+        experiences and backend systems with a focus on performance, simplicity,
+        and clean architecture.
       </p>
 
       <a
@@ -55,13 +59,13 @@ import { ArrowRight } from "@/components/icones";
       <p class="text-sm text-primary">Personal projects. Open source.</p>
 
       <a
-        href="https://github.com/carfdev"
+        href={site.github.href}
         target="_blank"
         rel="noopener noreferrer"
         class="w-fit text-sm text-secondary transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-        aria-label="Visit carfdev on GitHub (opens in a new tab)"
+        aria-label={`Visit ${site.name} on GitHub (opens in a new tab)`}
       >
-        github.com/carfdev ↗
+        {site.github.label} ↗
       </a>
     </div>
   </div>
@@ -70,7 +74,7 @@ import { ArrowRight } from "@/components/icones";
   <div class="border-t border-border pt-5">
     <div class="flex items-center justify-between gap-4">
       <p class="font-mono text-[10px] tracking-mono text-secondary md:text-xs">
-        BASED IN STOCKHOLM, SWEDEN
+        BASED IN {locationLabel.toUpperCase()}
       </p>
 
       <p class="hidden items-center gap-2 font-mono text-xs tracking-mono text-secondary md:inline-flex">

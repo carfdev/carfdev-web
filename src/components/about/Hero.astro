@@ -1,8 +1,9 @@
 ---
+import { locationLabel, site } from "@/data/site";
 const details = [
   {
     label: "BASED IN",
-    value: "Stockholm, Sweden",
+    value: locationLabel,
   },
   {
     label: "EXPERIENCE",
@@ -37,9 +38,9 @@ const details = [
     <!-- About text -->
     <div class="flex min-w-0 max-w-187.5 flex-col gap-6">
       <p class="text-xl leading-[1.45] text-secondary md:text-2xl">
-        I’m carfdev, a fullstack web developer based in Stockholm. I’m building
-        practical experience through personal projects as I work toward my first
-        developer role.
+        I’m {site.name}, a fullstack web developer based in {site.location.city}
+        . I’m building practical experience through personal projects as I work
+        toward my first developer role.
       </p>
 
       <p class="text-lg leading-relaxed text-secondary md:text-xl">

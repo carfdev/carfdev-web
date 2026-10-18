@@ -1,3 +1,7 @@
+---
+import { emailHref, locationLabel, site } from "@/data/site";
+---
+
 <footer class="mx-auto flex w-full max-w-360 flex-col gap-7.5 px-6 pt-12 pb-7 md:gap-8.5 md:px-20 md:pt-20 md:pb-14">
   <p class="font-mono text-xs tracking-mono text-secondary">03 / CONTACT</p>
 
@@ -17,10 +21,10 @@
     <address class="flex min-w-0 flex-col gap-4.5 not-italic">
       <!-- Email -->
       <a
-        href="mailto:info@carf.dev"
+        href={emailHref}
         class="link-underline group inline-flex w-fit max-w-full items-center gap-2 text-[clamp(1.375rem,5vw,1.875rem)] tracking-logo text-accent transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
       >
-        <span>info@carf.dev</span>
+        <span>{site.email}</span>
 
         <span
           aria-hidden="true"
@@ -32,13 +36,13 @@
 
       <!-- Phone -->
       <a
-        href="tel:+46722710280"
+        href={site.phone.href}
         class="link-underline w-fit text-sm text-primary transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
       >
-        072 271 02 80
+        {site.phone.label}
       </a>
 
-      <p class="text-sm text-secondary">Stockholm, Sweden</p>
+      <p class="text-sm text-secondary">{locationLabel}</p>
     </address>
   </div>
 
@@ -50,16 +54,16 @@
       href="/"
       class="text-xl font-semibold tracking-logo text-primary transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
     >
-      carfdev
+      {site.name}
     </a>
 
     <p class="hidden font-mono text-xs tracking-mono text-secondary md:block">
-      FULLSTACK / STOCKHOLM
+      FULLSTACK / {site.location.city.toUpperCase()}
     </p>
 
     <!-- GitHub -->
     <a
-      href="https://github.com/carfdev"
+      href={site.github.href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="GitHub (opens in a new tab)"

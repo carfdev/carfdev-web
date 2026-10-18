@@ -1,4 +1,5 @@
 ---
+import { site } from "@/data/site";
 import { Image } from "astro:assets";
 interface Props {
   preview: {
@@ -45,7 +46,7 @@ const { preview, demo } = Astro.props;
         </p>
       )}
       <a
-        href={demo ?? "https://github.com/carfdev"}
+        href={demo ?? site.github.href}
         target="_blank"
         rel="noopener noreferrer"
         class="link-underline group inline-flex w-fit items-center gap-2 text-sm font-medium text-accent transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"

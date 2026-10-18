@@ -1,24 +1,24 @@
 ---
 import type { ComponentProps } from "astro/types";
+import { getProjects } from "@/lib/projects";
+import { projectReference } from "@/lib/project-data";
 import CodeItem from "./CodeItem.astro";
 
 type Project = ComponentProps<typeof CodeItem>;
 
+const collection = await getProjects();
 const projects = [
   {
-    name: "Invoice API",
+    ...projectReference(collection, "invoice-api"),
     technologies: ["Rust", "Axum", "mTLS"],
-    href: "/projects/invoice-api",
   },
   {
-    name: "CarfDev Gateway",
+    ...projectReference(collection, "carfdev-gateway"),
     technologies: ["Go", "Gin", "NATS"],
-    href: "/projects/carfdev-gateway",
   },
   {
-    name: "Foodi",
+    ...projectReference(collection, "foodi"),
     technologies: ["Astro", "Vue", "Tailwind CSS"],
-    href: "/projects/foodi",
   },
 ] satisfies Project[];
 ---

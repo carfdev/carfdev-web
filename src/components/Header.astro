@@ -1,4 +1,5 @@
 ---
+import { site } from "@/data/site";
 const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
 
 const links = [
@@ -17,7 +18,7 @@ const isActive = (href: string) =>
     aria-current={currentPath === "/" ? "page" : undefined}
     class="whitespace-nowrap text-2xl font-semibold tracking-logo transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
   >
-    carfdev
+    {site.name}
   </a>
 
   <nav
