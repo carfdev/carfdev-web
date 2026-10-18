@@ -34,13 +34,35 @@ Run commands from the repository root.
 
 `--host` exposes the server beyond localhost. Use `pnpm astro dev --background` for background development without that flag.
 
-Run focused data regression tests without installing a test framework:
+Run isolated unit tests without building the site:
 
 ```sh
-node --experimental-strip-types --test tests/*.test.mjs
+pnpm test
+pnpm test:watch
+pnpm test:coverage
 ```
 
-Run `pnpm build` before these tests: the page snapshots assert published text, ordered links and heading identity against the pre-refactor baseline. Update the snapshots only for intentional content changes.
+To run one file, use `pnpm test tests/unit/header.test.ts`.
+Vitest uses Astro's Vite integration with an isolated config: tests do not load fonts,
+Tailwind, project Markdown or the production integrations. Coverage reports cover the
+TypeScript helpers and endpoint; they do not represent rendered Astro component coverage.
+
+Each test names one behavior. Use fresh synthetic fixtures; assert destinations,
+HTTP directives and semantic attributes instead of portfolio text or full HTML snapshots.
+Mock `astro:content` and child components at module boundaries; reset configurable mocks
+before each case. Render only the component under test with Astro's Container API.
+Do not add tests for static copy or Tailwind class inventories. Header's active-state
+class is an exception because it is the observable route-selection indicator.
+
+The legacy page regressions are separate and intentionally sensitive to editorial changes:
+
+```sh
+pnpm build
+pnpm test:regression
+```
+
+They compare published text, ordered links and headings against the pre-refactor baseline.
+Update those snapshots only for intentional content changes; they are not unit tests.
 
 Astro diagnostics and the production build are separate checks; they are not a test suite.
 

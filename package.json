@@ -12,7 +12,11 @@
     "preview": "astro preview --host",
     "astro": "astro",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:regression": "node --test tests/site.test.mjs"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
@@ -27,8 +31,11 @@
     "esbuild": true
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^5.0.5",
+    "linkedom": "^0.18.13",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.1",
-    "prettier-plugin-tailwindcss": "0.8.1"
+    "prettier-plugin-tailwindcss": "0.8.1",
+    "vitest": "^5.0.5"
   }
 }
