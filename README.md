@@ -40,6 +40,8 @@ Run focused data regression tests without installing a test framework:
 node --experimental-strip-types --test tests/*.test.mjs
 ```
 
+Run `pnpm build` before these tests: the page snapshots assert published text, ordered links and heading identity against the pre-refactor baseline. Update the snapshots only for intentional content changes.
+
 Astro diagnostics and the production build are separate checks; they are not a test suite.
 
 ## Project structure
@@ -88,3 +90,9 @@ See the [Astro documentation](https://docs.astro.build) for framework guidance.
 Source code and technical documentation are licensed under the [MIT License](LICENSE), copyright (c) 2026 carfdev.
 
 Portfolio copy, project descriptions, images, logos, and personal branding are excluded. Rights to those materials are reserved by their respective copyright holders. Third-party materials retain their own licenses. See `LICENSE` for the full scope and terms.
+
+## Shared presentation
+
+`src/components/shared/ActionLink.astro` provides an anchor with shared focus styling and a decorative arrow. Choose `appearance` (`link`, `button`, `plain`), `arrow` (`right`, `up-right`) and `distance` (`small`, `normal`); pass section typography, spacing and colors through `class`. Its named `icon` slot supports an existing SVG; `arrowClass` preserves section-specific arrow layout. `target`, `rel` and accessible labels remain explicit anchor attributes: arrow direction never changes navigation behavior. Arrow motion only runs when the user permits motion.
+
+Page introductions and numbered rows remain page-specific: their typography, heading levels and secondary layouts differ. Share their container and link pieces rather than introducing a component dominated by layout exceptions.

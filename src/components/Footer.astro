@@ -1,4 +1,5 @@
 ---
+import ActionLink from "@/components/shared/ActionLink.astro";
 import { emailHref, locationLabel, site } from "@/data/site";
 ---
 
@@ -20,19 +21,14 @@ import { emailHref, locationLabel, site } from "@/data/site";
 
     <address class="flex min-w-0 flex-col gap-4.5 not-italic">
       <!-- Email -->
-      <a
+      <ActionLink
         href={emailHref}
-        class="link-underline group inline-flex w-fit max-w-full items-center gap-2 text-[clamp(1.375rem,5vw,1.875rem)] tracking-logo text-accent transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+        arrowClass="shrink-0"
+        class="w-fit max-w-full gap-2 text-[clamp(1.375rem,5vw,1.875rem)] tracking-logo text-accent transition-colors hover:text-primary focus-visible:outline-accent"
+        arrow="up-right"
       >
         <span>{site.email}</span>
-
-        <span
-          aria-hidden="true"
-          class="inline-block shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 motion-reduce:transition-none"
-        >
-          ↗
-        </span>
-      </a>
+      </ActionLink>
 
       <!-- Phone -->
       <a
@@ -62,21 +58,16 @@ import { emailHref, locationLabel, site } from "@/data/site";
     </p>
 
     <!-- GitHub -->
-    <a
+    <ActionLink
       href={site.github.href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="GitHub (opens in a new tab)"
-      class="link-underline group inline-flex w-fit items-center gap-1 text-sm text-secondary transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+      class="w-fit gap-1 text-sm text-secondary transition-colors hover:text-primary focus-visible:outline-accent"
+      arrow="up-right"
+      distance="small"
     >
       <span>GitHub</span>
-
-      <span
-        aria-hidden="true"
-        class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
-      >
-        ↗
-      </span>
-    </a>
+    </ActionLink>
   </div>
 </footer>

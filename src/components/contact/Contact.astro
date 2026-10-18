@@ -1,4 +1,5 @@
 ---
+import ActionLink from "@/components/shared/ActionLink.astro";
 import { emailHref, locationLabel, site } from "@/data/site";
 ---
 
@@ -24,19 +25,14 @@ import { emailHref, locationLabel, site } from "@/data/site";
         {site.email}
       </a>
 
-      <a
+      <ActionLink
         href={emailHref}
-        class="group inline-flex min-h-12 w-fit items-center justify-between gap-9 bg-accent px-6 py-4 text-sm font-medium text-white transition-colors duration-200 hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+        class="w-fit justify-between gap-9 bg-accent px-6 py-4 text-sm font-medium text-white transition-colors hover:bg-primary focus-visible:outline-accent"
+        appearance="button"
+        arrow="up-right"
       >
         <span>Write an email</span>
-
-        <span
-          aria-hidden="true"
-          class="inline-block transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1 motion-reduce:transition-none"
-        >
-          ↗
-        </span>
-      </a>
+      </ActionLink>
     </div>
 
     <!-- Secondary contact -->
@@ -60,22 +56,17 @@ import { emailHref, locationLabel, site } from "@/data/site";
         <dt class="font-mono text-xs tracking-mono text-secondary">GITHUB</dt>
 
         <dd class="text-xl text-primary">
-          <a
+          <ActionLink
             href={site.github.href}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit ${site.name} on GitHub (opens in a new tab)`}
-            class="link-underline group inline-flex items-center gap-2 transition-colors duration-200 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none"
+            class="gap-2 transition-colors hover:text-accent focus-visible:outline-accent"
+            arrow="up-right"
+            distance="small"
           >
             <span>{site.github.label}</span>
-
-            <span
-              aria-hidden="true"
-              class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
-            >
-              ↗
-            </span>
-          </a>
+          </ActionLink>
         </dd>
       </div>
 

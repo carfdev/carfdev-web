@@ -1,3 +1,7 @@
+---
+import ActionLink from "@/components/shared/ActionLink.astro";
+---
+
 <section aria-labelledby="next-chapter-title" class="bg-primary">
   <div class="content-container flex w-full flex-col items-start gap-6 py-12 md:gap-7 md:py-16">
     <!-- Section label -->
@@ -20,18 +24,11 @@
     </p>
 
     <!-- CTA -->
-    <a
+    <ActionLink
       href="/contact"
-      class="link-underline group inline-flex w-fit items-center gap-2 text-lg font-medium text-white transition-colors duration-200 hover:text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none"
+      class="w-fit gap-2 text-lg font-medium text-white transition-colors hover:text-primary-foreground focus-visible:outline-white"
     >
       <span>Let’s talk</span>
-
-      <span
-        aria-hidden="true"
-        class="inline-block transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transition-none"
-      >
-        →
-      </span>
-    </a>
+    </ActionLink>
   </div>
 </section>

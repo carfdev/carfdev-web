@@ -1,0 +1,66 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+  appearance?: "link" | "button" | "plain";
+  arrow?: "right" | "up-right";
+  distance?: "small" | "normal";
+  arrowClass?: string;
+}
+
+const {
+  appearance = "link",
+  arrow = "right",
+  distance = "normal",
+  arrowClass,
+  class: className,
+  ...attributes
+} = Astro.props;
+---
+
+<a
+  {...attributes}
+  class:list={[
+    "action-link group inline-flex items-center duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 motion-reduce:transition-none",
+    appearance === "link" && "link-underline",
+    appearance === "button" && "min-h-12",
+    className,
+  ]}
+>
+  <slot />
+  <span
+    aria-hidden="true"
+    class:list={[
+      "action-link-arrow",
+      arrowClass,
+      arrow === "up-right" && "arrow-diagonal",
+      distance === "small" && "arrow-small",
+    ]}
+  >
+    <slot name="icon">{arrow === "up-right" ? "↗" : "→"}</slot>
+  </span>
+</a>
+
+<style>
+  .action-link-arrow {
+    display: inline-block;
+    --step: 0.25rem;
+    --rise: 0rem;
+  }
+  .arrow-small {
+    --step: 0.125rem;
+  }
+  .arrow-diagonal {
+    --rise: calc(var(--step) * -1);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .action-link-arrow {
+      transition: translate 200ms var(--default-transition-timing-function);
+    }
+    .action-link:hover .action-link-arrow {
+      translate: var(--step) var(--rise);
+    }
+  }
+</style>

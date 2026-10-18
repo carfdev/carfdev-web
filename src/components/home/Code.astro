@@ -1,4 +1,5 @@
 ---
+import ActionLink from "@/components/shared/ActionLink.astro";
 import type { ComponentProps } from "astro/types";
 import { getProjects } from "@/lib/projects";
 import { projectReference } from "@/lib/project-data";
@@ -48,19 +49,15 @@ const projects = [
         </p>
       </div>
 
-      <a
+      <ActionLink
         href="/projects"
-        class="group inline-flex w-fit shrink-0 items-center gap-2 text-sm font-medium text-white transition-opacity duration-200 hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        class="w-fit shrink-0 gap-2 text-sm font-medium text-white transition-opacity hover:opacity-70 focus-visible:outline-white"
+        appearance="plain"
+        arrow="up-right"
+        distance="small"
       >
         <span>All projects</span>
-
-        <span
-          aria-hidden="true"
-          class="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
-        >
-          ↗
-        </span>
-      </a>
+      </ActionLink>
     </header>
 
     <!-- Projects -->
