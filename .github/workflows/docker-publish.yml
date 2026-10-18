@@ -20,6 +20,10 @@ on:
         description: Existing release tag to publish (vX.Y.Z)
         required: true
         type: string
+      update_latest:
+        description: Also move latest to this release (only select for the newest release)
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -67,7 +71,9 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ vars.DOCKERHUB_IMAGE }}:${{ steps.version.outputs.value }}
+          tags: |
+            ${{ vars.DOCKERHUB_IMAGE }}:${{ steps.version.outputs.value }}
+            ${{ (inputs.sha != '' || inputs.update_latest) && format('{0}:latest', vars.DOCKERHUB_IMAGE) || '' }}
           labels: |
             org.opencontainers.image.version=${{ steps.version.outputs.value }}
             org.opencontainers.image.revision=${{ steps.version.outputs.sha }}
