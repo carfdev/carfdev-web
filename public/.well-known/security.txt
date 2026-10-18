@@ -1,0 +1,15 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:security@carf.dev
+Encryption: https://carf.dev/.well-known/security.asc
+Preferred-Languages: en, es, sv
+Canonical: https://carf.dev/.well-known/security.txt
+Expires: 2027-04-01T00:00:00Z
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQTzaL0amVShGGdI/CVfFIlji5jxYAUCatSZhgAKCRBfFIlji5jx
+YNTqAQCHKLwz43RYusC+uKAO/20sePeJRk3vAIAnTKY86QgMeQD+NgHhc9aa4Nkr
+h8ILBRct9dpEwXDf7R9AG5geOmPdwgQ=
+=8l5l
+-----END PGP SIGNATURE-----
