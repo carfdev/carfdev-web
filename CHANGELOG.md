@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/carfdev/carfdev-web/compare/v0.1.0...v0.1.1) (2026-10-18)
+
+
+### Bug Fixes
+
+* **ci:** publish latest alongside Docker release tags ([088ab7b](https://github.com/carfdev/carfdev-web/commit/088ab7bf3ed38d29c5588dd12e9e1a3523a8f942))
+
 ## [0.1.0](https://github.com/carfdev/carfdev-web/compare/v0.0.1...v0.1.0) (2026-10-18)
 
 
