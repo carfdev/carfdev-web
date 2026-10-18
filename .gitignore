@@ -47,6 +47,8 @@ id_ed25519
 # Caches, coverage and TypeScript build metadata
 .cache/
 coverage/
+test-results/
+playwright-report/
 *.tsbuildinfo
 
 # Operating system and editor artifacts

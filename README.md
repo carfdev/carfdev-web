@@ -77,6 +77,33 @@ sorter edge cases, Header matching, ActionLink props or isolated fallback behavi
 Integration coverage describes these cross-module contracts; `pnpm test:coverage` still
 reports the configured unit TypeScript coverage, not coverage of built Astro templates.
 
+Run real-browser checks with Playwright:
+
+```sh
+pnpm exec playwright install chromium
+pnpm test:e2e
+```
+
+The suite runs Chromium at 320px and 1440px. Each test gets a fresh browser context.
+Playwright builds a disposable project and serves it only at `127.0.0.1:4174`; an
+existing server is rejected, and the temporary build is removed when the server stops.
+Browser download and the font provider need network access on a cold setup.
+On a supported Linux distribution, install missing browser system libraries with
+`pnpm exec playwright install --with-deps chromium` if Playwright reports them missing.
+
+E2E owns keyboard skip navigation, visible keyboard focus, responsive overflow,
+browser Back/Forward and computed reduced-motion behavior. It does not repeat
+collection ordering, generated route graphs, SEO, link props or component fallbacks.
+Selectors use landmarks and functional attributes, not editorial copy. Tests use
+retrying assertions without fixed sleeps or automatic test retries.
+
+To run one scenario, use `pnpm test:e2e --grep "reduced motion"`; use
+`--project=desktop` to select one viewport. Failure screenshots and traces are written
+to the ignored `test-results/` folder. View a trace with
+`pnpm exec playwright show-trace test-results/<case>/trace.zip`.
+This suite targets local production output, not the behavior of a deployed host or
+compatibility across every browser engine.
+
 The legacy page regressions are separate and intentionally sensitive to editorial changes:
 
 ```sh
