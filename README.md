@@ -2,6 +2,8 @@
 
 Personal portfolio for carfdev, built with Astro, TypeScript, and Tailwind CSS. The site URL is configured as `https://carf.dev`.
 
+Current version: `0.2.2`. <!-- x-release-please-version -->
+
 ## Local development
 
 Use Node.js **22.12.0 or newer** and **pnpm 12.3.4**, as declared in `package.json`.
@@ -87,11 +89,12 @@ failure evidence is retained for seven days. CI can also be run manually.
 
 The official [Google release-please action](https://github.com/googleapis/release-please-action)
 opens a release PR from Conventional Commits. Merge that PR to update
-`package.json`, the release manifest and `CHANGELOG.md`, then create a GitHub
-release and a `vX.Y.Z` tag. Nothing is published to npm. The manifest starts at
-the current package version, `0.0.1`; the first release considers existing commit
-history. `feat:` and `fix:` drive version changes; ordinary `ci:`/`chore:` commits
-alone do not request a new release.
+`package.json`, the release manifest, `CHANGELOG.md`, and the version shown at the
+top of this README, then create a GitHub release and a `vX.Y.Z` tag. The README
+version is synchronized through the package's `extra-files` configuration.
+Nothing is published to npm. The manifest tracks the released version.
+`feat:` and `fix:` drive version changes; ordinary `ci:`/`chore:` commits alone do
+not request a new release.
 
 In GitHub repository **Settings → Actions → General**, allow Actions to create
 pull requests. Release automation uses `GITHUB_TOKEN` by default. Its generated
