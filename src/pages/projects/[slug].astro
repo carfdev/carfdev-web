@@ -43,7 +43,7 @@ const data = project.data;
   {data.kind === "backend" ? (
     <BackendArchitecture architecture={data.architecture} />
   ) : (
-    <FrontendPreview preview={data.preview} demo={data.demo} />
+    <FrontendPreview preview={data.preview} repository={data.repository} />
   )}
 
   <ImplementationList items={data.details} />

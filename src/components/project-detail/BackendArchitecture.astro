@@ -33,6 +33,7 @@ const arrowRightClass = manyNodes ? "xl:block" : "lg:block";
         "flex min-w-0 flex-col items-stretch gap-4 py-2",
         flowDirection,
       ]}
+      role="group"
       aria-label="Architecture flow"
     >
       {architecture.nodes.map((node, index) => (
@@ -44,14 +45,12 @@ const arrowRightClass = manyNodes ? "xl:block" : "lg:block";
             </p>
           </div>
           {index < architecture.nodes.length - 1 && (
-            <div
-              class="flex shrink-0 flex-col items-center justify-center gap-2 text-primary-foreground"
-              aria-hidden="true"
-            >
+            <div class="flex shrink-0 flex-col items-center justify-center gap-2 text-primary-foreground">
               <span class="font-mono text-xs tracking-mono text-primary-foreground">
                 {node.connection ?? "Flow"}
               </span>
               <svg
+                aria-hidden="true"
                 class:list={["h-6 w-6", arrowDownClass]}
                 viewBox="0 0 24 24"
                 fill="none"
@@ -63,6 +62,7 @@ const arrowRightClass = manyNodes ? "xl:block" : "lg:block";
                 <path d="M12 4v16m-7-7 7 7 7-7" />
               </svg>
               <svg
+                aria-hidden="true"
                 class:list={["hidden h-6 w-6", arrowRightClass]}
                 viewBox="0 0 24 24"
                 fill="none"

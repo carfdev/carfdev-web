@@ -1,5 +1,60 @@
 import { expect, test } from "@playwright/test";
 
+test("demo link text has readable contrast against the page background", async ({
+  page,
+}) => {
+  await page.goto("/projects/foodi");
+  const ratio = await page
+    .getByRole("link", { name: "Open live demo", exact: true })
+    .evaluate((element) => {
+      const canvas = document.createElement("canvas");
+      canvas.width = canvas.height = 1;
+      const context = canvas.getContext("2d")!;
+      const luminance = (color: string) => {
+        context.fillStyle = color;
+        context.fillRect(0, 0, 1, 1);
+        const channels = [...context.getImageData(0, 0, 1, 1).data]
+          .slice(0, 3)
+          .map((value) => {
+            const channel = value / 255;
+            return channel <= 0.04045
+              ? channel / 12.92
+              : ((channel + 0.055) / 1.055) ** 2.4;
+          });
+        return (
+          channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722
+        );
+      };
+      const text = luminance(getComputedStyle(element).color);
+      const background = luminance(
+        getComputedStyle(document.body).backgroundColor,
+      );
+      return (
+        (Math.max(text, background) + 0.05) /
+        (Math.min(text, background) + 0.05)
+      );
+    });
+  expect(ratio).toBeGreaterThanOrEqual(4.5);
+});
+
+test("architecture flow exposes connection labels in reading order", async ({
+  page,
+}) => {
+  await page.goto("/projects/invoice-api");
+  await expect(page.getByRole("group", { name: "Architecture flow" }))
+    .toMatchAriaSnapshot(`
+    - group "Architecture flow":
+      - heading "B2B client" [level=3]
+      - paragraph: Client certificate
+      - text: mTLS
+      - heading "Axum application" [level=3]
+      - paragraph: Routers + handlers
+      - text: SQLx
+      - heading "PostgreSQL" [level=3]
+      - paragraph: Invoices + documents
+  `);
+});
+
 test("skip navigation moves sequential keyboard focus past the header", async ({
   page,
 }) => {

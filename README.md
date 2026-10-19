@@ -2,6 +2,8 @@
 
 Personal portfolio for carfdev, built with Astro, TypeScript, and Tailwind CSS. The site URL is configured as `https://carf.dev`.
 
+Current version: `0.2.2`. <!-- x-release-please-version -->
+
 ## Local development
 
 Use Node.js **22.12.0 or newer** and **pnpm 12.3.4**, as declared in `package.json`.
@@ -18,6 +20,24 @@ pnpm astro dev status
 pnpm astro dev logs
 pnpm astro dev stop
 ```
+
+## Social preview images
+
+`pnpm build` generates a 1200 × 630 PNG for each page under `dist/og/`, using
+`astro-og-canvas`. Open `/og/home.png` or `/og/projects/foodi.png` on the local
+server to preview the cards. The shared layout adds absolute Open Graph image
+URLs and Twitter large-image cards.
+
+General-page titles and descriptions live in `src/data/page-metadata.ts`;
+project cards use the project collection automatically. When adding a general
+page, add its metadata there and pass it to the layout. Card appearance is
+configured in `src/pages/og/[...route].ts`.
+
+The generator uses local Geist Latin regular/medium TTF files from
+[Fontsource](https://fontsource.org/fonts/geist), with the upstream SIL Open Font
+License in `src/assets/fonts/OFL.txt`. Social image generation needs no font
+downloads. After deployment, check a shared URL with the destination platform's
+preview inspector; existing previews may need a cache refresh.
 
 ## Docker
 
@@ -78,17 +98,21 @@ NGINX_TEST_URL=http://127.0.0.1:8080 node --test tests/nginx.test.mjs
 ## GitHub Actions and releases
 
 Pull requests to `main` run CI: automation-file formatting, Astro diagnostics, unit coverage,
-integration tests, a production build, legacy regressions and Chromium E2E.
+integration tests, a production build, legacy regressions, Chromium E2E and checks
+against the production Docker image. The nginx checks verify headers, routing,
+embedding protection, and CSP-compatible assets in a temporary localhost-only
+container, which is stopped after the checks.
 Pushes to `main` run the same reusable CI before release automation. Browser
 failure evidence is retained for seven days. CI can also be run manually.
 
 The official [Google release-please action](https://github.com/googleapis/release-please-action)
 opens a release PR from Conventional Commits. Merge that PR to update
-`package.json`, the release manifest and `CHANGELOG.md`, then create a GitHub
-release and a `vX.Y.Z` tag. Nothing is published to npm. The manifest starts at
-the current package version, `0.0.1`; the first release considers existing commit
-history. `feat:` and `fix:` drive version changes; ordinary `ci:`/`chore:` commits
-alone do not request a new release.
+`package.json`, the release manifest, `CHANGELOG.md`, and the version shown at the
+top of this README, then create a GitHub release and a `vX.Y.Z` tag. The README
+version is synchronized through the package's `extra-files` configuration.
+Nothing is published to npm. The manifest tracks the released version.
+`feat:` and `fix:` drive version changes; ordinary `ci:`/`chore:` commits alone do
+not request a new release.
 
 In GitHub repository **Settings → Actions → General**, allow Actions to create
 pull requests. Release automation uses `GITHUB_TOKEN` by default. Its generated
@@ -130,6 +154,52 @@ docker buildx imagetools inspect your-namespace/carfdev-web:1.2.3
 
 The workflows are prepared locally; repository settings, secrets, remote runs and
 actual publication must be configured and verified in GitHub/Docker Hub.
+
+### Production deployment with Dokploy
+
+Recovery reference confirmed by the maintainer on 2026-10-19:
+
+- Release: `0.2.2`.
+- Image digest: `sha256:23375338c4e758659655f37b2c6fa4d8712fe0cdf7112ff5240442938cf3f9cb`.
+
+Use the existing Docker Hub repository name with this digest when selecting the
+recovery image in Dokploy. Update this record after verifying a newer deployment.
+
+Production is updated manually in Dokploy from the Docker Hub image's `latest`
+tag. CI must pass before release automation runs; a successful CI run alone does
+not publish an image. Wait for a new release and its **Publish Docker image** job
+to finish successfully before updating Dokploy.
+
+1. Record the image reference from the currently working deployment: its release
+   tag or digest, plus the deployment date. Keep that image available in Docker
+   Hub so it can be deployed again. If only `latest` is recorded, identify the
+   running image before updating; the registry's current `latest` may already
+   point to a newer release.
+2. In the existing Dokploy application, refresh/redeploy the configured `latest`
+   image so Dokploy pulls it from Docker Hub. Keep the existing domain and
+   container port **8080**. Check the deployment logs for a successful pull and
+   deployment, and record the new release tag or digest.
+3. Verify `https://carf.dev`: open the home, About, Contact, project list and a
+   project detail page; check navigation, the protected email link and an unknown
+   route's custom 404 page. Open `/og/home.png` and `/og/projects/foodi.png`, and
+   confirm the new cards appear. Inspect a shared page with the destination
+   platform's preview inspector if its preview is cached.
+
+To recover from a failed update, replace the application's image reference in
+Dokploy with the previously recorded release tag or digest and deploy it again.
+For example, use `your-namespace/carfdev-web:1.2.3` or
+`your-namespace/carfdev-web@sha256:<recorded-digest>` with actual values from the
+working deployment. Repeat the checks above and record the recovery result.
+Keep the restored reference selected until a fixed release is ready; redeploying
+`latest` could bring back the failing version. Version tags can be overwritten
+by manual publication, so a recorded digest identifies the exact image more
+precisely.
+
+See Dokploy's [Docker provider documentation](https://docs.dokploy.com/docs/core/providers)
+for image configuration. Its separate
+[rollback feature](https://docs.dokploy.com/docs/core/applications/rollbacks)
+requires its own setup; this procedure uses an explicitly selected image and
+does not depend on that feature being enabled.
 
 ## Commands
 

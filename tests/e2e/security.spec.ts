@@ -32,6 +32,8 @@ test("CSP blocks unapproved inline and external scripts", async ({ page }) => {
 test("CSP permits page assets and the same-origin email script without violations", async ({
   page,
 }) => {
+  // Inspect fresh responses rather than Firefox's conditional cache responses.
+  await page.route("**/*", (route) => route.continue());
   await page.addInitScript(() => {
     const violations: string[] = [];
     Object.assign(window, { cspViolations: violations });

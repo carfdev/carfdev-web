@@ -1,12 +1,10 @@
 ---
 import ActionLink from "@/components/shared/ActionLink.astro";
 import Layout from "@/layouts/Layout.astro";
+import { pageMetadata } from "@/data/page-metadata";
 ---
 
-<Layout
-  title="Page not found"
-  description="The page you were looking for could not be found. Explore carfdev's projects or return to the homepage."
->
+<Layout {...pageMetadata["404"]}>
   <section
     aria-labelledby="not-found-title"
     class="content-container flex w-full flex-col items-start gap-6 py-12 md:gap-8 md:py-18"

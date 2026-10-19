@@ -1,12 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { pageMetadata } from "@/data/page-metadata";
 import { Hero, Projects, Cta } from "@/components/projects";
 ---
 
-<Layout
-  title="Projects"
-  description="Explore personal projects by carfdev, from Rust APIs and Go microservices to frontend applications and software architecture."
->
+<Layout {...pageMetadata.projects}>
   <Hero />
   <Projects />
   <Cta />
