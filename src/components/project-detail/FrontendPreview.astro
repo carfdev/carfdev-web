@@ -11,9 +11,9 @@ interface Props {
     alt: string;
     attribution?: string;
   };
-  demo?: string;
+  repository?: string;
 }
-const { preview, demo } = Astro.props;
+const { preview, repository } = Astro.props;
 ---
 
 <section aria-labelledby="preview-title" class="bg-base-accent">
@@ -47,14 +47,14 @@ const { preview, demo } = Astro.props;
         </p>
       )}
       <ActionLink
-        href={demo ?? site.github.href}
+        href={repository ?? site.github.href}
         target="_blank"
         rel="noopener noreferrer"
         class="w-fit gap-2 text-sm font-medium text-accent transition-colors hover:text-primary focus-visible:outline-accent"
         arrow="up-right"
       >
         <span>
-          {demo ? "Browse the implementation" : "Explore repositories"}
+          {repository ? "Browse the implementation" : "Explore repositories"}
         </span>
       </ActionLink>
     </div>

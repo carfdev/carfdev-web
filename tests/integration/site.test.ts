@@ -9,6 +9,8 @@ interface Entry {
   description: string;
   order: number;
   kind: "backend" | "frontend";
+  repository?: string;
+  demo?: string;
 }
 
 const root = inject("integrationRoot");
@@ -17,11 +19,52 @@ const page = async (path: string) =>
   parseHTML(await readFile(join(output, path, "index.html"), "utf8")).document;
 let entries: Entry[];
 
+it("keeps visible GitHub link text in its accessible name and preserves external navigation", async () => {
+  for (const path of ["", "contact"]) {
+    const link = (await page(path)).querySelector(
+      'main a[href="https://github.com/carfdev"]',
+    )!;
+    expect(link).not.toBeNull();
+    expect(link.getAttribute("aria-label")).toBe(
+      "github.com/carfdev (opens in a new tab)",
+    );
+    expect(link.getAttribute("target")).toBe("_blank");
+    expect(link.getAttribute("rel")).toBe("noopener noreferrer");
+  }
+});
+
 beforeAll(async () => {
   entries = JSON.parse(
     await readFile(join(output, "test-collection-manifest.json"), "utf8"),
   );
   expect(entries.length).toBeGreaterThan(0);
+});
+
+it("links frontend implementations to their repository while keeping the hero demo destination", async () => {
+  const frontend = entries.filter(({ kind }) => kind === "frontend");
+  expect(frontend.length).toBeGreaterThan(0);
+  for (const { id, repository, demo } of frontend) {
+    const document = await page(`projects/${id}`);
+    const implementation = document.querySelector(
+      'section[aria-labelledby="preview-title"] a',
+    )!;
+    expect(implementation.getAttribute("href")).toBe(
+      repository ?? "https://github.com/carfdev",
+    );
+    expect(implementation.textContent.trim()).toBe(
+      repository ? "Browse the implementation" : "Explore repositories",
+    );
+    expect(implementation.getAttribute("target")).toBe("_blank");
+    expect(implementation.getAttribute("rel")).toBe("noopener noreferrer");
+    if (demo) {
+      const demoLink = [
+        ...document.querySelectorAll(
+          'section[aria-labelledby="project-title"] a',
+        ),
+      ].find((link) => link.textContent.trim() === "Open live demo")!;
+      expect(demoLink.getAttribute("href")).toBe(demo);
+    }
+  }
 });
 
 it("publishes every validated collection entry as a discoverable detail route", async () => {
