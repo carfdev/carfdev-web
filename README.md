@@ -38,6 +38,38 @@ local credentials, dependencies, build output and tests. Add new build-time
 configuration files to that allowlist when needed. Base image tags track updates;
 use image digests if you need immutable base images.
 
+## Browser security policies
+
+Astro's `security.csp` emits a CSP meta tag with automatic hashes for inline
+styles and scripts. Resources are restricted to the same origin, including the
+Cloudflare email protection script. Objects, base URL overrides and form submissions
+are disabled. The portfolio uses contact links rather than forms.
+
+Nginx adds a complementary CSP header containing only `frame-ancestors 'none'`,
+plus `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`
+and a Permissions Policy disabling camera, microphone and geolocation. These
+headers also apply to error responses. Keep resource directives in Astro: a second
+policy that omits the generated hashes could block valid inline styles.
+
+CSP is enforced in production builds, not Astro dev mode. Astro preview verifies
+the meta policy; use the Docker runtime to inspect the nginx headers. A scanner
+that only inspects HTTP headers cannot evaluate the full meta policy. Report-only
+testing requires an HTTP header; the generated meta policy is enforcing.
+
+Cloudflare AI Labyrinth is disabled for this site. Enabling HTML transformations,
+analytics or external resources requires rechecking CSP compatibility. The E2E
+suite checks font/image loading and simulates an email decoder at Cloudflare's
+same-origin script path; it does not reproduce Cloudflare's actual implementation.
+After deployment, verify the real protected email links in a browser. COOP, CORP
+and COEP are not enabled by this change.
+
+With the Docker runtime running locally and Playwright Chromium installed, verify
+its headers, routing and rejection of iframe embedding:
+
+```sh
+NGINX_TEST_URL=http://127.0.0.1:8080 node --test tests/nginx.test.mjs
+```
+
 ## GitHub Actions and releases
 
 Pull requests to `main` run CI: automation-file formatting, Astro diagnostics, unit coverage,

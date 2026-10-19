@@ -9,6 +9,20 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://carf.dev",
 
+  security: {
+    csp: {
+      directives: [
+        "default-src 'self'",
+        "font-src 'self'",
+        "img-src 'self'",
+        "connect-src 'self'",
+        "object-src 'none'",
+        "base-uri 'none'",
+        "form-action 'none'",
+      ],
+    },
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
