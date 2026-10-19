@@ -24,7 +24,8 @@ test("nginx preserves routes and sends security headers on HTML, assets and erro
     const response = await fetch(new URL(path, origin));
     assert.equal(response.status, status, path);
     for (const [name, value] of Object.entries({
-      "content-security-policy": "frame-ancestors 'none'; script-src 'self'",
+      "content-security-policy":
+        "frame-ancestors 'none'; script-src 'self'; object-src 'none'; base-uri 'none'",
       "x-frame-options": "DENY",
       "referrer-policy": "strict-origin-when-cross-origin",
       "permissions-policy": "camera=(), microphone=(), geolocation=()",
