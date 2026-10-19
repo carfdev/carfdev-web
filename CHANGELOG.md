@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/carfdev/carfdev-web/compare/v0.1.2...v0.2.0) (2026-10-19)
+
+
+### Features
+
+* **security:** enforce CSP and browser security headers ([5f2ad9e](https://github.com/carfdev/carfdev-web/commit/5f2ad9e930994718678fce51705da90d18e0c663))
+* **security:** enforce CSP and browser security headers ([f1fcbdb](https://github.com/carfdev/carfdev-web/commit/f1fcbdbd020ce2745b660855541faefe1d53eb35))
+
 ## [0.1.2](https://github.com/carfdev/carfdev-web/compare/v0.1.1...v0.1.2) (2026-10-19)
 
 
