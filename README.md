@@ -78,7 +78,10 @@ NGINX_TEST_URL=http://127.0.0.1:8080 node --test tests/nginx.test.mjs
 ## GitHub Actions and releases
 
 Pull requests to `main` run CI: automation-file formatting, Astro diagnostics, unit coverage,
-integration tests, a production build, legacy regressions and Chromium E2E.
+integration tests, a production build, legacy regressions, Chromium E2E and checks
+against the production Docker image. The nginx checks verify headers, routing,
+embedding protection, and CSP-compatible assets in a temporary localhost-only
+container, which is stopped after the checks.
 Pushes to `main` run the same reusable CI before release automation. Browser
 failure evidence is retained for seven days. CI can also be run manually.
 
