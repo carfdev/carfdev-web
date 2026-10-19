@@ -21,6 +21,24 @@ pnpm astro dev logs
 pnpm astro dev stop
 ```
 
+## Social preview images
+
+`pnpm build` generates a 1200 × 630 PNG for each page under `dist/og/`, using
+`astro-og-canvas`. Open `/og/home.png` or `/og/projects/foodi.png` on the local
+server to preview the cards. The shared layout adds absolute Open Graph image
+URLs and Twitter large-image cards.
+
+General-page titles and descriptions live in `src/data/page-metadata.ts`;
+project cards use the project collection automatically. When adding a general
+page, add its metadata there and pass it to the layout. Card appearance is
+configured in `src/pages/og/[...route].ts`.
+
+The generator uses local Geist Latin regular/medium TTF files from
+[Fontsource](https://fontsource.org/fonts/geist), with the upstream SIL Open Font
+License in `src/assets/fonts/OFL.txt`. Social image generation needs no font
+downloads. After deployment, check a shared URL with the destination platform's
+preview inspector; existing previews may need a cache refresh.
+
 ## Docker
 
 Build and run the production site locally:
