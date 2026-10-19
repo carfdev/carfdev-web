@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/carfdev/carfdev-web/compare/v0.1.1...v0.1.2) (2026-10-19)
+
+
+### Bug Fixes
+
+* **ui:** replace Unicode arrows with SVG icons ([f6d506f](https://github.com/carfdev/carfdev-web/commit/f6d506f8f9eefd17810cccfcf51f18d4fb6bab91))
+* **ui:** replace Unicode arrows with SVG icons ([f38990f](https://github.com/carfdev/carfdev-web/commit/f38990facef87fc9c42c33ed9074fee62542bbfd))
+
 ## [0.1.1](https://github.com/carfdev/carfdev-web/compare/v0.1.0...v0.1.1) (2026-10-18)
 
 
