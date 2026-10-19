@@ -45,8 +45,8 @@ styles and scripts. Resources are restricted to the same origin, including the
 Cloudflare email protection script. Objects, base URL overrides and form submissions
 are disabled. The portfolio uses contact links rather than forms.
 
-Nginx adds a complementary CSP header containing `frame-ancestors 'none'` and
-`script-src 'self'`,
+Nginx adds a complementary CSP header containing `frame-ancestors 'none'`,
+`script-src 'self'`, `object-src 'none'` and `base-uri 'none'`,
 plus `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`
 and a Permissions Policy disabling camera, microphone and geolocation. These
 headers also apply to error responses. The HTTP policy explicitly restricts scripts
