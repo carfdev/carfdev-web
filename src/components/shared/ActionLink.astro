@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import { ArrowRight, ArrowUpRight } from "@/components/icones";
 
 interface Props extends HTMLAttributes<"a"> {
   href: string;
@@ -38,7 +39,9 @@ const {
       distance === "small" && "arrow-small",
     ]}
   >
-    <slot name="icon">{arrow === "up-right" ? "↗" : "→"}</slot>
+    <slot name="icon">
+      {arrow === "up-right" ? <ArrowUpRight /> : <ArrowRight />}
+    </slot>
   </span>
 </a>
 

@@ -1,4 +1,6 @@
 ---
+import { ArrowRight } from "@/components/icones";
+
 interface Props {
   architecture: {
     title: string;
@@ -79,7 +81,17 @@ const arrowRightClass = manyNodes ? "xl:block" : "lg:block";
 
     {architecture.note && (
       <p class="font-mono text-xs leading-relaxed tracking-mono text-primary-foreground wrap-break-word">
-        {architecture.note}
+        {architecture.note.split("→").map((part, index) => (
+          <>
+            {index > 0 && (
+              <ArrowRight
+                aria-hidden="true"
+                class="inline-block align-middle"
+              />
+            )}
+            {part}
+          </>
+        ))}
       </p>
     )}
   </div>

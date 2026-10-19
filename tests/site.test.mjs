@@ -12,6 +12,7 @@ for (const [path, expected] of Object.entries(baseline)) {
   test(`${path} preserves text, ordered links, navigation attributes and headings`, async () => {
     const html = await readFile(new URL(path, dist), "utf8");
     assert.equal(pageSnapshot(html), expected);
+    assert.doesNotMatch(html, /[↗→]/u);
   });
 }
 
