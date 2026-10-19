@@ -155,6 +155,52 @@ docker buildx imagetools inspect your-namespace/carfdev-web:1.2.3
 The workflows are prepared locally; repository settings, secrets, remote runs and
 actual publication must be configured and verified in GitHub/Docker Hub.
 
+### Production deployment with Dokploy
+
+Recovery reference confirmed by the maintainer on 2026-10-19:
+
+- Release: `0.2.2`.
+- Image digest: `sha256:23375338c4e758659655f37b2c6fa4d8712fe0cdf7112ff5240442938cf3f9cb`.
+
+Use the existing Docker Hub repository name with this digest when selecting the
+recovery image in Dokploy. Update this record after verifying a newer deployment.
+
+Production is updated manually in Dokploy from the Docker Hub image's `latest`
+tag. CI must pass before release automation runs; a successful CI run alone does
+not publish an image. Wait for a new release and its **Publish Docker image** job
+to finish successfully before updating Dokploy.
+
+1. Record the image reference from the currently working deployment: its release
+   tag or digest, plus the deployment date. Keep that image available in Docker
+   Hub so it can be deployed again. If only `latest` is recorded, identify the
+   running image before updating; the registry's current `latest` may already
+   point to a newer release.
+2. In the existing Dokploy application, refresh/redeploy the configured `latest`
+   image so Dokploy pulls it from Docker Hub. Keep the existing domain and
+   container port **8080**. Check the deployment logs for a successful pull and
+   deployment, and record the new release tag or digest.
+3. Verify `https://carf.dev`: open the home, About, Contact, project list and a
+   project detail page; check navigation, the protected email link and an unknown
+   route's custom 404 page. Open `/og/home.png` and `/og/projects/foodi.png`, and
+   confirm the new cards appear. Inspect a shared page with the destination
+   platform's preview inspector if its preview is cached.
+
+To recover from a failed update, replace the application's image reference in
+Dokploy with the previously recorded release tag or digest and deploy it again.
+For example, use `your-namespace/carfdev-web:1.2.3` or
+`your-namespace/carfdev-web@sha256:<recorded-digest>` with actual values from the
+working deployment. Repeat the checks above and record the recovery result.
+Keep the restored reference selected until a fixed release is ready; redeploying
+`latest` could bring back the failing version. Version tags can be overwritten
+by manual publication, so a recorded digest identifies the exact image more
+precisely.
+
+See Dokploy's [Docker provider documentation](https://docs.dokploy.com/docs/core/providers)
+for image configuration. Its separate
+[rollback feature](https://docs.dokploy.com/docs/core/applications/rollbacks)
+requires its own setup; this procedure uses an explicitly selected image and
+does not depend on that feature being enabled.
+
 ## Commands
 
 Run commands from the repository root.
