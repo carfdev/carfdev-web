@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2](https://github.com/carfdev/carfdev-web/compare/v0.2.1...v0.2.2) (2026-10-19)
+
+
+### Bug Fixes
+
+* **security:** restrict objects and base URLs in HTTP CSP ([97f6a7d](https://github.com/carfdev/carfdev-web/commit/97f6a7d9d5d79b1f21b0d1199d9d148122365faf))
+* **security:** restrict objects and base URLs in HTTP CSP ([1eca03a](https://github.com/carfdev/carfdev-web/commit/1eca03ad1007230c7ddb8b1f52a26f890da138f3))
+
 ## [0.2.1](https://github.com/carfdev/carfdev-web/compare/v0.2.0...v0.2.1) (2026-10-19)
 
 
