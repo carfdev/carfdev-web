@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/carfdev/carfdev-web/compare/v0.2.0...v0.2.1) (2026-10-19)
+
+
+### Bug Fixes
+
+* **security:** restrict scripts in HTTP CSP header ([50a90f9](https://github.com/carfdev/carfdev-web/commit/50a90f9995b261146a885dfd9d46df2facea2c57))
+* **security:** restrict scripts in HTTP CSP header ([251bc95](https://github.com/carfdev/carfdev-web/commit/251bc950cf164258ac8b8d6328fedea885c81541))
+
 ## [0.2.0](https://github.com/carfdev/carfdev-web/compare/v0.1.2...v0.2.0) (2026-10-19)
 
 
