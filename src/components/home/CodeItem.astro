@@ -1,4 +1,6 @@
 ---
+import { ArrowUpRight } from "@/components/icones";
+
 interface Props {
   name: string;
   technologies: string[];
@@ -28,7 +30,7 @@ const Element = href ? "a" : "div";
           aria-hidden="true"
           class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
         >
-          ↗
+          <ArrowUpRight class="inline-block align-middle" />
         </span>
       )}
     </h3>

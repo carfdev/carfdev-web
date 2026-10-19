@@ -43,3 +43,14 @@ it("replaces the default arrow with the supplied icon slot", async () => {
   expect(arrow.childNodes).toHaveLength(1);
   expect(arrow.querySelector("svg[data-fixture=icon]")).not.toBeNull();
 });
+
+it.each([
+  ["right", "M5 12h14m-7-7l7 7l-7 7"],
+  ["up-right", "M7 7h10v10M7 17L17 7"],
+])("renders the %s arrow as an SVG", async (arrow, path) => {
+  const document = await render({ arrow });
+  const icon = document.querySelector("a > span svg");
+  expect(icon?.getAttribute("width")).toBe("1em");
+  expect(icon?.querySelector("path")?.getAttribute("d")).toBe(path);
+  expect(document.querySelector("a")!.textContent).not.toMatch(/[↗→]/u);
+});
