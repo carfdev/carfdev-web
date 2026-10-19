@@ -45,11 +45,16 @@ styles and scripts. Resources are restricted to the same origin, including the
 Cloudflare email protection script. Objects, base URL overrides and form submissions
 are disabled. The portfolio uses contact links rather than forms.
 
-Nginx adds a complementary CSP header containing only `frame-ancestors 'none'`,
+Nginx adds a complementary CSP header containing `frame-ancestors 'none'` and
+`script-src 'self'`,
 plus `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`
 and a Permissions Policy disabling camera, microphone and geolocation. These
-headers also apply to error responses. Keep resource directives in Astro: a second
-policy that omits the generated hashes could block valid inline styles.
+headers also apply to error responses. The HTTP policy explicitly restricts scripts
+to the same origin, including Cloudflare's email decoder, without allowing inline
+scripts or external analytics. Astro keeps its generated hashes unchanged. Keep
+`style-src` and `default-src` out of this header so Astro's hashed inline font styles
+remain valid. The site currently has no inline scripts; adding one later would
+require authorizing its hash in both policies or moving it into a same-origin file.
 
 CSP is enforced in production builds, not Astro dev mode. Astro preview verifies
 the meta policy; use the Docker runtime to inspect the nginx headers. A scanner
