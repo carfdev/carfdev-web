@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.0](https://github.com/carfdev/carfdev-web/compare/v0.2.2...v0.3.0) (2026-10-19)
+
+
+### Features
+
+* prepare portfolio for stable release ([3e78fda](https://github.com/carfdev/carfdev-web/commit/3e78fdac21e9d8553a436df5b69c35b5fc09ee70))
+* **seo:** generate branded social cards for every page ([85669da](https://github.com/carfdev/carfdev-web/commit/85669dafe3050f0b4bcd043d4f038f6e2653545d))
+
+
+### Bug Fixes
+
+* **a11y:** improve project links and architecture reading flow ([f855a77](https://github.com/carfdev/carfdev-web/commit/f855a77518e364f49aa957e1bf642377b5788b18))
+
 ## [0.2.2](https://github.com/carfdev/carfdev-web/compare/v0.2.1...v0.2.2) (2026-10-19)
 
 
