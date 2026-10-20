@@ -2,7 +2,7 @@ import { site } from "./site";
 
 export const pageMetadata = {
   home: {
-    title: "Fullstack Web Developer",
+    title: "Fullstack Web Developer in Stockholm",
     description: `${site.location.city}-based fullstack developer building web interfaces, backend systems, and infrastructure.`,
   },
   about: {
