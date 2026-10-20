@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/carfdev/carfdev-web/compare/v1.0.0...v1.0.1) (2026-10-20)
+
+
+### Bug Fixes
+
+* **seo:** include Stockholm in homepage title ([b8380bb](https://github.com/carfdev/carfdev-web/commit/b8380bbf054b9a4fa15e77cda7375c7083445120))
+* **seo:** include Stockholm in homepage title ([58c3ffb](https://github.com/carfdev/carfdev-web/commit/58c3ffbce35bbb7252d4dafe7df9cb7ba6f2225c))
+
 ## [1.0.0](https://github.com/carfdev/carfdev-web/compare/v0.3.0...v1.0.0) (2026-10-20)
 
 
