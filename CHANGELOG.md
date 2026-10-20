@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/carfdev/carfdev-web/compare/v0.3.0...v1.0.0) (2026-10-20)
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([6dc34b7](https://github.com/carfdev/carfdev-web/commit/6dc34b775d4917d365bf6a1e88a7dc1d1f61accf))
+
 ## [0.3.0](https://github.com/carfdev/carfdev-web/compare/v0.2.2...v0.3.0) (2026-10-19)
 
 

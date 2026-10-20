@@ -1,7 +1,7 @@
 {
   "name": "carfdev-web",
   "type": "module",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "packageManager": "pnpm@12.3.4",
   "engines": {
     "node": ">=22.12.0"
