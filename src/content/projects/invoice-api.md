@@ -36,15 +36,18 @@ architecture:
       description: Invoices + documents
   note: "B2B traffic: port 8443 / Internal admin: 127.0.0.1:9090"
 details:
-  - title: Certificate-based access
+  - title: The challenge — separate client and administration access
     description: >-
-      rustls verifies client certificates against a trusted CA. The application extracts the certificate’s Common Name for client identification.
-  - title: Application boundaries
+      This project explores invoice processing with two entry points: certificate-authenticated B2B traffic on port 8443 and an internal administration API bound to 127.0.0.1:9090. The distinction makes access boundaries part of the application design.
+  - title: The access decision — identify clients through certificates
     description: >-
-      Domain models, HTTP handlers, repository interfaces and database implementations are separated into distinct modules.
-  - title: Background processing
+      rustls verifies client certificates against a trusted CA, and the application extracts the certificate’s Common Name for client identification. Trying this boundary requires certificate setup as well as an HTTP request; the repository README describes the server certificates and local setup.
+  - title: The structure — keep HTTP and persistence separate
     description: >-
-      Document work moves to Tokio’s blocking thread pool, with concurrent storage uploads, document hashes and invoice status updates.
+      Domain models, HTTP handlers, repository interfaces and database implementations live in separate modules. Axum handles HTTP traffic and SQLx connects to PostgreSQL. The repository boundaries separate application behaviour from its database implementation.
+  - title: Follow the processing flow in the source
+    description: >-
+      Start with the routers and handlers, then follow the document-processing services and persistence implementations. Document work moves to Tokio’s blocking thread pool, with concurrent storage uploads, document hashes and invoice status updates. The useful evidence is how those steps connect; PDF rendering and digital signing remain mocked, and XML output is a placeholder.
 scope:
   title: An experiment, not a production claim.
   description: >-

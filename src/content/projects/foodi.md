@@ -33,15 +33,18 @@ preview:
   image: ../../assets/images/projects/foodi-preview.webp
   alt: Screenshot of Foodi restaurant website design, showing the hero and product interface.
 details:
-  - title: Responsive composition
+  - title: The challenge — from a design to a working interface
     description: >-
-      Astro layouts and section components organise the landing page. Tailwind utilities adapt navigation, content groups and page layout across screen sizes.
-  - title: Interactive components
+      The starting point was Dscode’s community Figma design. My work turns it into a responsive restaurant interface with navigation, product controls and a cart, while keeping the original design attribution explicit.
+  - title: The approach — page structure and interactive components
     description: >-
-      Vue components cover the mobile menu, cart view and add-to-cart controls, adding interaction to the page’s Astro structure.
-  - title: Persistent cart state
+      Astro layouts and sections organise the page, with Tailwind adapting the layout across screen sizes. Vue components handle the mobile menu, cart view and add-to-cart controls. This separates page composition from the components that manage interaction.
+  - title: The state decision — one cart across components
     description: >-
-      A Nano Stores persistent atom stores item IDs, names and quantities. Adding an existing item updates its quantity rather than creating a duplicate.
+      The product controls and cart view share a Nano Stores persistent atom containing item IDs, names and quantities. Adding an existing item updates its quantity rather than creating a duplicate. Shared state connects the separate components; persistence keeps the cart across reloads.
+  - title: Try the flow — add, repeat and reload
+    description: >-
+      Open the live demo, add a product and open the cart. Add the same product again to check that its quantity increases within one entry, then reload the page to check that the cart is retained. Resize the page to explore the responsive layout and mobile navigation. This demonstrates frontend interaction, not a completed ordering or payment flow.
 scope:
   title: Implementation practice, not client work.
   description: >-
