@@ -2,7 +2,7 @@
 
 Personal portfolio for carfdev, built with Astro, TypeScript, and Tailwind CSS. The site URL is configured as `https://carf.dev`.
 
-Current version: `1.0.1`. <!-- x-release-please-version -->
+Current version: `1.0.2`. <!-- x-release-please-version -->
 
 ## Local development
 
